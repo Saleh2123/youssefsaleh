@@ -7,6 +7,69 @@ datasource db {
   url      = env("_TOPP_PHARMACY_DB_URL")
 }
 
-model User {
+model Profile {
   id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  username String @unique
+  password String
+
+  admin      Admin?
+  patient    Patient?
+  pharmacist Pharmacist?
+}
+
+model Admin {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId String  @unique @db.ObjectId
+}
+
+model EmergencyContact {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  name     String
+  mobile   String
+  relation String
+
+  patients Patient[]
+}
+
+model Patient {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  name   String
+  email  String   @unique
+  dob    DateTime @db.Date
+  gender String
+  mobile String
+
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId String  @unique @db.ObjectId
+
+  contact   EmergencyContact @relation(fields: [contactId], references: [id])
+  contactId String           @db.ObjectId
+}
+
+model Pharmacist {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  name        String
+  email       String   @unique
+  dob         DateTime @db.Date
+  hourlyRate  Float
+  affiliation String
+  education   String
+
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  profileId String  @unique @db.ObjectId
+
+  pendingPharmacist PendingPharmacist?
+}
+
+model PendingPharmacist {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  pharmacist   Pharmacist @relation(fields: [pharmacistId], references: [id], onDelete: Cascade)
+  pharmacistId String     @unique @db.ObjectId
 }
