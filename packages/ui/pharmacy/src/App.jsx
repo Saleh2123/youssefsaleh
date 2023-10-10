@@ -9,10 +9,10 @@ import Registerr from './register2';
 import Adminhome from './Adminhome';
 import Pharmacisthome from './Pharmacisthome';
 import Patienthome from './Patienthome';
-import Pharmacistsview from './pharmacistsview';
-import Patientsview from './patientsview';
+// import Pharmacistsview from './pharmacistsview';
+// import Patientsview from './patientsview';
 import Addadmin from './addadmin';
-import Requestshome from './Requestshome';
+// import Requestshome from './Requestshome';
 
 function App() {
   return (
@@ -34,13 +34,13 @@ function App() {
 
         <Route path="/patienthome" element={<Patienthome />} />
 
-        <Route path="/pharview" element={<Pharmacistsview />} />
+        {/* <Route path="/pharview" element={<Pharmacistsview />} />
 
-        <Route path="/patientsview" element={<Patientsview />} />
+        <Route path="/patientsview" element={<Patientsview />} /> */}
 
         <Route path="/addadmin" element={<Addadmin />} />
 
-        <Route path="/requestshome" element={<Requestshome />} />
+        {/* <Route path="/requestshome" element={<Requestshome />} /> */}
 
       </Routes>
     </BrowserRouter>
