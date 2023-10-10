@@ -1,0 +1,13 @@
+.addbutton {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .addbutton:hover {
+    background-color: darkred;
+  }
+  

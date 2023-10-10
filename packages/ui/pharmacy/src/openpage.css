@@ -1,0 +1,30 @@
+.shape-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .custom-shape {
+    position: relative;
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 50px; /* Curved edge on the top left */
+    border-bottom-left-radius: 50px; /* Curved edge on the bottom left */
+    border-top-right-radius: 50px; /* Curved edge on the top right */
+    border-bottom-right-radius: 50px; /* Curved edge on the bottom right */
+  }
+  
+  .custom-shape:hover {
+    cursor: pointer;
+    background-color: darkred; /* Change color on hover */
+  }

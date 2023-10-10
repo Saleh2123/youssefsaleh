@@ -1,0 +1,45 @@
+.registration-form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    display: inline-block;
+    margin-right: 20px; /* Adjust this margin as needed to create space between fields */
+    margin-bottom: 10px;
+  }
+  
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .dob-fields select {
+    width: 32%;
+  }
+  
+  button[type="submit"] {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: darkred;
+  }
+  
