@@ -119,7 +119,7 @@ const AppProvider = ({children}) => {
             password: "abc",
             dateofbirth: "5 jan 2002",
             hourlyRate: 4 ,
-            affiliation:"Magdy hospital", 
+            affiliation:"Magdy hospital",
             educationalBackground:"abc"
             },
             {
@@ -129,7 +129,7 @@ const AppProvider = ({children}) => {
             password: "abc",
             dateofbirth: "5 jan 2002",
             hourlyRate: 4 ,
-            affiliation:"Magdy hospital", 
+            affiliation:"Magdy hospital",
             educationalBackground:"abc"
             },
             {
@@ -139,7 +139,7 @@ const AppProvider = ({children}) => {
             password: "abc",
             dateofbirth: "5 jan 2002",
             hourlyRate: 4 ,
-            affiliation:"Magdy hospital", 
+            affiliation:"Magdy hospital",
             educationalBackground:"abc"
             },
             {
@@ -149,7 +149,7 @@ const AppProvider = ({children}) => {
             password: "abc",
             dateofbirth: "5 jan 2002",
             hourlyRate: 4 ,
-            affiliation:"Magdy hospital", 
+            affiliation:"Magdy hospital",
             educationalBackground:"abc"
             }
         ]
@@ -192,8 +192,8 @@ const AppProvider = ({children}) => {
     // const [searchTerm,setSearchTerm] = useState("a")
     // const [showModal,setShowModal] = useState(false)
     // const [selectedMedicine,setSelectedMedicine] = useState(null)
-    
-    
+
+
     // const fetchMedicines = async (url) => {
     //     setLoading(true)
     //     try{
@@ -216,7 +216,7 @@ const AppProvider = ({children}) => {
         medicine = medicines.find((medicine) =>
         medicine.Name === Name
         )
-        
+
         setSelectedMedicine(medicine)
         setShowModal(true)
     }
@@ -239,7 +239,7 @@ const AppProvider = ({children}) => {
         request = requests.find((request) =>
         request.email === email
         )
-        
+
         setSelectedRequest(request)
         setShowModal(true)
     }
@@ -277,7 +277,7 @@ const AppProvider = ({children}) => {
     // }
     // ,[searchTerm])
     // :>>>
-    
+
     return (
         <AppContext.Provider value={{medicines,setMedicines,selectedMedicine,selectMedicine,closeModal,showModal,patients,pharmacists,removePharmacist,removePatient,requests,selectRequest,selectedRequest,showAddMediModal,setShowAddMediModal,closeAddMediModal,showEddMediModal,setShowEddMediModal,closeEddMediModal,editMedicine,editedMedicine,setEditedMedicine, editedindex,closeFilterModal,showFilterModal,setShowFilterModal,Allmedicines}}>
             {children}
