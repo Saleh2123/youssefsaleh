@@ -73,3 +73,14 @@ model PendingPharmacist {
   pharmacist   Pharmacist @relation(fields: [pharmacistId], references: [id], onDelete: Cascade)
   pharmacistId String     @unique @db.ObjectId
 }
+
+model Medicine {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  name     String
+  uses     String[]
+  active   String[]
+  quantity Int      @default(0)
+  sales    Int      @default(0)
+  price    Float
+}
