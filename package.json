@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@topp/mono",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/_config/*",
+    "packages/ui/*"
+  ],
+  "scripts": {
+    "check::prettier": "prettier --check '*.json' '*.md' '*.yaml'",
+    "check::syncpack": "syncpack",
+    "b": "turbo build",
+    "c": "turbo check",
+    "d": "turbo dev",
+    "t": "turbo test"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": ">=2 <3",
+    "@prisma/language-server": ">=5 <6",
+    "@topp/_config.eslint": "*",
+    "@topp/_config.tsc": "*",
+    "@topp/_config.vitest": "*",
+    "@types/compression": ">=1 <2",
+    "@types/eslint": ">=8 <9",
+    "@types/eslint__js": ">=8 <9",
+    "@types/express": ">=4 <5",
+    "@types/node": ">=20 <21",
+    "@types/react": ">=18 <19",
+    "@types/react-dom": ">=18 <19",
+    "compression": ">=1 <2",
+    "eslint": ">=8 <9",
+    "eslint-config-next": ">=13 <14",
+    "express": ">=4 <5",
+    "helmet": ">=7 <8",
+    "next": ">=13 <14",
+    "npm-check-updates": ">=16 <17",
+    "prettier": ">=3 <4",
+    "prettier-plugin-organize-imports": ">=3 <4",
+    "prisma": ">=5 <6",
+    "syncpack": ">=11 <12",
+    "turbo": ">=1 <2",
+    "typescript": ">=5 <6",
+    "vitest": ">=0 <1"
+  },
+  "config": {
+    "syncpack": {
+      "dependencyTypes": [
+        "!local"
+      ]
+    }
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "printWidth": 100,
+    "plugins": [
+      "prettier-plugin-organize-imports"
+    ],
+    "organizeImportsSkipDestructiveCodeActions": true
+  }
+}

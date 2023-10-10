@@ -1,0 +1,24 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": { "dependsOn": ["^build"], "outputs": ["target/**"] },
+
+    "//#check::prettier": { "inputs": ["*.json", "*.md", "*.yaml"] },
+    "//#check::syncpack": { "inputs": ["**/package.json"] },
+    "check::eslint": { "dependsOn": ["@topp/_config.eslint#build"] },
+    "check::prettier": {},
+    "check": {
+      "dependsOn": [
+        "//#check::prettier",
+        "//#check::syncpack",
+        "build",
+        "check::eslint",
+        "check::prettier"
+      ]
+    },
+
+    "dev": { "cache": false, "persistent": true, "dependsOn": ["^build"] },
+
+    "test": { "dependsOn": ["build"] }
+  }
+}

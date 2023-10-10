@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "extends": "@topp/_config.tsc/base.json",
+
+  "include": ["./*.ts", "./src/**/*.ts", "./tests/**/*.ts"],
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "."
+  }
+}

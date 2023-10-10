@@ -1,0 +1,24 @@
+{
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  "files.associations": {
+    "**/packages/_config/typescript/*.json": "jsonc"
+  },
+
+  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
+
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.runtime": "node",
+  "eslint.workingDirectories": [{ "pattern": "./packages/*" }, { "pattern": "./packages/_config/*" }],
+
+  "typescript.tsdk": "./node_modules/typescript/lib",
+
+  "[javascript][javascriptreact][json][jsonc][markdown][typescript][typescriptreact][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
+}

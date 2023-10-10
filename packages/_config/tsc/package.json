@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@topp/_config.tsc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "check::prettier": "prettier --ignore-path=../../../.gitignore --check ."
+  },
+  "peerDependencies": {
+    "typescript": ">=5 <6"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@topp/pharmacy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": null,
+  "scripts": {
+    "build::prisma": "prisma generate",
+    "build": "next build",
+    "check::eslint": "TIMING=1 eslint .",
+    "check::prettier": "prettier --ignore-path=../../.gitignore --check .",
+    "dev": "next dev",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@prisma/client": ">=5 <6",
+    "@topp/_config.next": "*",
+    "@topp/_core": "*",
+    "compression": ">=1 <2",
+    "express": ">=4 <5",
+    "helmet": ">=7 <8",
+    "next": ">=13 <14",
+    "react": ">=18 <19",
+    "react-dom": ">=18 <19"
+  }
+}
