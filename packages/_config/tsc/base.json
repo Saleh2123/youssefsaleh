@@ -19,7 +19,7 @@
 
     // # JavaScript Support
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
 
     // # Language and Environment
     "jsx": "preserve",
@@ -27,7 +27,7 @@
 
     // # Modules
     "module": "nodenext",
-    "paths": { "::/*": ["./src/*"] },
+    "paths": { "~/*": ["./src/*"] },
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "rootDir": "../../..",

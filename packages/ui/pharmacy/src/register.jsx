@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
-import './register.css'; // Import your custom CSS for the form styles
+import React, { useState } from "react";
+import { _TARGET } from "./_target";
+import "./register.css"; // Import your custom CSS for the form styles
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    name: '',
-    email: '',
-    password: '',
-    birthYear: '',
-    birthMonth: '',
-    birthDay: '',
-    gender: 'male',
-    mobileNumber: '',
+    username: "",
+    name: "",
+    email: "",
+    password: "",
+    birthYear: "",
+    birthMonth: "",
+    birthDay: "",
+    gender: "male",
+    mobileNumber: "",
     emergencyContact: {
-      fullName: '',
-      relation: '',
-      emergencyMobile: '',
+      fullName: "",
+      relation: "",
+      emergencyMobile: "",
     },
   });
 
@@ -40,9 +41,14 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+    await fetch(`${_TARGET}/api/auth/register/patient`, {
+      headers: { "content-type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
   };
 
   return (
@@ -110,7 +116,7 @@ const Register = () => {
                   value={formData.birthDay}
                   onChange={handleDOBChange}
                   required
-                  style={{ width: '90px' }}
+                  style={{ width: "90px" }}
                 >
                   <option value="">Day</option>
                   {Array.from({ length: 31 }, (_, i) => (
@@ -124,22 +130,22 @@ const Register = () => {
                   value={formData.birthMonth}
                   onChange={handleDOBChange}
                   required
-                  style={{ width: '90px' }}
+                  style={{ width: "90px" }}
                 >
                   <option value="">Month</option>
                   {[
-                    'January',
-                    'February',
-                    'March',
-                    'April',
-                    'May',
-                    'June',
-                    'July',
-                    'August',
-                    'September',
-                    'October',
-                    'November',
-                    'December',
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December",
                   ].map((month, index) => (
                     <option key={index} value={month}>
                       {month}
@@ -151,7 +157,7 @@ const Register = () => {
                   value={formData.birthYear}
                   onChange={handleDOBChange}
                   required
-                  style={{ width: '90px' }}
+                  style={{ width: "90px" }}
                 >
                   <option value="">Year</option>
                   {Array.from({ length: 44 }, (_, i) => (
@@ -166,12 +172,7 @@ const Register = () => {
           <div className="col-md-4">
             <div className="form-group">
               <label>Gender:</label>
-              <select
-                name="gender"
-                value={formData.gender}
-                onChange={handleInputChange}
-                required
-              >
+              <select name="gender" value={formData.gender} onChange={handleInputChange} required>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
@@ -197,7 +198,7 @@ const Register = () => {
               <label>Emergency Name:</label>
               <input
                 type="text"
-                name="emergencyContact.fullName"
+                name="fullName"
                 value={formData.emergencyContact.fullName}
                 onChange={handleEmergencyContactChange}
                 required
@@ -209,7 +210,7 @@ const Register = () => {
               <label>Relation to Patient:</label>
               <input
                 type="text"
-                name="emergencyContact.relation"
+                name="relation"
                 value={formData.emergencyContact.relation}
                 onChange={handleEmergencyContactChange}
                 required
@@ -224,7 +225,7 @@ const Register = () => {
               <label>Emergency Mobile Number:</label>
               <input
                 type="text"
-                name="emergencyContact.emergencyMobile"
+                name="emergencyMobile"
                 value={formData.emergencyContact.emergencyMobile}
                 onChange={handleEmergencyContactChange}
                 required

@@ -29,7 +29,7 @@ model EmergencyContact {
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
   name     String
-  mobile   String
+  mobile   String @unique
   relation String
 
   patients Patient[]
@@ -40,7 +40,7 @@ model Patient {
 
   name   String
   email  String   @unique
-  dob    DateTime @db.Date
+  dob    String[]
   gender String
   mobile String
 
@@ -56,7 +56,7 @@ model Pharmacist {
 
   name        String
   email       String   @unique
-  dob         DateTime @db.Date
+  dob         String[]
   hourlyRate  Float
   affiliation String
   education   String
@@ -64,10 +64,18 @@ model Pharmacist {
   profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
   profileId String  @unique @db.ObjectId
 
-  pendingPharmacist PendingPharmacist?
+  pendingPharmacist  PendingPharmacist?
+  acceptedPharmacist AcceptedPharmacist?
 }
 
 model PendingPharmacist {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  pharmacist   Pharmacist @relation(fields: [pharmacistId], references: [id], onDelete: Cascade)
+  pharmacistId String     @unique @db.ObjectId
+}
+
+model AcceptedPharmacist {
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
   pharmacist   Pharmacist @relation(fields: [pharmacistId], references: [id], onDelete: Cascade)

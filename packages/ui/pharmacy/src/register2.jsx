@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
-import './register2.css';
+import React, { useState } from "react";
+import { _TARGET } from "./_target";
+import "./register2.css";
 
 const Registerr = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    name: '',
-    email: '',
-    password: '',
-    birthDay: '',
-    birthMonth: '',
-    birthYear: '',
-    hourlyRate: '',
-    affiliation: '',
-    educationalBackground: '',
+    username: "",
+    name: "",
+    email: "",
+    password: "",
+    birthDay: "",
+    birthMonth: "",
+    birthYear: "",
+    hourlyRate: "",
+    affiliation: "",
+    educationalBackground: "",
   });
 
   const handleInputChange = (e) => {
@@ -20,10 +21,14 @@ const Registerr = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    // You can submit the form data to your server here
+    await fetch(`${_TARGET}/api/auth/register/pharmacist`, {
+      headers: { "content-type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(formData),
+    });
   };
 
   return (
@@ -73,12 +78,7 @@ const Registerr = () => {
         <div className="form-group">
           <label>Date of Birth:</label>
           <div className="dob-fields">
-            <select
-              name="birthDay"
-              value={formData.birthDay}
-              onChange={handleInputChange}
-              required
-            >
+            <select name="birthDay" value={formData.birthDay} onChange={handleInputChange} required>
               <option value="">Day</option>
               {Array.from({ length: 31 }, (_, i) => (
                 <option key={i} value={i + 1}>
@@ -94,18 +94,18 @@ const Registerr = () => {
             >
               <option value="">Month</option>
               {[
-                'January',
-                'February',
-                'March',
-                'April',
-                'May',
-                'June',
-                'July',
-                'August',
-                'September',
-                'October',
-                'November',
-                'December',
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
               ].map((month, index) => (
                 <option key={index} value={month}>
                   {month}
