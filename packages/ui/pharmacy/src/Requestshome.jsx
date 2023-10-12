@@ -1,15 +1,39 @@
-import { useGlobalContext } from "./context"
-import Requests from "./requests"
-import ReqModal from "./reqModal"
-import "./web.css"
+import { useEffect, useState } from "react";
+import { _TARGET } from "./_target";
+import ReqModal from "./reqModal";
+import Requests from "./requests";
+import "./web.css";
 
 const Requestshome = () => {
-    const {showModal} = useGlobalContext()
-    return (
-        <main style={{"margin-top": "150px"}}>
-        <Requests/>
-        {showModal && <ReqModal />}
-        </main>
-    )
-}
-export default Requestshome
+  const [requests, setRequests] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedRequest, setSelectedRequest] = useState(null);
+
+  useEffect(() => {
+    const get = async () => {
+      const res = await fetch(`${_TARGET}/api/pharmacist/pending/find`, {
+        headers: { "content-type": "application/json" },
+      });
+      const results = await res.json();
+      console.log(results);
+      setRequests(results);
+    };
+    get();
+  }, []);
+
+  const select = (email) => {
+    const request = requests.find((request) => request.email === email);
+    setSelectedRequest(request);
+    setShowModal(true);
+  };
+
+  return (
+    <main style={{ "margin-top": "150px" }}>
+      <Requests requests={requests} select={select} />
+      {showModal && (
+        <ReqModal selectedRequest={selectedRequest} close={setShowModal.bind(null, false)} />
+      )}
+    </main>
+  );
+};
+export default Requestshome;
