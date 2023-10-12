@@ -9,7 +9,7 @@ const ModalPhar = () =>{
         <div className="modal-container">
         <img src={selectedMedicine.picture} alt ="No" className="img modal-img"/>
         <div className="modal-content">
-            <h4>{selectedMedicine.Name}</h4>
+            <h4>{selectedMedicine.name}</h4>
             <p>{selectedMedicine.description}</p>
             <p>Price: {selectedMedicine.price}</p>
             <p>Quantity: {selectedMedicine.quantity}</p>

@@ -85,10 +85,12 @@ model AcceptedPharmacist {
 model Medicine {
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
-  name     String
-  uses     String[]
-  active   String[]
-  quantity Int      @default(0)
-  sales    Int      @default(0)
-  price    Float
+  name        String   @unique
+  use         String
+  description String
+  ingredients String[]
+  quantity    Int      @default(0)
+  sales       Int      @default(0)
+  picture     String?
+  price       Float
 }

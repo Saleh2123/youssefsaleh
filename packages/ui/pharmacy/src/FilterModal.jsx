@@ -1,38 +1,35 @@
+import { useState } from "react";
 import { useGlobalContext } from "./context";
 import "./web.css";
-import { useState } from "react";
 
 const FilterModal = () => {
   const { medicines, setMedicines, closeFilterModal, Allmedicines } = useGlobalContext();
-  const [selectedUse, setSelectedUse] = useState('');
+  const [selectedUse, setSelectedUse] = useState("");
 
-  const getuses = ()=>{
+  const getuses = () => {
     let uses = [];
     medicines.forEach((medicine) => {
-        if (uses.indexOf(medicine.use) === -1) {
-            uses.push(medicine.use);
-        }
-        });
-    return uses    
-}
-  const [uniqueUses] = useState(getuses())
+      if (uses.indexOf(medicine.use) === -1) {
+        uses.push(medicine.use);
+      }
+    });
+    return uses;
+  };
+  const [uniqueUses] = useState(getuses());
 
   const handleRadioButtonChange = (use) => {
     setSelectedUse(use);
   };
 
   const filter = () => {
-    if(selectedUse === ''){
-        setMedicines(Allmedicines)
+    if (selectedUse === "") {
+      setMedicines(Allmedicines);
+    } else {
+      let arr;
+      arr = medicines.filter((medicine) => medicine.use === selectedUse);
+      setMedicines(arr);
     }
-    else{
-        let arr
-        arr = medicines.filter((medicine)=>
-        medicine.use === selectedUse
-        )
-        setMedicines(arr)
-    }
-    closeFilterModal()
+    closeFilterModal();
   };
 
   return (
@@ -54,7 +51,10 @@ const FilterModal = () => {
               </div>
             );
           })}
-          <button className="btn btn-hipster filter-btn" onClick={filter}> Filter </button>
+          <button className="btn btn-hipster filter-btn" onClick={filter}>
+            {" "}
+            Filter{" "}
+          </button>
         </div>
       </div>
     </aside>
