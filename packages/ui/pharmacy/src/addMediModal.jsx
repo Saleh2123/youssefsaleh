@@ -4,7 +4,7 @@ import { useGlobalContext } from "./context";
 import "./web.css";
 
 const AddMediModal = () => {
-  const { closeAddMediModal, medicines, setMedicines, setAllMedicines} = useGlobalContext();
+  const { closeAddMediModal, medicines, setMedicines} = useGlobalContext();
   const [medicineData, setMedicineData] = useState({
     name: "",
     description: "",
@@ -40,19 +40,19 @@ const AddMediModal = () => {
     ing.push(medicineData.ingredient1);
     ing.push(medicineData.ingredient2);
     ing.push(medicineData.ingredient3);
-    setAllMedicines([
-      ...medicines,
-      {
-        ingredients: ing,
-        name: medicineData.name,
-        price: parseInt(medicineData.price),
-        description: medicineData.description,
-        quantity: parseInt(medicineData.quantity),
-        use: medicineData.use,
-        sales: 0,
-        picture: "https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
-      },
-    ]);
+    // setAllMedicines([
+    //   ...medicines,
+    //   {
+    //     ingredients: ing,
+    //     name: medicineData.name,
+    //     price: parseInt(medicineData.price),
+    //     description: medicineData.description,
+    //     quantity: parseInt(medicineData.quantity),
+    //     use: medicineData.use,
+    //     sales: 0,
+    //     picture: "https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
+    //   },
+    // ]);
     setMedicines([
       ...medicines,
       {
