@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { _TARGET } from "./_target";
-import { useGlobalContext } from "./context";
-import "./web.css";
+import { _TARGET } from "../_target";
+import { useGlobalContext } from "../context";
+import "../web.css";
 
 const AddMediModal = () => {
   const { closeAddMediModal, medicines, setMedicines} = useGlobalContext();

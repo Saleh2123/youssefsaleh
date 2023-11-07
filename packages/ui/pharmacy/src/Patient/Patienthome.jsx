@@ -1,9 +1,9 @@
-import { useGlobalContext } from "./context"
-import Search from "./Search"
-import Medicines from "./Medicines"
-import Modal from "./Modal"
-import "./web.css"
-import FilterModal from "./FilterModal"
+import { useGlobalContext } from "../context"
+import Search from "../All/Search"
+import Medicines from "../All/Medicines"
+import Modal from "../All/Modal"
+import "../web.css"
+import FilterModal from "../All/FilterModal"
 
 const Patienthome = () => {
     const {showModal,showFilterModal} = useGlobalContext()

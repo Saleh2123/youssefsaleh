@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { _TARGET } from "./_target";
-import "./web.css";
+import { _TARGET } from "../_target";
+import "../web.css";
 
 const Patientsview = () => {
   const [patients, setPatients] = useState([]);

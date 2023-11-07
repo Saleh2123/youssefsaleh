@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { _TARGET } from "./_target";
+import { _TARGET } from "../_target";
 import ReqModal from "./reqModal";
 import Requests from "./requests";
-import "./web.css";
+import "../web.css";
 
 const Requestshome = () => {
   const [requests, setRequests] = useState([]);

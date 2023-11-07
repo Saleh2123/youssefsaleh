@@ -1,11 +1,11 @@
-import FilterModal from "./FilterModal";
+import FilterModal from "../All/FilterModal";
 import MedicinesP from "./MedicinesP";
 import ModalPhar from "./ModalPhar";
-import Search from "./Search";
+import Search from "../All/Search";
 import AddMediModal from "./addMediModal";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "../context";
 import EddMediModal from "./eddMediModal";
-import "./web.css";
+import "../web.css";
 
 const Pharmacisthome = () => {
   const { showModal, showAddMediModal, showEddMediModal, showFilterModal } = useGlobalContext();

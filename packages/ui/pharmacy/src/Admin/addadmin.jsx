@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { _TARGET } from "./_target";
+import { _TARGET } from "../_target";
 
 const Addadmin = () => {
   const [username, setUsername] = useState("");

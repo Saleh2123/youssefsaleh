@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { _TARGET } from "./_target";
-import "./web.css";
+import { _TARGET } from "../_target";
+import "../web.css";
 
 const Pharmacistsview = () => {
   const [pharmacists, setPharmacists] = useState([]);
@@ -15,7 +15,7 @@ const Pharmacistsview = () => {
       setPharmacists(results);
     };
     get();
-  }, []);
+  },[]);
 
   const removePharmacist = async (id, profileId) => {
     let arr = pharmacists.filter((pharmacist) => pharmacist.id !== id);

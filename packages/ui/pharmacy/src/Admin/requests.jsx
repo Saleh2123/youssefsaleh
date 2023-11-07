@@ -1,4 +1,4 @@
-import "./web.css";
+import "../web.css";
 
 const Requests = ({ requests, select }) => {
   // if(loading){

@@ -1,4 +1,4 @@
-import "./web.css";
+import "../web.css";
 
 const ReqModal = ({ selectedRequest: { pharmacist }, close }) => {
   return (

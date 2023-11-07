@@ -6,13 +6,13 @@ import Openpage from './openpage';
 import Openpage2 from './openpage2';
 import Register from './register';
 import Registerr from './register2';
-import Adminhome from './Adminhome';
-import Pharmacisthome from './Pharmacisthome';
-import Patienthome from './Patienthome';
-import Pharmacistsview from './pharmacistsview';
-import Patientsview from './patientsview';
-import Addadmin from './addadmin';
-import Requestshome from './Requestshome';
+import Adminhome from './Admin/Adminhome';
+import Pharmacisthome from './Pharmacist/Pharmacisthome';
+import Patienthome from './Patient/Patienthome';
+import Pharmacistsview from './Admin/pharmacistsview';
+import Patientsview from './Admin/patientsview';
+import Addadmin from './Admin/addadmin';
+import Requestshome from './Admin/Requestshome';
 
 function App() {
   return (

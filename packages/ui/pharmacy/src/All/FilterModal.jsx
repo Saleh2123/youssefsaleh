@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useGlobalContext } from "./context";
-import "./web.css";
+import { useGlobalContext } from "../context";
+import "../web.css";
 
 const FilterModal = () => {
   const { medicines, setMedicines, closeFilterModal, Allmedicines } = useGlobalContext();

@@ -1,5 +1,5 @@
-import { useGlobalContext } from "./context"
-import "./web.css"
+import { useGlobalContext } from "../context"
+import "../web.css"
 
 const Modal = () =>{
 

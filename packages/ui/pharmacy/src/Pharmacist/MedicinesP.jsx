@@ -1,6 +1,6 @@
 import { FaEdit } from "react-icons/fa";
-import { useGlobalContext } from "./context";
-import "./web.css";
+import { useGlobalContext } from "../context";
+import "../web.css";
 
 const MedicinesP = () => {
   const { medicines, selectMedicine, setShowAddMediModal, editMedicine } = useGlobalContext();
