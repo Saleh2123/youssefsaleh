@@ -10,15 +10,15 @@ const Openpage2 = () =>{
 
     return(
         <div className="shape-container">
-           <button className="custom-shape" onClick={()=>{changePage("/adminhome")}}>
+           <button className="custom-shape" onClick={()=>{changePage("/loginA")}}>
                <span>Log In as an adminstrator </span>
            </button>
            <h5 style={{color : "white"}}>or</h5>
-           <button className="custom-shape" onClick={()=>{changePage("/pharhome")}}>
+           <button className="custom-shape" onClick={()=>{changePage("/loginPh")}}>
                <span>Log In as a pharmacist </span>
            </button>
            <h5 style={{color : "white"}}>or</h5>
-           <button className="custom-shape" onClick={()=>{changePage("/patienthome")}}>
+           <button className="custom-shape" onClick={()=>{changePage("/loginPa")}}>
                <span>Log In as a patient </span>
            </button>
         </div>

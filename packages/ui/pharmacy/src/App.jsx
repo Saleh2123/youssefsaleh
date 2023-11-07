@@ -13,6 +13,9 @@ import Pharmacistsview from './Admin/pharmacistsview';
 import Patientsview from './Admin/patientsview';
 import Addadmin from './Admin/addadmin';
 import Requestshome from './Admin/Requestshome';
+import LoginPhar from './loginPhar';
+import LoginPatient from './loginPatient';
+import LoginAdmin from './loginAdmin';
 
 function App() {
   return (
@@ -41,6 +44,12 @@ function App() {
         <Route path="/addadmin" element={<Addadmin />} />
 
         <Route path="/requestshome" element={<Requestshome />} />
+
+        <Route path="/loginA" element={<LoginAdmin />} />
+
+        <Route path="/loginPh" element={<LoginPhar />} />
+
+        <Route path="/loginPa" element={<LoginPatient />} />
 
       </Routes>
     </BrowserRouter>

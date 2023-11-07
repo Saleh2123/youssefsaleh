@@ -9,6 +9,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   // const [loading, setLoading] = useState(false)
   const [showModal, setShowModal] = useState(false);
+  const [showlogoutModal, setShowlogoutModal] = useState(false);
   const [showAddMediModal, setShowAddMediModal] = useState(false);
   const [showEddMediModal, setShowEddMediModal] = useState(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
@@ -229,6 +230,10 @@ const AppProvider = ({ children }) => {
     setShowModal(false);
   };
 
+  const closelogoutModal = () => {
+    setShowlogoutModal(false);
+  };
+
   const closeAddMediModal = () => {
     setShowAddMediModal(false);
   };
@@ -291,6 +296,9 @@ const AppProvider = ({ children }) => {
         Allmedicines,
         setAllMedicines,
         getPharmacists,
+        closelogoutModal,
+        showlogoutModal,
+        setShowlogoutModal
       }}
     >
       {children}
