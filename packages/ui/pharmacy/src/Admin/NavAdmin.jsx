@@ -26,7 +26,7 @@ const NavAdmin = () =>{
                 </li>
             </ul>
             <ul className="navbar-nav ml-auto">
-                <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px"}} onClick={()=>changePage("/pass")}>
+                <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px"}} onClick={()=>changePage("/passA")}>
                     Change Password?
                 </li>
                 <li className="nav-item" style={{"color":"white", "cursor":"pointer"}} onClick={()=>setShowlogoutModal(true)}>

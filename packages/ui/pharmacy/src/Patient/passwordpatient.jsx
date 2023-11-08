@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+//import { useLocation } from "react-router-dom";
 
-const Password = () => {
+const PasswordPatient = () => {
   const [Currentpassword, setCurrentpassword] = useState("");
   const [Newpassword, setNewpassword] = useState("");
   const [Cpassword, setCpassword] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  // const location = useLocation();
+  // console.log(location.pathname)
   const navigate = useNavigate()
 
   const changePage = (exten) =>{
@@ -27,8 +30,8 @@ const Password = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-    if(Cpassword !== "" && Newpassword !== "" && Currentpassword!==""){
-      changePage("/adminhome");
+    if(Cpassword !== "" && Newpassword !== "" && Currentpassword !=="" && Cpassword === Newpassword){
+      changePage("/patienthome");
     }
   };
 
@@ -97,7 +100,7 @@ const Password = () => {
           {isSubmitted && Cpassword === "" && (
             <p className="text-danger">Please fill out this field</p>
           )}
-          {isSubmitted && Cpassword === "" && Cpassword !== Newpassword && (
+          {isSubmitted && Newpassword !== "" && Cpassword !== "" && Cpassword !== Newpassword && (
             <p className="text-danger">You confirmed the wrong password</p>
           )}
         </div>
@@ -111,5 +114,5 @@ const Password = () => {
   );
 };
 
-export default Password;
+export default PasswordPatient;
 

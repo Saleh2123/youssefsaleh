@@ -14,7 +14,7 @@ const NavPharmacist = () =>{
              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             </ul>
             <ul className="navbar-nav ml-auto">
-            <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px"}} onClick={()=>changePage("/pass")}>
+            <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px"}} onClick={()=>changePage("/passPh")}>
                     Change Password?
                 </li>
                 <li className="nav-item" style={{"color":"white", "cursor":"pointer"}} onClick={()=>setShowlogoutModal(true)}>
