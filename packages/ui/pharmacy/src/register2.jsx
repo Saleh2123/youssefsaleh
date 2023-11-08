@@ -3,6 +3,10 @@ import { _TARGET } from "./_target";
 import "./register2.css";
 
 const Registerr = () => {
+  const [idDocument, setIdDocument] = useState(null);
+  const [degreeDocument, setDegreeDocument] = useState(null);
+  const [licenseDocument, setLicenseDocument] = useState(null);
+
   const [formData, setFormData] = useState({
     username: "",
     name: "",
@@ -15,6 +19,20 @@ const Registerr = () => {
     affiliation: "",
     educationalBackground: "",
   });
+
+  const handlePDFChange = (e) => {
+    const file = e.target.files[0];
+    const name = e.target.name;
+
+    if (name === "idDocument") {
+      setIdDocument(file);
+    } else if (name === "degreeDocument") {
+      setDegreeDocument(file);
+    } else if (name === "licenseDocument") {
+      setLicenseDocument(file);
+    }
+  };
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -157,6 +175,20 @@ const Registerr = () => {
             required
           />
         </div>
+        {/* Three file input buttons for uploading documents */}
+        <div className="form-group">
+           <label>Upload ID:</label>
+           <input type="file" accept=".pdf" name="idDocument" onChange={handlePDFChange} />
+        </div>
+        <div className="form-group">
+          <label>Upload Pharmacy Degree:</label>
+          <input type="file" accept=".pdf" name="degreeDocument" onChange={handlePDFChange} />
+        </div>
+        <div className="form-group">
+         <label>Upload Working Licenses:</label>
+         <input type="file" accept=".pdf" name="licenseDocument" onChange={handlePDFChange} />
+        </div>
+        {/* Register button */}
         <div className="form-group">
           <button type="submit">Register</button>
         </div>
