@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { _TARGET } from "../_target";
 import { useGlobalContext } from "../context";
+import React, { useRef } from 'react';
 import "../web.css";
 
 const EddMediModal = () => {
+  const fileInputRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState(null);
   const {
     closeEddMediModal,
     medicines,
@@ -14,27 +17,18 @@ const EddMediModal = () => {
   } = useGlobalContext();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Handle changes in input fields
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // if (name === "ingredient1") {
-    //   const updatedIngredients = [...editedMedicine.ingredients];
-    //   updatedIngredients[0] = value;
-    //   setEditedMedicine({ ...editedMedicine, ingredients: updatedIngredients });
-    // } else if (name === "ingredient2") {
-    //   const updatedIngredients = [...editedMedicine.ingredients];
-    //   updatedIngredients[1] = value;
-    //   setEditedMedicine({ ...editedMedicine, ingredients: updatedIngredients });
-    // } else if (name === "ingredient3") {
-    //   const updatedIngredients = [...editedMedicine.ingredients];
-    //   updatedIngredients[2] = value;
-    //   setEditedMedicine({ ...editedMedicine, ingredients: updatedIngredients });
-    // } else {
     console.log(name);
     console.log(value);
     setEditedMedicine({ ...editedMedicine, [name]: value });
-    // }
   };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedImage(file);
+  };
+
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -47,6 +41,9 @@ const EddMediModal = () => {
       editedMedicine.quantity === ""
     ) {
       return;
+    }
+    if (selectedImage) {
+      editedMedicine.picture = URL.createObjectURL(selectedImage);
     }
     let arr = medicines;
     arr[editedindex] = editedMedicine;
@@ -81,35 +78,6 @@ const EddMediModal = () => {
             {isSubmitted && editedMedicine.name === "" && (
               <p className="text-danger">Please fill out this field</p>
             )}
-            {/*
-            <div>
-              <label>Ingredient 1:</label>
-              <input
-                type="text"
-                name="ingredient1"
-                value={editedMedicine.ingredients[0]}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <label>Ingredient 2:</label>
-              <input
-                type="text"
-                name="ingredient2"
-                value={editedMedicine.ingredients[1]}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <label>Ingredient 3:</label>
-              <input
-                type="text"
-                name="ingredient3"
-                value={editedMedicine.ingredients[2]}
-                onChange={handleInputChange}
-              />
-            </div>
-            */}
             <div>
               <label>Price:</label>
               <input
@@ -146,8 +114,19 @@ const EddMediModal = () => {
             {isSubmitted && editedMedicine.description === "" && (
               <p className="text-danger">Please fill out this field</p>
             )}
+            <div>
+               <label>Upload Photo:</label>
+                  <input
+                  type="file"
+                  accept="image/*"
+                  ref={fileInputRef}
+                  style={{ display: 'none' }}
+                  onChange={(e) => handleImageChange(e)}
+                />
+              <button className="btn-hipster close-btn btn-accept" type="button" onClick={() => fileInputRef.current.click()}>Choose Image</button>
+            </div>
             <button type="submit" className="btn btn-hipster close-btn">
-              Edit Medicine
+            Edit Medicine
             </button>
           </form>
         </div>

@@ -364,7 +364,7 @@ article:hover .delete-button{
 }
 
 .btn-accept {
-  background-color: green;
+  background-color: green !important;
   color: white;
   padding: 10px 20px;
   margin: 5px;
