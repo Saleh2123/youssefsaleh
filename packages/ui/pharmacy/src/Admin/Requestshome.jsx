@@ -5,7 +5,17 @@ import Requests from "./requests";
 import "../web.css";
 
 const Requestshome = () => {
-  const [requests, setRequests] = useState([]);
+  const [requests, setRequests] = useState([
+    {
+      username: "khelo",
+      name: "khaled",
+      email: "khaled@gmail.com",
+      password: "abc",
+      dob: "5 jan 2002",
+      hourlyRate: 4,
+      affiliation: "Magdy hospital",
+      education: "abc",
+    }]);
   const [showModal, setShowModal] = useState(false);
   const [selectedRequest, setSelectedRequest] = useState(null);
 

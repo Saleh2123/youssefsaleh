@@ -16,6 +16,7 @@ import Requestshome from './Admin/Requestshome';
 import LoginPhar from './loginPhar';
 import LoginPatient from './loginPatient';
 import LoginAdmin from './loginAdmin';
+import Password from './All/password';
 
 function App() {
   return (
@@ -50,6 +51,8 @@ function App() {
         <Route path="/loginPh" element={<LoginPhar />} />
 
         <Route path="/loginPa" element={<LoginPatient />} />
+
+        <Route path="/pass" element={<Password />} />
 
       </Routes>
     </BrowserRouter>
