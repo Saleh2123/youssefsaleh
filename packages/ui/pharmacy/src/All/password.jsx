@@ -97,6 +97,9 @@ const Password = () => {
           {isSubmitted && Cpassword === "" && (
             <p className="text-danger">Please fill out this field</p>
           )}
+          {isSubmitted && Cpassword === "" && Cpassword !== Newpassword && (
+            <p className="text-danger">You confirmed the wrong password</p>
+          )}
         </div>
         <div>
           <button type="submit" className="addbutton">
