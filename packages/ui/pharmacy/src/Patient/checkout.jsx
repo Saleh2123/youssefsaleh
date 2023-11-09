@@ -35,7 +35,7 @@ const Checkout = () =>{
               <div>
                     <span style={{"color":"black"}}>{medicine.price}</span>
                     <span style={{"color":"black"}}>x{CountMedicineInCart(medicine)}</span>
-                    <div>
+                    <div style={{"color":"wheat"}}>
                       {medicine.price * CountMedicineInCart(medicine)}
                     </div>
               </div>
