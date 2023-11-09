@@ -26,6 +26,9 @@ const AppProvider = ({ children }) => {
       if(CountMedicineInCart(medicine) < medicine.quantity){
         setCart([...cart, medicine]);
       }
+      else{
+        alert("No Enough Quantity");
+      }
     }
     else{
       setCart([...cart, medicine]);
