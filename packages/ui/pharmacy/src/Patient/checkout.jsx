@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { FaPlus } from 'react-icons/fa';
 import { FaMinus } from 'react-icons/fa';
 
-const Cart = () =>{
-     const { cart, CountMedicineInCart,addtocart ,removefromcart, removeAllfromcart } = useGlobalContext();
+const Checkout = () =>{
+     const { cart, CountMedicineInCart, total } = useGlobalContext();
 
      const groupMedicines= ()=> {
       const meds = [];
@@ -26,27 +26,30 @@ const Cart = () =>{
 
     return (
       <div>
-        <h1 className='title'>Shopping Cart</h1>
+        <h1 className='title'>Checkout</h1>
       <div className="cart">
-         <h2 style={{"color":"wheat"}}>Cart items</h2>
+         <h2 style={{"color":"wheat"}}>Payment details</h2>
          {uniqueMedicines.map((medicine,index) => (
            <div className="cart-item">
               <span>{medicine.name}</span>
               <div>
-                 <button className='btn' onClick={()=>{removeAllfromcart(medicine)}}>remove All</button>
-                 <div className='square' onClick={()=>{removefromcart(medicine)}}>
-                   <FaMinus/>
-                 </div>
-                 <span style={{"color":"black"}}>x{CountMedicineInCart(medicine)}</span>
-                 <div className='square' onClick={()=>{addtocart(medicine)}}>
-                  <FaPlus/>
-                 </div>
+                    <span style={{"color":"black"}}>{medicine.price}</span>
+                    <span style={{"color":"black"}}>x{CountMedicineInCart(medicine)}</span>
+                    <div>
+                      {medicine.price * CountMedicineInCart(medicine)}
+                    </div>
               </div>
          </div>
          ))}
+         <div className="cart-item">
+              <div>
+                    <span style={{"color":"white"}}>Total:</span>
+              </div>
+              <span style={{"color":"white"}}>{total}{" EGP"}</span>
+         </div>
       </div>
       </div>
     )
 }
 
-export default Cart;
+export default Checkout;

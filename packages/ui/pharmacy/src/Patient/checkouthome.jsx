@@ -1,17 +1,17 @@
 import { useGlobalContext } from "../context"
-import Viewcart from "./viewcart"
 import { FaShoppingCart } from 'react-icons/fa';
 import "./viewcart.css"
-import Checkoutbox from "./checkoutbox";
+import Checkout from "./checkout";
+import PlaceOrderbox from "./placeorderbox";
 
-const Viewcarthome = () => {
+const Checkouthome = () => {
     const { cart } = useGlobalContext();
     return (
         <main>
             <FaShoppingCart className="logo"/>
-            <Viewcart/>
-            {cart.length > 0 && < Checkoutbox/>}
+            <Checkout/>
+            {cart.length > 0 && < PlaceOrderbox/>}
         </main>
     )
 }
-export default Viewcarthome
+export default Checkouthome

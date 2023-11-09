@@ -53,8 +53,25 @@ const AppProvider = ({ children }) => {
     setTotal(sum);
   }
 
-  const removefromcart = (medicine)=>{
+  const removeAllfromcart = (medicine)=>{
     const newcart = cart.filter((med)=> med.name !== medicine.name);
+    setCart(newcart);
+  }
+
+  const removefromcart = (medicine)=>{
+    const newcart = [];
+    let flag = true;
+    for(let i=0;i<cart.length;i++){
+      if(cart[i].name !== medicine.name){
+        newcart.push(cart[i]);
+      }
+      else if(cart[i].name === medicine.name && flag){
+        flag = false;
+      }
+      else{
+        newcart.push(cart[i]);
+      }
+    }
     setCart(newcart);
   }
 
@@ -349,6 +366,7 @@ const AppProvider = ({ children }) => {
         setShowlogoutModal,
         cart,
         addtocart,
+        removeAllfromcart,
         removefromcart,
         total,
         CountMedicineInCart

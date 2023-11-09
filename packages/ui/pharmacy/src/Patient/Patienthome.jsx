@@ -6,7 +6,7 @@ import "../web.css"
 import FilterModal from "../All/FilterModal"
 import NavPatient from "./NavPatient"
 import Logout from "../All/logoutModal"
-import Cart from "./cart"
+import Cartbox from "./cartbox"
 
 const Patienthome = () => {
     const {showModal,showFilterModal,showlogoutModal, cart} = useGlobalContext()
@@ -15,7 +15,7 @@ const Patienthome = () => {
         <NavPatient/>
         <Search/>
         <MedicinesPa />
-        {cart.length > 0 && < Cart/>}
+        {cart.length > 0 && < Cartbox/>}
         {showlogoutModal && <Logout />}
         {showModal && <Modal />}
         {showFilterModal && <FilterModal/>}
