@@ -1,0 +1,36 @@
+.curved-rectangle {
+    position: fixed;
+    cursor: pointer;
+    bottom: 0;
+    margin-bottom: 15px;
+    left: 25%;
+    width: 50%;
+    height: 75px; /* Adjust the height as needed */
+    background-color: orangered; /* Adjust the background color as needed */
+    border-top-left-radius: 15px; /* Curved edge on the top left */
+    border-bottom-left-radius: 15px; /* Curved edge on the bottom left */
+    border-top-right-radius: 15px; /* Curved edge on the top right */
+    border-bottom-right-radius: 15px; /* Curved edge on the bottom right */
+
+    /* Center the text vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Adjust the text color as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+  }
+
+  .cart-icon{
+    position: fixed;
+    margin-right:550px
+  }
+  .vertical-words {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+  .cart-price{
+    position: fixed;
+    margin-left:500px
+  }

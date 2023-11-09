@@ -19,6 +19,7 @@ import LoginAdmin from './loginAdmin';
 import PasswordAdmin from './Admin/passwordadmin';
 import PasswordPatient from './Patient/passwordpatient';
 import PasswordPharmacist from './Pharmacist/passwordpharmacist';
+import Viewcart from './Patient/viewcart';
 
 function App() {
   return (
@@ -59,6 +60,8 @@ function App() {
         <Route path="/passPa" element={<PasswordPatient />} />
 
         <Route path="/passPh" element={<PasswordPharmacist />} />
+
+        <Route path="/viewcart" element={<Viewcart />} />
 
       </Routes>
     </BrowserRouter>

@@ -381,3 +381,13 @@ article:hover .delete-button{
   cursor: pointer;
 }
 
+.plus-square {
+  display: inline-block;
+  width: 40px; /* Adjust the size as needed */
+  height: 30px; /* Adjust the size as needed */
+  background-color: whitesmoke; /* Adjust the color as needed */
+  border: 2px solid black;
+  border-radius: 5px; /* Adjust the border radius as needed */
+  margin-left: 10px; /* Adjust the spacing as needed */
+  cursor: pointer;
+}

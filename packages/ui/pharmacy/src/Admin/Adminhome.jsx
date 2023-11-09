@@ -1,6 +1,6 @@
 import { useGlobalContext } from "../context"
 import Search from "../All/Search"
-import Medicines from "../All/Medicines"
+import Medicines from "./Medicines"
 import Modal from "../All/Modal"
 import NavAdmin from "./NavAdmin"
 import "../web.css"
