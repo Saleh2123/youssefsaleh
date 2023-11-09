@@ -1,0 +1,33 @@
+.logo{
+    position: fixed;
+    color: orangered;
+    top:0;
+    margin-top: 50px;
+    font-size: 100px;
+}
+.cart {
+    background-color: orangered;
+    border: 1px solid wheat;
+  padding: 20px; /* Increase padding for more height */
+  margin: 10px;
+  width: 1000px; /* Set a specific width */
+  max-height: 1200px; /* Set a maximum height */
+  overflow-y: auto; /* Add scroll if the content exceeds the maximum height */
+  border-top-left-radius: 15px; /* Curved edge on the top left */
+    border-bottom-left-radius: 15px; /* Curved edge on the bottom left */
+    border-top-right-radius: 15px; /* Curved edge on the top right */
+    border-bottom-right-radius: 15px; /* Curved edge on the bottom right */
+}
+
+.title{
+    color:wheat;
+    text-align:center
+}
+
+  .cart-item {
+    display: flex;
+    color:wheat;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid wheat;
+  }

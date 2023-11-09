@@ -19,7 +19,7 @@ import LoginAdmin from './loginAdmin';
 import PasswordAdmin from './Admin/passwordadmin';
 import PasswordPatient from './Patient/passwordpatient';
 import PasswordPharmacist from './Pharmacist/passwordpharmacist';
-import Viewcart from './Patient/viewcart';
+import Viewcarthome from './Patient/viewcarthome';
 
 function App() {
   return (
@@ -61,7 +61,7 @@ function App() {
 
         <Route path="/passPh" element={<PasswordPharmacist />} />
 
-        <Route path="/viewcart" element={<Viewcart />} />
+        <Route path="/viewcart" element={<Viewcarthome />} />
 
       </Routes>
     </BrowserRouter>
