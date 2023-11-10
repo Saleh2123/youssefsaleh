@@ -1,85 +1,16 @@
 import { useGlobalContext } from "../context";
-import { useState } from "react";
-import { FaHome, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
+import { FaPlus, FaHome, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import "../web.css";
 import "./viewcart.css"
 import "./cart.css"
 
 const SelectAddress = () => {
-  const { chosenAddress,setChosenAddress} = useGlobalContext();
-  const [addresses,setAddresses] = useState([
-    {
-       street: 'Ahmed Mostageer Street',
-       city: 'Cairo',
-       district: 'Fifth Settlement',
-       neighborhood: "Narges 3",
-       postalCode: '12345',
-       country: 'Egypt',
-       telephoneNum: +201125922421,
-       buildingNo : 265
-    },
-    {
-        street: 'Ahmed Mostageer Street',
-        city: 'Cairo',
-        district: 'first Settlement',
-        neighborhood: "Narges 3",
-        postalCode: '12345',
-        country: 'Egypt',
-        telephoneNum: +201725922421,
-        buildingNo : 265
-     },
-     {
-        street: 'Ahmed Mostageer Street',
-        city: 'Cairo',
-        district: 'third Settlement',
-        neighborhood: "Narges 3",
-        postalCode: '12345',
-        country: 'Egypt',
-        telephoneNum: +201124922401,
-        buildingNo : 265
-     },
-     {
-        street: 'Ahmed Mostageer Street',
-        city: 'Cairo',
-        district: 'Nasr city',
-        neighborhood: "Narges 3",
-        postalCode: '12345',
-        country: 'Egypt',
-        telephoneNum: +201125924421,
-        buildingNo : 265
-     },
-     {
-        street: 'Ahmed Mostageer Street',
-        city: 'Cairo',
-        district: 'Fifth Settlement',
-        neighborhood: "sheraton",
-        postalCode: '12345',
-        country: 'Egypt',
-        telephoneNum: +201125927421,
-        buildingNo : 265
-     },
-     {
-        street: 'Ahmed Mostageer Street',
-        city: 'Cairo',
-        district: 'roxy',
-        neighborhood: "Narges 3",
-        postalCode: '12345',
-        country: 'Egypt',
-        telephoneNum: +201125962421,
-        buildingNo : 265
-     },
-    {
-        street: 'Mohahmed Street',
-        city: 'Cairo',
-        district: 'Masr El gdeeda',
-        neighborhood: "Banafseg 3",
-        postalCode: '12345',
-        country: 'Egypt',
-        telephoneNum: +201525922321,
-        buildingNo : 19
-     }
-    ]);
-
+  const { chosenAddress,setChosenAddress, addresses} = useGlobalContext();
+  const navigate = useNavigate()
+  const changePage = (exten) =>{
+      navigate(exten)
+  }
   // if(loading){
   //     return (
   //         <section className="section">
@@ -135,6 +66,9 @@ const SelectAddress = () => {
         );
       })}
     </section>
+    <div className="add-button" onClick={()=>{changePage("/addaddress")}}>
+        <FaPlus className="plus-icon" />
+      </div>
     </div>
   );
 };

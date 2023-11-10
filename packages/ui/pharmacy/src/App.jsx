@@ -22,6 +22,7 @@ import PasswordPharmacist from './Pharmacist/passwordpharmacist';
 import Carthome from './Patient/carthome';
 import Checkouthome from './Patient/checkouthome';
 import SelectAddress from './Patient/SelectAddress';
+import AddAddress from './Patient/AddAddress';
 
 function App() {
   return (
@@ -68,6 +69,8 @@ function App() {
         <Route path="/checkout" element={<Checkouthome />} />
 
         <Route path="/seladdress" element={<SelectAddress />} />
+
+        <Route path="/addaddress" element={<AddAddress />} />
 
       </Routes>
     </BrowserRouter>
