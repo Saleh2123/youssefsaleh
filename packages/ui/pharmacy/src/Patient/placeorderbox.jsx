@@ -27,7 +27,6 @@ const PlaceOrderbox = () => {
 
     const ordernow = ()=>{
       removeQuantityFromStore();
-      //setCart([]);
       changePage("/order");
     }
 
