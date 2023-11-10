@@ -28,7 +28,7 @@
 }
 
 .title{
-    margin-top: 50px;
+    /* margin-top: 50px; */
     color:wheat;
     text-align:center
 }
@@ -42,7 +42,7 @@
   }
 
   .above {
-    margin-top: 50px;
+    margin-top: 25px;
     display: flex;
     color:wheat;
     justify-content: space-between !important;
