@@ -11,7 +11,7 @@ const PlaceOrderbox = () => {
     }
 
   return (
-    <div className="curved-rectangle" onClick={()=>{changePage("lesa")}}>
+    <div className="curvedrectangle" onClick={()=>{changePage("lesa")}}>
         <div className='cart-icon'>
            <FaShoppingCart/>
         </div>

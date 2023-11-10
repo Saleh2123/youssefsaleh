@@ -16,8 +16,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Adjust the text color as needed */
+    color: wheat; /* Adjust the text color as needed */
     font-size: 20px; /* Adjust the font size as needed */
+  }
+
+  .curved-rectangle:hover{
+    background-color: wheat;
+    color: orangered;
+  }
+
+  .curvedrectangle {
+    position: fixed;
+    cursor: pointer;
+    bottom: 0;
+    margin-bottom: 15px;
+    left: 25%;
+    width: 50%;
+    height: 75px; /* Adjust the height as needed */
+    background-color: wheat; /* Adjust the background color as needed */
+    border-top-left-radius: 15px; /* Curved edge on the top left */
+    border-bottom-left-radius: 15px; /* Curved edge on the bottom left */
+    border-top-right-radius: 15px; /* Curved edge on the top right */
+    border-bottom-right-radius: 15px; /* Curved edge on the bottom right */
+
+    /* Center the text vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orangered; /* Adjust the text color as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+  }
+
+  .curvedrectangle:hover{
+    background-color: orangered;
+    color: wheat;
   }
 
   .cart-icon{

@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useGlobalContext } from "../context";
 import { useState } from 'react'
-import { FaPlus } from 'react-icons/fa';
-import { FaMinus } from 'react-icons/fa';
 
 const Checkout = () =>{
      const { cart, CountMedicineInCart, total } = useGlobalContext();
