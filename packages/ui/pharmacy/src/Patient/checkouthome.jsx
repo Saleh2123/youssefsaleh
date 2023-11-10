@@ -4,6 +4,7 @@ import "./viewcart.css"
 import Checkout from "./checkout";
 import PlaceOrderbox from "./placeorderbox";
 import Address from "./Address";
+import PaymentMethod from "./paymentmethod";
 
 const Checkouthome = () => {
     const { cart } = useGlobalContext();
@@ -15,6 +16,7 @@ const Checkouthome = () => {
             <Address/>
           </header>
           <div>
+          <PaymentMethod/>
           <Checkout/>
           </div>
           {cart.length > 0 && <PlaceOrderbox/>}
