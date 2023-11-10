@@ -23,8 +23,6 @@ const Checkout = () =>{
     },[cart])
 
     return (
-      <div>
-        <h1 className='title'>Checkout</h1>
       <div className="cart">
          <h2 style={{"color":"wheat"}}>Payment details</h2>
          {uniqueMedicines.map((medicine,index) => (
@@ -45,7 +43,6 @@ const Checkout = () =>{
               </div>
               <span style={{"color":"white"}}>{total}{" EGP"}</span>
          </div>
-      </div>
       </div>
     )
 }

@@ -11,15 +11,17 @@ const Checkouthome = () => {
 
     return (
         <div className="page-container">
-          <header>
-            <FaShoppingCart className="logotwo" />
-            <Address/>
-          </header>
-          <div>
-          <PaymentMethod/>
-          <Checkout/>
-          </div>
-          {cart.length > 0 && <PlaceOrderbox/>}
+            <header>
+               <FaShoppingCart className="logotwo" />
+               <Address/>
+            </header>
+            <div>
+               <PaymentMethod/>
+            </div>
+            <div>
+               <Checkout/>
+            </div>
+            {cart.length > 0 && <PlaceOrderbox/>}
         </div>
       );
     };

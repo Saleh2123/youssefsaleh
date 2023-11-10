@@ -10,7 +10,7 @@ const PaymentMethod = () =>{
       };
 
     return(
-        <main className='cart'>
+        <div className='cart'>
             <h2 style={{"color":"wheat"}}>Payment Method</h2>
         <div>
             <label style={{"font-size":"25px"}}>
@@ -45,7 +45,7 @@ const PaymentMethod = () =>{
               {" "}<FaMoneyBillWave style={{"color":"green"}}/>{" Cash on delivery"}
           </label>
         </div>
-    </main>
+    </div>
     )
 }
 export default PaymentMethod;
