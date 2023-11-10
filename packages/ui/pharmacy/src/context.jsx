@@ -326,6 +326,11 @@ const AppProvider = ({ children }) => {
   const [Allmedicines, setAllMedicines] = useState([]);
   const [medicines, setMedicines] = useState(meds()); //dummy data
 
+  useEffect(()=>{
+    const NewMedicines = medicines.filter((med)=> med.quantity > 0)
+    setMedicines(NewMedicines);
+  },[medicines])
+
   useEffect(() => {
     const get = async () => {
       const res = await fetch(`${_TARGET}/api/medicine/find`, {
@@ -464,6 +469,7 @@ const AppProvider = ({ children }) => {
         showlogoutModal,
         setShowlogoutModal,
         cart,
+        setCart,
         addtocart,
         removeAllfromcart,
         removefromcart,
