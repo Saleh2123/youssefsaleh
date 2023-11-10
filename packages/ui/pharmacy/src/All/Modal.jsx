@@ -11,7 +11,7 @@ const Modal = () =>{
         <div className="modal-content">
             <h4>{selectedMedicine.name}</h4>
             <p>{selectedMedicine.description}</p>
-            <p>Price: {selectedMedicine.price}</p>
+            <p>Price: {selectedMedicine.quantity}</p>
             <button className="btn btn-hipster close-btn" onClick={closeModal}>close</button>
         </div>
         </div>

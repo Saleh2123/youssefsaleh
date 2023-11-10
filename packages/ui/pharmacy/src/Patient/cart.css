@@ -52,6 +52,33 @@
     color: black;
   }
 
+  .curverectangle {
+    position: fixed;
+    cursor: pointer;
+    bottom: 0;
+    margin-bottom: 15px;
+    left: 25%;
+    width: 50%;
+    height: 75px; /* Adjust the height as needed */
+    background-color: black; /* Adjust the background color as needed */
+    border-top-left-radius: 15px; /* Curved edge on the top left */
+    border-bottom-left-radius: 15px; /* Curved edge on the bottom left */
+    border-top-right-radius: 15px; /* Curved edge on the top right */
+    border-bottom-right-radius: 15px; /* Curved edge on the bottom right */
+
+    /* Center the text vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: wheat; /* Adjust the text color as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+  }
+
+  .curverectangle:hover{
+    background-color: red;
+    color: wheat;
+  }
+
   .cart-icon{
     position: fixed;
     margin-right:550px

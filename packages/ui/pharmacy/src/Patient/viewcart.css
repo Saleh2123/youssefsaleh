@@ -27,6 +27,20 @@
     border-bottom-right-radius: 15px; /* Curved edge on the bottom right */
 }
 
+.cartwo {
+  background-color: darkred;
+  border: 1px solid darkred;
+padding: 20px; /* Increase padding for more height */
+margin: 20px;
+width: 1000px; /* Set a specific width */
+max-height: 1200px; /* Set a maximum height */
+overflow-y: auto; /* Add scroll if the content exceeds the maximum height */
+border-top-left-radius: 15px; /* Curved edge on the top left */
+  border-bottom-left-radius: 15px; /* Curved edge on the bottom left */
+  border-top-right-radius: 15px; /* Curved edge on the top right */
+  border-bottom-right-radius: 15px; /* Curved edge on the bottom right */
+}
+
 .title{
     /* margin-top: 50px; */
     color:wheat;

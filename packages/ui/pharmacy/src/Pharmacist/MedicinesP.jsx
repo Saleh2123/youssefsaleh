@@ -23,7 +23,9 @@ const MedicinesP = () => {
   return (
     <section className="section-center">
       {medicines.map((medicine) => {
-        // console.log(image)
+        if(medicine.quantity === 0){
+          return;
+        }
         return (
           <article
             key={medicine.name}

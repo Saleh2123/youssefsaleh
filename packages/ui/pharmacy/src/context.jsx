@@ -326,10 +326,11 @@ const AppProvider = ({ children }) => {
   const [Allmedicines, setAllMedicines] = useState([]);
   const [medicines, setMedicines] = useState(meds()); //dummy data
 
-  useEffect(()=>{
-    const NewMedicines = medicines.filter((med)=> med.quantity > 0)
-    setMedicines(NewMedicines);
-  },[medicines])
+  // useEffect(()=>{
+  //   const NewMedicines = medicines.filter((med)=> med.quantity > 0)
+  //   setMedicines(NewMedicines);
+  // },[medicines])
+  //7
 
   useEffect(() => {
     const get = async () => {
