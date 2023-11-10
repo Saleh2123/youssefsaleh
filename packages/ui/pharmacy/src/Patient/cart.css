@@ -48,8 +48,8 @@
   }
 
   .curvedrectangle:hover{
-    background-color: yellowgreen;
-    color: wheat;
+    background-color: greenyellow;
+    color: black;
   }
 
   .cart-icon{
@@ -65,4 +65,41 @@
   .cart-price{
     position: fixed;
     margin-left:500px
+  }
+
+  .singlemeal{
+    background:var(--white);
+    color:var(--textColor);
+    border-radius:var(--borderRadius);
+    box-shadow:var(--shadow-2);
+    transition:var(--transition);
+  }
+  .art {
+    border: 4px solid white; /* 1px solid border with a light gray color (#ddd) */
+    padding: 10px; /* Optional: Add padding to give some space inside the border */
+  }
+  .article {
+    border: 4px solid black; /* 1px solid border with a light gray color (#ddd) */
+    padding: 10px; /* Optional: Add padding to give some space inside the border */
+  }
+
+  .singlemeal:hover{
+      box-shadow:var(--shadow-4);
+  }
+  .singlemeal img{
+      height:15rem;
+      border-top-left-radius:var(--borderRadius);
+      border-top-right-radius:var(--borderRadius);
+  cursor:pointer;
+  }
+  .singlemeal h5{
+    padding:0;
+    margin:0;
+  }
+  .singlemeal footer{
+    padding:1rem 1.5rem;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap:wrap;
   }

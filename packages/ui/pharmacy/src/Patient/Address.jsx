@@ -1,39 +1,20 @@
-import React, { useEffect } from 'react';
 import { useGlobalContext } from "../context";
-import { useState } from 'react'
 import { FaHome, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import "../web.css";
+import { useNavigate } from "react-router-dom";
 
 const Address = () =>{
-    const [chosenAddress,setChosenAddress] = useState({
-        street: 'Ahmed Mostageer Street',
-        city: 'Cairo',
-        district: 'Fifth Settlement',
-        neighborhood: "Narges 3",
-        postalCode: '12345',
-        country: 'Egypt',
-        telephoneNum: +201125922421,
-        buildingNo : 265
-     });
-    const [addresses,setAddresses] = useState([
-        {
-           street: 'Ahmed Mostageer Street',
-           city: 'Cairo',
-           district: 'Fifth Settlement',
-           neighborhood: "Narges 3",
-           postalCode: '12345',
-           country: 'Egypt',
-           telephoneNum: +201125922421,
-           buildingNo : 265
-        }
-    ]);
-    const { } = useGlobalContext();
+    const navigate = useNavigate()
+    const changePage = (exten) =>{
+        navigate(exten)
+    }
+    const {chosenAddress} = useGlobalContext();
 
     return (
         <div>
             <div className='above'>
                <h4>Delivery Address</h4>
-               <button className='bt'>Change</button>
+               <button className='bt' onClick={()=>{changePage("/seladdress")}}>Change</button>
             </div>
             <div className="cart">
                <div>

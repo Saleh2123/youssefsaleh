@@ -8,7 +8,7 @@ const NavPatient = () =>{
     const navigate = useNavigate()
     const changePage = (exten) =>{
         navigate(exten)
-  }
+    }
 
     return (
         <nav className = "navbar navbar-expand-lg navbar-light bg-lights bcpa">

@@ -19,6 +19,16 @@ const AppProvider = ({ children }) => {
   const [editedindex, setEditedindex] = useState(0);
   const [cart, setCart] = useState([]);
   let [total,setTotal] = useState(0);
+  const [chosenAddress,setChosenAddress] = useState({
+    street: 'Ahmed Mostageer Street',
+    city: 'Cairo',
+    district: 'Fifth Settlement',
+    neighborhood: "Narges 3",
+    postalCode: '12345',
+    country: 'Egypt',
+    telephoneNum: +201125922421,
+    buildingNo : 265
+    });
 
   const addtocart = (medicine)=>{
     const found = cart.find((med)=>med.name === medicine.name)
@@ -369,7 +379,9 @@ const AppProvider = ({ children }) => {
         removeAllfromcart,
         removefromcart,
         total,
-        CountMedicineInCart
+        CountMedicineInCart,
+        chosenAddress,
+        setChosenAddress
       }}
     >
       {children}

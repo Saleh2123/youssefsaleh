@@ -21,6 +21,7 @@ import PasswordPatient from './Patient/passwordpatient';
 import PasswordPharmacist from './Pharmacist/passwordpharmacist';
 import Carthome from './Patient/carthome';
 import Checkouthome from './Patient/checkouthome';
+import SelectAddress from './Patient/SelectAddress';
 
 function App() {
   return (
@@ -65,6 +66,8 @@ function App() {
         <Route path="/viewcart" element={<Carthome />} />
 
         <Route path="/checkout" element={<Checkouthome />} />
+
+        <Route path="/seladdress" element={<SelectAddress />} />
 
       </Routes>
     </BrowserRouter>
