@@ -3,29 +3,12 @@ import { useGlobalContext } from "../context";
 import { useState } from 'react'
 
 const Checkout = () =>{
-     const { cart, CountMedicineInCart, total } = useGlobalContext();
-
-     const groupMedicines= ()=> {
-      const meds = [];
-      for(let i=0;i<cart.length;i++){
-        if(meds.indexOf(cart[i]) === -1){
-            meds.push(cart[i])
-        }
-      };
-      console.log(meds);
-      return meds;
-    }
-
-    const [uniqueMedicines,setUniqueMedicines] = useState(groupMedicines());
-
-    useEffect(()=>{
-      setUniqueMedicines(groupMedicines());
-    },[cart])
+     const { CountMedicineInCart, total, uniqueMedicines } = useGlobalContext();
 
     return (
       <div className="cart">
          <h2 style={{"color":"wheat"}}>Payment details</h2>
-         {uniqueMedicines.map((medicine,index) => (
+         {uniqueMedicines.map((medicine) => (
            <div className="cart-item">
               <span>{medicine.name}</span>
               <div>

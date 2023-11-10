@@ -161,6 +161,23 @@ const AppProvider = ({ children }) => {
     calculateTotal();
   },[cart])
 
+  const groupMedicines= ()=> {
+    const meds = [];
+    for(let i=0;i<cart.length;i++){
+      if(meds.indexOf(cart[i]) === -1){
+          meds.push(cart[i])
+      }
+    };
+    console.log(meds);
+    return meds;
+  }
+
+  const [uniqueMedicines,setUniqueMedicines] = useState(groupMedicines());
+
+  useEffect(()=>{
+     setUniqueMedicines(groupMedicines());
+  },[cart])
+
   const getPharmacists = () => {
     const phars = [
       {
@@ -455,7 +472,8 @@ const AppProvider = ({ children }) => {
         chosenAddress,
         setChosenAddress,
         addresses,
-        setAddresses
+        setAddresses,
+        uniqueMedicines
       }}
     >
       {children}

@@ -10,8 +10,12 @@ const PlaceOrderbox = () => {
       navigate(exten)
     }
 
+    const ordernow = ()=>{
+      changePage("/order");
+    }
+
   return (
-    <div className="curvedrectangle" onClick={()=>{changePage("lesa")}}>
+    <div className="curvedrectangle" onClick={ordernow}>
         <div className='cart-icon'>
            <FaShoppingCart/>
         </div>
