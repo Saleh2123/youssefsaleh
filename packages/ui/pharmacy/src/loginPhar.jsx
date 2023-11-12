@@ -74,6 +74,7 @@ const LoginPhar = () => {
           {isSubmitted && password === "" && (
             <p className="text-danger">Please fill out this field</p>
           )}
+          <button className="btn" style={{"color":"wheat"}} onClick={()=>{changePage("/emailph")}}>Forget Password?</button>
         </div>
         <div>
           <button type="submit" className="addbutton">

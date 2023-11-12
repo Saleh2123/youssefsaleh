@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import "./email.css"
 
-const EmailPa = () => {
+const EmailPh = () => {
     const [email, setEmail] = useState('');
     const [show, setShow] = useState(false);
 
@@ -34,4 +34,4 @@ const EmailPa = () => {
        );
 };
 
-export default EmailPa;
+export default EmailPh;

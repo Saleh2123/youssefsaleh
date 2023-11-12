@@ -25,6 +25,8 @@ import SelectAddress from './Patient/SelectAddress';
 import AddAddress from './Patient/AddAddress';
 import Orderhome from './Patient/orderhome';
 import EmailPa from './emailPa';
+import EmailPh from './emailPh';
+import EmailAd from './emailAd';
 
 function App() {
   return (
@@ -77,6 +79,10 @@ function App() {
         <Route path="/order" element={<Orderhome />} />
 
         <Route path="/emailpa" element={<EmailPa />} />
+
+        <Route path="/emailph" element={<EmailPh />} />
+
+        <Route path="/emailad" element={<EmailAd />} />
 
       </Routes>
     </BrowserRouter>

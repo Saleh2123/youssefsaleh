@@ -1,0 +1,26 @@
+.rec {
+    position: fixed;
+    cursor: pointer;
+    bottom: 0;
+    margin-bottom: 250px;
+    left: 30%;
+    width: 40%;
+    height: 75px; /* Adjust the height as needed */
+    background-color: blue; /* Adjust the background color as needed */
+    border-top-left-radius: 35px; /* Curved edge on the top left */
+    border-bottom-left-radius: 35px; /* Curved edge on the bottom left */
+    border-top-right-radius: 35px; /* Curved edge on the top right */
+    border-bottom-right-radius: 35px; /* Curved edge on the bottom right */
+
+    /* Center the text vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: wheat; /* Adjust the text color as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+  }
+
+  .rec:hover{
+    background-color: wheat;
+    color: blue;
+  }
