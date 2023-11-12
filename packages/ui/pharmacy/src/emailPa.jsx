@@ -1,5 +1,4 @@
 import React from 'react';
-import "./email.css";
 import { useState } from 'react';
 
 const EmailPa = () => {
@@ -10,19 +9,14 @@ const EmailPa = () => {
   };
 
   return (
-    <div className="form-group">
-      <label className={email ? 'shrink' : ''} htmlFor="emailField">
-        Enter your email
-      </label>
-      <input
-        type="email"
-        className="form-control rounded"
-        id="emailField"
-        placeholder=" "
-        value={email}
-        onChange={handleInputChange}
-      />
-    </div>
+    <div className="w-50 p-5 rounded mx-auto">
+            <div className="form-floating">
+                <input style={{backgroundColor: "rgba(145, 158, 171, 0.04)"}} id="search"
+                type="text" className="form-control" placeholder="Search" autoComplete="off"
+                value={email} onChange={(e)=> setEmail(e.target.value)}></input>
+                <label htmlFor="search">Search</label>
+            </div>
+        </div>
   );
 };
 
