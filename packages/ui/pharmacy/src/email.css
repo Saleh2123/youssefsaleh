@@ -1,0 +1,22 @@
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+  }
+
+  label.shrink {
+    transform: translateY(-1.5rem) scale(0.8);
+  }
+
+  input {
+    width: 100%;
+    padding: 1.5rem 1rem; /* Adjust padding as needed */
+    font-size: 1rem; /* Adjust font size as needed */
+  }

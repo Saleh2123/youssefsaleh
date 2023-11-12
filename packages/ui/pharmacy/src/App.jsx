@@ -24,6 +24,7 @@ import Checkouthome from './Patient/checkouthome';
 import SelectAddress from './Patient/SelectAddress';
 import AddAddress from './Patient/AddAddress';
 import Orderhome from './Patient/orderhome';
+import EmailPa from './emailPa';
 
 function App() {
   return (
@@ -74,6 +75,8 @@ function App() {
         <Route path="/addaddress" element={<AddAddress />} />
 
         <Route path="/order" element={<Orderhome />} />
+
+        <Route path="/emailpa" element={<EmailPa />} />
 
       </Routes>
     </BrowserRouter>
