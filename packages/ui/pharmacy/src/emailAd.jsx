@@ -1,10 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
 import "./email.css"
+import { useNavigate } from "react-router-dom";
 
 const EmailAd = () => {
     const [email, setEmail] = useState('');
     const [show, setShow] = useState(false);
+    const [isSubmitted, setisSubmitted] = useState(false);
+    const navigate = useNavigate()
+
+    const changePage = (exten) =>{
+          navigate(exten)
+    }
 
   const handleInputChange = (e) => {
     setEmail(e.target.value);
@@ -12,6 +19,13 @@ const EmailAd = () => {
 
   const Showmsg = ()=>{
     setShow(true);
+  }
+
+  const navcheck = () =>{
+    setisSubmitted(true);
+    if(email !== ''){
+      changePage("/passadmin");
+    }
   }
 
   return (
@@ -24,7 +38,10 @@ const EmailAd = () => {
                 value={email} onChange={handleInputChange}></input>
                 <label htmlFor="email">Email</label>
             </div>
-        <div className="rec" onClick={Showmsg}>
+            {isSubmitted && email === '' && (
+            <p className="text-danger">Please fill out this field</p>
+            )}
+        <div className="rec" onClick={navcheck}>
            <div>
               <h5>Find Account</h5>
            </div>

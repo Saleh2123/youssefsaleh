@@ -27,6 +27,9 @@ import Orderhome from './Patient/orderhome';
 import EmailPa from './emailPa';
 import EmailPh from './emailPh';
 import EmailAd from './emailAd';
+import PassAdmin from './passadmin';
+import PassPatient from './passpatient';
+import PassPharmacist from './passpharmacist';
 
 function App() {
   return (
@@ -83,6 +86,12 @@ function App() {
         <Route path="/emailph" element={<EmailPh />} />
 
         <Route path="/emailad" element={<EmailAd />} />
+
+        <Route path="/passadmin" element={<PassAdmin />} />
+
+        <Route path="/passpharmacist" element={<PassPharmacist />} />
+
+        <Route path="/passpatient" element={<PassPatient />} />
 
       </Routes>
     </BrowserRouter>
