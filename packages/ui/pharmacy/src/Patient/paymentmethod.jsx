@@ -1,12 +1,25 @@
-import {useState} from 'react';
+import "../email.css"
 import "../web.css";
+import { useState } from "react";
 import { FaMoneyBillWave, FaWallet, FaCreditCard } from 'react-icons/fa';
+import { useGlobalContext } from '../context';
 
 const PaymentMethod = () =>{
-    const [selected, setSelected] = useState("");
+  let {selected, setSelected, cardNumber, setCardNumber,byCard, byWallet,
+    setByWallet, setByCard} = useGlobalContext();
 
     const handleRadioButtonChange = (use) => {
-        setSelected(use);
+      if(use === "cc"){
+        setByWallet(false);
+      }
+      if(use === "w"){
+        setByCard(false);
+      }
+      setSelected(use);
+      };
+
+      const handleInputChange = (e) => {
+        setCardNumber(e.target.value);
       };
 
     return(
@@ -22,6 +35,7 @@ const PaymentMethod = () =>{
               />
               {" "}<FaWallet style={{"color":"brown"}}/>{" Wallet"}
             </label>
+            {byWallet && (<p style={{"color":"red"}}>No enough money in your wallet</p>)}
         </div>
         <div>
           <label style={{"font-size":"25px"}}>
@@ -34,6 +48,13 @@ const PaymentMethod = () =>{
               {" "}<FaCreditCard style={{"color":"wheat"}}/>{" Credit Card"}
           </label>
         </div>
+        {selected === "cc" && (<div className="form-floating">
+                <input id="card" style={{"width":"300px"}}
+                type="text" className="form-control" placeholder="card" autoComplete="off"
+                value={cardNumber} onChange={handleInputChange}></input>
+                <label htmlFor="card">Card Number</label>
+            </div>)}
+        {byCard && cardNumber === '' &&(<p style={{"color":"red"}}>Please fill out this field</p>)}
         <div>
           <label style={{"font-size":"25px"}}>
              <input

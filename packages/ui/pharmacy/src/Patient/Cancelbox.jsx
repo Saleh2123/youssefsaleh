@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from '../context';
 
 const CancelBox = () => {
-    const {uniqueMedicines,setCart,CountMedicineInCart,medicines,setMedicines} = useGlobalContext();
+    const {uniqueMedicines,setCart,CountMedicineInCart,medicines,setMedicines,
+    wallet,total,selected} = useGlobalContext();
     const navigate = useNavigate()
 
     const changePage = (exten) =>{
@@ -25,6 +26,9 @@ const CancelBox = () => {
       }
 
     const cancel = ()=>{
+      if(selected === "w"){
+        wallet += total;
+      }
         returnQuantityToStore();
         setCart([]);
         changePage("/patienthome");

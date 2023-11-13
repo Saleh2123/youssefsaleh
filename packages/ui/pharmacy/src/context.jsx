@@ -19,6 +19,11 @@ const AppProvider = ({ children }) => {
   const [editedindex, setEditedindex] = useState(0);
   const [cart, setCart] = useState([]);
   let [total,setTotal] = useState(0);
+  const [selected, setSelected] = useState("");
+  let [wallet,setWallet] = useState(307);
+  const [cardNumber,setCardNumber] = useState('');
+  const [byWallet, setByWallet] = useState(false);
+  const [byCard, setByCard] = useState(false);
   const [chosenAddress,setChosenAddress] = useState({
     street: 'Ahmed Mostageer Street',
     city: 'Cairo',
@@ -480,7 +485,17 @@ const AppProvider = ({ children }) => {
         setChosenAddress,
         addresses,
         setAddresses,
-        uniqueMedicines
+        uniqueMedicines,
+        wallet,
+        setWallet,
+        selected,
+        setSelected,
+        cardNumber,
+        setCardNumber,
+        byWallet,
+        byCard,
+        setByWallet,
+        setByCard
       }}
     >
       {children}
