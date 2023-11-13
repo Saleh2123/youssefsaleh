@@ -14,6 +14,17 @@ const PassAdmin = () => {
         navigate(exten)
   }
 
+  const checkPassword = ()=>{
+    for(let i=0;i<Newpassword.length;i++){
+      if(Newpassword[i] === '0' || Newpassword[i] === '1' || Newpassword[i] === '2' || Newpassword[i] === '3' ||
+        Newpassword[i] === '4' || Newpassword[i] === '5' || Newpassword[i] === '6' || Newpassword[i] === '7' ||
+        Newpassword[i] === '8' || Newpassword[i] === '9'){
+          return true;
+      }
+    }
+    return false;
+  }
+
   const handleNewPasswordChange = (e) => {
     setNewpassword(e.target.value);
   };
@@ -25,7 +36,7 @@ const PassAdmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-    if(Cpassword !== "" && Newpassword !== "" && Cpassword === Newpassword){
+    if(Cpassword !== "" && Newpassword !== "" && Cpassword === Newpassword && checkPassword() === true){
       changePage("/loginA");
     }
   };
@@ -58,6 +69,9 @@ const PassAdmin = () => {
           />
           {isSubmitted && Newpassword === "" && (
             <p className="text-danger">Please fill out this field</p>
+          )}
+          {isSubmitted && Newpassword !== "" && checkPassword() === false && (
+            <p className="text-danger">Password must contain at least 1 Number</p>
           )}
         </div>
         <div>
