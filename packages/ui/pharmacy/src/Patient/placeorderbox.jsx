@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from '../context';
 
 const PlaceOrderbox = () => {
-    const {medicines,setMedicines,CountMedicineInCart,uniqueMedicines, selected, total
-    , setByCard, cardNumber} = useGlobalContext();
-    let {wallet,setByWallet} =  useGlobalContext();
+    let {medicines,setMedicines,CountMedicineInCart,uniqueMedicines, selected
+    , setByCard, cardNumber,setByWallet,wallet,setWallet, total} = useGlobalContext();
+
     const navigate = useNavigate()
 
     const changePage = (exten) =>{
@@ -34,9 +34,11 @@ const PlaceOrderbox = () => {
       else if(selected === "cc" && cardNumber === ''){
         setByCard(true);
       }
-      else{
+      else if(selected === "w" || selected === "cc" || selected === "cod"){
         if(selected === "w" && wallet >= total){
           wallet-=total;
+          setWallet(wallet)
+          console.log(wallet);
         }
         removeQuantityFromStore();
         changePage("/order");
