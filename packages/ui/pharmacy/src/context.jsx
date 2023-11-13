@@ -24,6 +24,7 @@ const AppProvider = ({ children }) => {
   const [cardNumber,setCardNumber] = useState('');
   const [byWallet, setByWallet] = useState(false);
   const [byCard, setByCard] = useState(false);
+  const [noMethod, setNoMethod] = useState(false);
   const [chosenAddress,setChosenAddress] = useState({
     street: 'Ahmed Mostageer Street',
     city: 'Cairo',
@@ -495,7 +496,9 @@ const AppProvider = ({ children }) => {
         byWallet,
         byCard,
         setByWallet,
-        setByCard
+        setByCard,
+        noMethod,
+        setNoMethod
       }}
     >
       {children}

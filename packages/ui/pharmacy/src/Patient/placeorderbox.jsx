@@ -6,7 +6,7 @@ import { useGlobalContext } from '../context';
 
 const PlaceOrderbox = () => {
     let {medicines,setMedicines,CountMedicineInCart,uniqueMedicines, selected
-    , setByCard, cardNumber,setByWallet,wallet,setWallet, total} = useGlobalContext();
+    , setByCard, cardNumber,setByWallet,wallet,setWallet, total,setNoMethod} = useGlobalContext();
 
     const navigate = useNavigate()
 
@@ -42,6 +42,9 @@ const PlaceOrderbox = () => {
         }
         removeQuantityFromStore();
         changePage("/order");
+      }
+      else{
+        setNoMethod(true);
       }
     }
 
