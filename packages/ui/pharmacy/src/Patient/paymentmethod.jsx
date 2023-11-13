@@ -9,10 +9,10 @@ const PaymentMethod = () =>{
     setByWallet, setByCard} = useGlobalContext();
 
     const handleRadioButtonChange = (use) => {
-      if(use === "cc"){
+      if(use === "cc" || use === "cod"){
         setByWallet(false);
       }
-      if(use === "w"){
+      if(use === "w" || use === "cod"){
         setByCard(false);
       }
       setSelected(use);
