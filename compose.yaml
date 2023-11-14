@@ -1,14 +1,49 @@
 name: topp
+
+x-base: &base
+  init: true
+  restart: "on-failure"
+  tty: true
+
 services:
-  db:
+  mongo:
+    <<: *base
     build: ./packages/_config/docker
     entrypoint: _topp_db.sh
-    init: true
-    restart: on-failure
-    tty: true
     environment:
       _TOPP_DB_PORT: ${_TOPP_DB_PORT}
     ports:
       - ${_TOPP_DB_PORT}:${_TOPP_DB_PORT}
     volumes:
       - ./packages/_config/docker/bin:/usr/local/bin
+      - dufs:${_TOPP_DUFS_DIR}
+
+  dufs:
+    <<: *base
+    image: sigoden/dufs:v0.37.1
+    command: ["${_TOPP_DUFS_DIR}", "--allow-all"]
+    environment:
+      DUFS_PORT: ${_TOPP_DUFS_PORT}
+    ports:
+      - ${_TOPP_DUFS_PORT}:${_TOPP_DUFS_PORT}
+    volumes:
+      - dufs:${_TOPP_DUFS_DIR}
+
+  mailcrab:
+    <<: *base
+    image: marlonb/mailcrab:v0.23.0
+    environment:
+      HTTP_PORT: ${_TOPP_MAIL_HTTP_PORT}
+      SMTP_PORT: ${_TOPP_MAIL_SMTP_PORT}
+    ports:
+      - ${_TOPP_MAIL_HTTP_PORT}:${_TOPP_MAIL_HTTP_PORT}
+      - ${_TOPP_MAIL_SMTP_PORT}:${_TOPP_MAIL_SMTP_PORT}
+
+  stripe:
+    <<: *base
+    image: stripe/stripe-mock:v0.177.0
+    ports:
+      - "12111-12112:12111-12112"
+
+volumes:
+  dufs:

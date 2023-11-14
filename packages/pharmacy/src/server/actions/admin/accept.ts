@@ -21,6 +21,7 @@ export const pharmacist = async (data: FormData): Promise<void> => {
     where: { username: pharmacist.username },
     create: {
       username: pharmacist.username,
+      email: pharmacist.email,
       password: pharmacist.password,
       mode: _mode.PHARMACIST,
       pharmacist: { create: {} },

@@ -19,10 +19,11 @@ const _id = {
 const gen = {
   profile: async <T extends object>(
     data: T,
-  ): Promise<T & Pick<Profile, "username" | "password">> => {
-    const username = `user-${_id.profile.next().value}`;
+  ): Promise<T & Pick<Profile, "username" | "email" | "password">> => {
+    const username = `User-${_id.profile.next().value}`;
     return Object.assign(data, {
       username,
+      email: `${username}@example.com`,
       password: await argon2.hash(username),
     });
   },

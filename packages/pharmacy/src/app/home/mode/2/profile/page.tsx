@@ -7,13 +7,18 @@ const Page = async (): Promise<React.JSX.Element> => {
 
   const patient = await prisma.patient.findUnique({
     where: { profileId: user.id },
-    select: { addresses: true },
+    select: { addresses: true, wallet: true },
   });
 
-  return (
+  return patient ? (
     <div className="prose">
-      <h2>Addresses</h2>
-      <ul>{patient?.addresses.map((address, idx) => <li key={idx}>{address}</li>)}</ul>
+      <h3>Wallet: ${patient.wallet}</h3>
+      <h3>Addresses</h3>
+      <ul>
+        {patient.addresses.map((address, idx) => (
+          <li key={idx}>{address}</li>
+        ))}
+      </ul>
       <form action={profile.updateAddresses}>
         <textarea name="addresses" />
         <div>
@@ -21,6 +26,8 @@ const Page = async (): Promise<React.JSX.Element> => {
         </div>
       </form>
     </div>
+  ) : (
+    <></>
   );
 };
 

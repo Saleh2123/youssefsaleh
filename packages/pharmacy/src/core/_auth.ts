@@ -10,11 +10,26 @@ export const config: NextAuthConfig = {
   callbacks: {
     authorized: ({ auth, request: _request }) => {
       const request = _request as NextRequest;
-      if (!auth?.user && request.nextUrl.pathname.startsWith(_href.user.home)) {
-        const url = new URL(_href.auth.login, request.nextUrl);
-        url.searchParams.set("callbackURL", request.nextUrl.pathname);
-        return Response.redirect(url);
+      const _home = (): Response => Response.redirect(new URL(_href.user.home, request.nextUrl));
+
+      if (request.nextUrl.pathname.startsWith(_href.user.home)) {
+        if (!auth?.user) {
+          const url = new URL(_href.auth.login, request.nextUrl);
+          url.searchParams.set("callbackURL", request.nextUrl.pathname);
+          return Response.redirect(url);
+        }
+
+        const mode = RegExp(`${_href.user.mode}/([0-9]+)`);
+        const result = mode.exec(request.nextUrl.pathname);
+        if (result && result[1] && !(+result[1] & auth.user.mode)) {
+          return _home();
+        }
       }
+
+      if (request.nextUrl.pathname.startsWith(_href.auth._this) && auth?.user) {
+        return _home();
+      }
+
       return true;
     },
 

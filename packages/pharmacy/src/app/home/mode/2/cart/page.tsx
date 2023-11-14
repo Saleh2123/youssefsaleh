@@ -1,3 +1,4 @@
+import { _href } from "</core.js";
 import * as cart from "</server/actions/patient/cart.js";
 import * as auth from "</server/auth.js";
 import { prisma } from "</server/prisma/client.js";
@@ -47,6 +48,7 @@ const Page = async (): Promise<React.JSX.Element> => {
         })}
       </ol>
       <div className="text-lg font-bold">{`Cart total: $${total}`}</div>
+      <a href={_href.patient.checkout}>Checkout</a>
     </div>
   );
 };

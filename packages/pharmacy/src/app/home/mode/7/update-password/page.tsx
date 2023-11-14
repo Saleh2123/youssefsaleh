@@ -1,3 +1,4 @@
+import { _parser } from "</core.js";
 import * as auth from "</server/actions/auth.js";
 
 const Page = (): React.JSX.Element => (
@@ -7,11 +8,11 @@ const Page = (): React.JSX.Element => (
       <input name="prev" type="password" />
     </label>
     <label htmlFor="password">
-      <div>New password</div>
+      <div>New password {_parser._schema.password}</div>
       <input name="new0" type="password" />
     </label>
     <label htmlFor="password">
-      <div>Repeat new password</div>
+      <div>Repeat new password {_parser._schema.password}</div>
       <input name="new1" type="password" />
     </label>
     <div>

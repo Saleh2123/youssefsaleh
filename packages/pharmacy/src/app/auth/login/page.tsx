@@ -18,6 +18,9 @@ const Login = ({ searchParams }: Props): React.JSX.Element => (
     <input name="redirectTo" type="hidden" value={searchParams.callbackURL ?? _href.user.home} />
     <div>
       <button className="mt-2 bg-blue-200 p-1">Log In</button>
+      <button formAction={auth.otp} className="ml-1 bg-red-200 p-1">
+        Forgot Password?
+      </button>
     </div>
   </form>
 );
