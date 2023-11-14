@@ -1,0 +1,17 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "pipeline": {
+    "build.next": { "dependsOn": ["^build", "build.prisma"] },
+    "build.prisma": { "inputs": ["./src/server/prisma/schema.prisma"] },
+    "build": { "dependsOn": ["build.next"] },
+
+    "check.eslint": { "dependsOn": ["^build", "build.prisma"] },
+    "check.prettier": {},
+    "check.tsc": { "dependsOn": ["^build", "build.prisma"] },
+    "check": { "dependsOn": ["check.eslint", "check.prettier", "check.tsc"] },
+
+    "run.development": { "dependsOn": ["^build", "build.prisma"] },
+    "run.production": { "dependsOn": ["build"] }
+  }
+}

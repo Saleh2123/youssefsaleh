@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+
+  "name": "@topp/_config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+
+  "exports": {
+    "./tsc/*": "./tsc/*",
+    "./*": {
+      "types": "./src/*",
+      "default": "./target/tsc/src/*"
+    }
+  },
+
+  "scripts": {
+    "build": "tsc",
+    "check.eslint": "TIMING=1 eslint .",
+    "check.prettier": "prettier --ignore-path='../../.gitignore' --check ."
+  },
+
+  "peerDependencies": {
+    "@eslint/eslintrc": "^2",
+    "@eslint/js": "^8",
+    "@tailwindcss/forms": "^0.5",
+    "@tailwindcss/typography": "^0.5",
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/parser": "^6",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "^14",
+    "next": "^14",
+    "postcss": "^8",
+    "tailwindcss": "^3",
+    "typescript": "^5"
+  },
+
+  "peerDependenciesMeta": {
+    "@eslint/eslintrc": { "optional": true },
+    "@eslint/js": { "optional": true },
+    "@tailwindcss/forms": { "optional": true },
+    "@tailwindcss/typography": { "optional": true },
+    "@typescript-eslint/eslint-plugin": { "optional": true },
+    "@typescript-eslint/parser": { "optional": true },
+    "autoprefixer": { "optional": true },
+    "eslint": { "optional": true },
+    "eslint-config-next": { "optional": true },
+    "next": { "optional": true },
+    "postcss": { "optional": true },
+    "tailwindcss": { "optional": true },
+    "typescript": { "optional": true }
+  },
+
+  "devDependencies": {
+    "@types/eslint": "^8",
+    "@types/eslint__eslintrc": "^2",
+    "@types/eslint__js": "^8",
+    "@types/node": "^20",
+    "@types/webpack": "^5",
+
+    "@eslint/eslintrc": "^2",
+    "@eslint/js": "^8",
+    "@tailwindcss/forms": "^0.5",
+    "@tailwindcss/typography": "^0.5",
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/parser": "^6",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "^14",
+    "next": "^14",
+    "postcss": "^8",
+    "tailwindcss": "^3",
+    "typescript": "^5"
+  }
+}

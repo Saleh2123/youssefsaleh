@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "packageManager": "pnpm@8.10.2+sha256.487609e857f1c11780cc98dd0bfe4c8a8b11c7f23bc3a4493ac7d263d6fb6c8c",
+
+  "name": "@topp/_",
+  "private": true,
+
+  "scripts": {
+    ",": "turbo",
+    "clean": "git clean -dx --exclude='.env' --exclude='.env*.local'"
+  },
+
+  "devDependencies": {
+    "prettier": "^3",
+    "prettier-plugin-organize-imports": "^3",
+    "prettier-plugin-tailwindcss": "^0.5",
+    "turbo": "^1",
+    "typescript": "^5"
+  },
+
+  "prettier": {
+    "endOfLine": "lf",
+    "printWidth": 100,
+    "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
+    "organizeImportsSkipDestructiveCodeActions": true,
+
+    "overrides": [
+      {
+        "files": ["package.json"],
+        "options": { "parser": "json" }
+      }
+    ]
+  }
+}

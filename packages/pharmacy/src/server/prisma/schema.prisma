@@ -1,0 +1,71 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("_TOPP_PHARMACY_DB_URL")
+}
+
+//------------------------------------------------------------------------------
+model Profile {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    username String @unique
+
+    password String
+    mode     Int
+
+    patient    Patient?
+    pharmacist Pharmacist?
+}
+
+model Pharmacist {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    profileId String  @unique @db.ObjectId
+    profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+
+model Patient {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    addresses String[]
+    cart      CartProduct[]
+
+    profileId String  @unique @db.ObjectId
+    profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+
+//------------------------------------------------------------------------------
+model PendingPharmacist {
+    id       String @id @default(auto()) @map("_id") @db.ObjectId
+
+    username String @unique
+    password String
+}
+
+//------------------------------------------------------------------------------
+model Product {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    name     String
+    quantity Int    @default(0)
+    sales    Int    @default(0)
+    price    Float
+
+    cartProduct CartProduct?
+}
+
+//------------------------------------------------------------------------------
+model CartProduct {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    quantity Int @default(1)
+
+    productId String  @unique @db.ObjectId
+    product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+    patientId String  @db.ObjectId
+    patient   Patient @relation(fields: [patientId], references: [id], onDelete: Cascade)
+}

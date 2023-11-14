@@ -1,0 +1,26 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+
+  "globalDependencies": ["./.npmrc"],
+
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["./target/**"]
+    },
+
+    "check": { "dependsOn": ["^build"] },
+
+    "run.development": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^build"]
+    },
+
+    "run.production": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["build"]
+    }
+  }
+}

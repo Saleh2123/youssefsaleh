@@ -1,0 +1,14 @@
+{
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.runtime": "node",
+  "eslint.workingDirectories": [{ "pattern": "./packages/*" }],
+
+  "typescript.tsdk": "./node_modules/typescript/lib",
+
+  "[javascript][javascriptreact][json][jsonc][markdown][typescript][typescriptreact][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
+}

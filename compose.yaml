@@ -1,0 +1,14 @@
+name: topp
+services:
+  db:
+    build: ./packages/_config/docker
+    entrypoint: _topp_db.sh
+    init: true
+    restart: on-failure
+    tty: true
+    environment:
+      _TOPP_DB_PORT: ${_TOPP_DB_PORT}
+    ports:
+      - ${_TOPP_DB_PORT}:${_TOPP_DB_PORT}
+    volumes:
+      - ./packages/_config/docker/bin:/usr/local/bin
