@@ -8,14 +8,16 @@ import EddMediModal from "./eddMediModal";
 import NavPharmacist from "./NavPharmacist";
 import "../web.css";
 import Logout from "../All/logoutModal"
+import ArchivedMeds from "./ArchivedMeds";
 
 const Pharmacisthome = () => {
-  const { showModal, showAddMediModal, showEddMediModal, showFilterModal, showlogoutModal } = useGlobalContext();
+  const { showModal, showAddMediModal, showEddMediModal, showFilterModal, showlogoutModal, archivedMeds } = useGlobalContext();
 
   return (
     <main style={{ "margin-top": "500px" }}>
       <NavPharmacist />
       <Search />
+      {archivedMeds.length > 0 && <ArchivedMeds />}
       <MedicinesP />
       {showlogoutModal && <Logout />}
       {showModal && <ModalPhar />}

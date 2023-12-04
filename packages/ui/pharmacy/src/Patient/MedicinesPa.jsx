@@ -23,7 +23,7 @@ const MedicinesPa = () => {
   return (
     <section className="section-center">
       {medicines.map((medicine) => {
-        if(medicine.quantity === 0){
+        if(medicine.quantity === 0 || medicine.archived === true){
           return;
         }
         return (

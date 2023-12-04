@@ -196,15 +196,20 @@ ul {
 }
 /* Favorites */
 .favorites{
-  background:var(--black);
+  background-color: darkolivegreen;
   color:var(--white);
   padding:1rem 0;
+  border-top-left-radius: 25px; /* Curved edge on the top left */
+  border-bottom-left-radius: 25px; /* Curved edge on the bottom left */
+  border-top-right-radius: 25px; /* Curved edge on the top right */
+  border-bottom-right-radius: 25px; /* Curved edge on the bottom*/
 }
 .favorites-content{
   width:var(--view-width);
   max-width:var(--max-width);
   margin:0 auto;
 }
+
 .favorites-container{
   display:flex;
   gap:0.5rem;
@@ -214,9 +219,10 @@ ul {
   text-align:center;
 }
 .favorites-img{
-  width:60px;
+  width:50px;
+  /* height:10px; */
   border-radius:50%;
-  border:5px solid var(--white);
+  border:3px solid var(--black);
   cursor:pointer;
 }
 .remove-btn{
@@ -225,7 +231,7 @@ ul {
   color:var(--white);
   border:transparent;
   cursor:pointer;
-  font-size:0.5rem;
+  font-size:1rem;
   transition:var(--transition);
 }
 .remove-btn:hover{
@@ -390,4 +396,13 @@ article:hover .delete-button{
   border-radius: 5px; /* Adjust the border radius as needed */
   margin-left: 10px; /* Adjust the spacing as needed */
   cursor: pointer;
+}
+
+.arch{
+  color: white;
+  cursor: pointer
+}
+
+.arch:hover {
+  color: black;
 }

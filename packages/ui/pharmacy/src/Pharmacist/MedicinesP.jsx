@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context";
 import "../web.css";
 
 const MedicinesP = () => {
-  const { medicines, selectMedicine, setShowAddMediModal, editMedicine } = useGlobalContext();
+  const { medicines, selectMedicine, setShowAddMediModal, editMedicine, addToArchivedMeds} = useGlobalContext();
 
   // if(loading){
   //     return (
@@ -23,7 +23,7 @@ const MedicinesP = () => {
   return (
     <section className="section-center">
       {medicines.map((medicine) => {
-        if(medicine.quantity === 0){
+        if(medicine.quantity === 0 || medicine.archived === true){
           return;
         }
         return (
@@ -42,7 +42,7 @@ const MedicinesP = () => {
               }}
             />
             <footer>
-              <h5 style={{ color: "white" }}>{medicine.name}</h5>
+              <h5 className="arch" onClick={()=>{addToArchivedMeds(medicine)}}>{medicine.name}</h5>
               <FaEdit
                 style={{ "margin-left": "10px", color: "white", cursor: "pointer" }}
                 onClick={() => {
