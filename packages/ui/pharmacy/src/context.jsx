@@ -20,7 +20,7 @@ const AppProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   let [total,setTotal] = useState(0);
   const [selected, setSelected] = useState("");
-  let [wallet,setWallet] = useState(307);
+  let [wallet,setWallet] = useState(337.15);
   const [cardNumber,setCardNumber] = useState('');
   const [byWallet, setByWallet] = useState(false);
   const [byCard, setByCard] = useState(false);
