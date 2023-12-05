@@ -2,12 +2,10 @@
 import React, { useState } from 'react';
 import "./Notifications.css";
 import { FaBell } from 'react-icons/fa';
+import { useGlobalContext } from '../context';
 
 const Notifications = () => {
-  const [notifications, setNotifications] = useState([
-    { id: 1, message: 'Medicine A is out of Stock', time: '10 minutes ago' },
-    { id: 2, message: 'Medicine B is out of Stock', time: '1 hour ago' },
-  ]);
+    const {notifications} = useGlobalContext();
 
   return (
     <div className="notifications-page">
