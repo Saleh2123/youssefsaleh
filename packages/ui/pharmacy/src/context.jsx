@@ -27,10 +27,7 @@ const AppProvider = ({ children }) => {
   const [noMethod, setNoMethod] = useState(false);
   const [archivedMeds, setArchivedMeds] = useState([]);
   let [notificationsCount,setNotificationsCount] = useState(0);
-  const [notifications, setNotifications] = useState([
-    { id: 1, message: 'Medicine A is out of Stock', time: '10 minutes ago' },
-    { id: 2, message: 'Medicine B is out of Stock', time: '1 hour ago' },
-  ]);
+  const [notifications, setNotifications] = useState([]);
   const [chosenAddress,setChosenAddress] = useState({
     street: 'Ahmed Mostageer Street',
     city: 'Cairo',
@@ -199,21 +196,6 @@ const AppProvider = ({ children }) => {
   useEffect(()=>{
      setUniqueMedicines(groupMedicines());
   },[cart])
-
-  useEffect( ()=>{
-    const nots = [];
-    const count = 0;
-    for(let i=0;i<medicines.length;i++){
-      if(medicines[i].quantity == 0 && medicines[i].notified == false){
-        count++;
-        nots.push({ id: medicines[i].name, message: `${medicines[i].name} is out of Stock`, time: '10 minutes ago' },);
-        medicines[i].notified == true
-      }
-    }
-    setNotificationsCount(count)
-    setNotifications(...notifications,nots);
-  }
-    ,[medicines])
 
   const getPharmacists = () => {
     const phars = [
@@ -389,6 +371,21 @@ const AppProvider = ({ children }) => {
     };
     get();
   }, [setAllMedicines, setMedicines]);
+
+  useEffect( ()=>{
+    const nots = [];
+    const count = 0;
+    for(let i=0;i<medicines.length;i++){
+      if(medicines[i].quantity == 0 && medicines[i].notified == false){
+        count++;
+        nots.push({ id: medicines[i].name, message: `${medicines[i].name} is out of Stock`, time: '10 minutes ago' });
+        medicines[i].notified = true;
+      }
+    }
+    setNotificationsCount(count)
+    setNotifications(...notifications,nots);
+  }
+    ,[medicines])
 
   const [pharmacists, setPharmacists] = useState(getPharmacists());
   const [patients, setPatients] = useState(getPatients());

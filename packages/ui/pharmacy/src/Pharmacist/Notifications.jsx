@@ -1,11 +1,16 @@
 // NotificationsPage.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Notifications.css";
 import { FaBell } from 'react-icons/fa';
 import { useGlobalContext } from '../context';
 
 const Notifications = () => {
-    const {notifications} = useGlobalContext();
+    const {notifications, setNotificationsCount} = useGlobalContext();
+
+    useEffect(()=>{
+        setNotificationsCount(0);
+    }
+    ,[])
 
   return (
     <div className="notifications-page">
