@@ -26,6 +26,7 @@ const AppProvider = ({ children }) => {
   const [byCard, setByCard] = useState(false);
   const [noMethod, setNoMethod] = useState(false);
   const [archivedMeds, setArchivedMeds] = useState([]);
+  let [notificationsCount,setNotificationsCount] = useState(3);
   const [chosenAddress,setChosenAddress] = useState({
     street: 'Ahmed Mostageer Street',
     city: 'Cairo',
@@ -520,7 +521,9 @@ const AppProvider = ({ children }) => {
         setNoMethod,
         addToArchivedMeds,
         removeFromArchivedMeds,
-        archivedMeds
+        archivedMeds,
+        notificationsCount,
+        setNotificationsCount
       }}
     >
       {children}

@@ -1,0 +1,42 @@
+/* styles.css */
+
+.notifications-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  color:whitesmoke
+}
+
+.notification-list {
+  margin-top: 20px;
+}
+
+.notification {
+    height: 75px; /* Adjust the height as needed */
+    background-color: blue; /* Adjust the background color as needed */
+    /* Center the text vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: wheat; /* Adjust the text color as needed */
+    border-top-left-radius: 15px; /* Curved edge on the top left */
+    border-bottom-left-radius: 15px; /* Curved edge on the bottom left */
+    border-top-right-radius: 15px; /* Curved edge on the top right */
+    border-bottom-right-radius: 15px; /* Curved edge on the bottom right */
+    margin-bottom: 10px;
+}
+
+.notification-content {
+  text-align: center;
+}
+
+.notification-time {
+  color: orange;
+  font-size: 12px;
+}

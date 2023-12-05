@@ -30,6 +30,7 @@ import EmailAd from './emailAd';
 import PassAdmin from './passadmin';
 import PassPatient from './passpatient';
 import PassPharmacist from './passpharmacist';
+import Notifications from './Pharmacist/Notifications';
 
 function App() {
   return (
@@ -92,6 +93,8 @@ function App() {
         <Route path="/passpharmacist" element={<PassPharmacist />} />
 
         <Route path="/passpatient" element={<PassPatient />} />
+
+        <Route path="/noti" element={<Notifications />} />
 
       </Routes>
     </BrowserRouter>
