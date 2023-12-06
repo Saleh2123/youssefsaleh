@@ -372,20 +372,28 @@ const AppProvider = ({ children }) => {
     get();
   }, [setAllMedicines, setMedicines]);
 
+  // const organizeNotifications = (notifs)=>{
+  //   const organizedNotifications = [];
+  //   for(let i=0;i<notifs.length;i++){
+
+  //   }
+  // }
+
   useEffect( ()=> {
     let nots = [];
     let count = 0;
     for(let i=0;i<medicines.length;i++){
       if(medicines[i].quantity == 0 && medicines[i].notified == false){
         count++;
-        console.log(count);
-        nots.push({ id: medicines[i].name, message: `${medicines[i].name} is out of Stock`, time: '10 minutes ago' });
+        const currentDate = new Date();
+        nots.push({ id: medicines[i].name, message: `${medicines[i].name} is out of Stock`, date: currentDate, new: true });
         medicines[i].notified = true;
       }
       if(medicines[i].quantity !== 0){
         medicines[i].notified = false;
       } //for cancelling order and being out of stock again
     }
+    //const organizedNotifications = organizeNotifications([...notifications,...nots]);
     setNotificationsCount(count)
     setNotifications([...notifications,...nots]);
   }

@@ -40,3 +40,20 @@
   color: orange;
   font-size: 12px;
 }
+
+.new{
+    height: 20px;
+    width: 50px; /* Adjust the height as needed */
+    background-color: orange; /* Adjust the background color as needed */
+    /* Center the text vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: wheat; /* Adjust the text color as needed */
+    border-top-left-radius: 25px; /* Curved edge on the top left */
+    border-bottom-left-radius: 25px; /* Curved edge on the bottom left */
+    border-top-right-radius: 25px; /* Curved edge on the top right */
+    border-bottom-right-radius: 25px; /* Curved edge on the bottom right */
+    margin-top:25px;
+    margin-left: 10px;
+}
