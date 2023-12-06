@@ -14,16 +14,17 @@ const CancelBox = () => {
     }
 
     const returnQuantityToStore = ()=>{
+        const meds = [...medicines];
         for(let i = 0;i<uniqueMedicines.length;i++){
           let count = CountMedicineInCart(uniqueMedicines[i]);
           for(let j=0;j<medicines.length;j++){
             if(uniqueMedicines[i].name === medicines[j].name){
-              medicines[j].quantity+=count;
+              meds[j].quantity+=count;
               break;
             }
           }
         }
-        setMedicines(medicines);
+        setMedicines(meds);
       }
 
     const cancel = ()=>{
