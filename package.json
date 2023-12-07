@@ -57,5 +57,9 @@
       "prettier-plugin-organize-imports"
     ],
     "organizeImportsSkipDestructiveCodeActions": true
+  },
+  "dependencies": {
+    "chart.js": "^4.4.1",
+    "react-chartjs-2": "^5.2.0"
   }
 }
