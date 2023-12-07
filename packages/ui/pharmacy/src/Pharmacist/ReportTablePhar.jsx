@@ -48,46 +48,47 @@ const ReportTablePhar = () => {
       )
   }
   else{
-  return (
-    <div>
-      <table className="table table-hover mt-5 rounded">
-        <thead>
-          <tr>
-            <th scope="col">Medicine Name</th>
-            {/* <th scope="col">Type</th>
-            <th scope="col">Description</th> */}
-            <th scope="col">Price</th>
-            <th scope="col">Remaining Quantity</th>
-            <th scope="col">Last Month Sales</th>
-            <th scope="col">Chg</th>
-            <th scope="col">Chg%</th>
-          </tr>
-        </thead>
-        <tbody>
-          {medicines.map((medicine) => {
-            return (
-              <tr key={medicine.name} style={{ cursor: 'pointer' }} className="table-row">
-                <th scope="row">{medicine.name}</th>
-                {/* <td>{medicine.use}</td>
-                <td style={{ textAlign: 'center' }}>{medicine.description}</td> */}
-                <td style={{ textAlign: 'center' }}>{medicine.price}</td>
-                <td style={{ textAlign: 'center' }}>{medicine.quantity}</td>
-                <td style={{ textAlign: 'center' }}>{medicine.sales}</td>
-                <td className={medicine.sales > 0 ? 'text-success' : 'text-danger'}>
-                  {medicine.sales}
-                  {medicine.sales > 0 ? <BsFillCaretUpFill /> : <BsFillCaretDownFill />}
-                </td>
-                <td className={medicine.sales > 0 ? 'text-success' : 'text-danger'}>
-                  {medicine.sales}
-                  {renderIcon(1222)}
-                </td>
+    return (
+        <div>
+          <table className="table table-hover mt-5 rounded">
+            <thead>
+              <tr>
+                <th scope="col">Medicine Name</th>
+                {/* <th scope="col">Type</th>
+                <th scope="col">Description</th> */}
+                <th scope="col">Price</th>
+                <th scope="col">Remaining Quantity</th>
+                <th scope="col">Last Month Sales</th>
+                <th scope="col">Chg</th>
+                <th scope="col">Chg%</th>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
-  )};
+            </thead>
+            <tbody>
+              {medicines.map((medicine) => {
+                return (
+                  <tr key={medicine.name} style={{ cursor: 'pointer' }} className="table-row">
+                    <th scope="row">{medicine.name}</th>
+                    {/* <td>{medicine.use}</td>
+                    <td style={{ textAlign: 'center' }}>{medicine.description}</td> */}
+                    <td style={{ textAlign: 'center' }}>{medicine.price}</td>
+                    <td style={{ textAlign: 'center' }}>{medicine.quantity}</td>
+                    <td style={{ textAlign: 'center' }}>{medicine.sales}</td>
+                    <td className={medicine.sales > 0 ? 'text-success' : 'text-danger'}>
+                      {medicine.sales}
+                      {medicine.sales > 0 ? <BsFillCaretUpFill /> : <BsFillCaretDownFill />}
+                    </td>
+                    <td className={medicine.sales > 0 ? 'text-success' : 'text-danger'}>
+                      {medicine.sales}
+                      {renderIcon(1222)}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+  ;
 };
 
 export default ReportTablePhar;

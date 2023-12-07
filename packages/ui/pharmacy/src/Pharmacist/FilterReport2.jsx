@@ -23,7 +23,7 @@ const FilterReport2 = () => {
 
   const filter = () => {
     if (selected === "") {
-        setMedicineTable("");
+        setMedicineTable(null);
     } else {
       let med;
       med = medicines.find((medicine) => medicine.name === selected);
