@@ -19,7 +19,7 @@ const NavPharmacist = () =>{
                 </li>
             </ul>
             <ul className="navbar-nav ml-auto">
-                <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px"}} onClick={()=>changePage("/sales")}>
+                <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px"}} onClick={()=>changePage("/salesPhar")}>
                     View Sales
                 </li>
                 <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px"}} onClick={()=>changePage("/passPh")}>
