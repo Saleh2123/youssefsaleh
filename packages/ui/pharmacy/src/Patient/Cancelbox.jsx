@@ -20,6 +20,7 @@ const CancelBox = () => {
           for(let j=0;j<medicines.length;j++){
             if(uniqueMedicines[i].name === medicines[j].name){
               meds[j].quantity+=count;
+              meds[j].sales-=count;
               break;
             }
           }

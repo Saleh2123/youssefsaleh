@@ -16,6 +16,7 @@ const AppProvider = ({ children }) => {
   const [selectedMedicine, setSelectedMedicine] = useState(null);
   const [editedMedicine, setEditedMedicine] = useState(null);
   const [medicineTable, setMedicineTable] = useState(null);
+  const [selectedMonth, setSelectedMonth] = useState('');
   const [selectedRequest, setSelectedRequest] = useState(null);
   const [editedindex, setEditedindex] = useState(0);
   const [cart, setCart] = useState([]);
@@ -560,7 +561,9 @@ const AppProvider = ({ children }) => {
         notifications,
         setNotifications,
         medicineTable,
-        setMedicineTable
+        setMedicineTable,
+        selectedMonth,
+        setSelectedMonth
       }}
     >
       {children}

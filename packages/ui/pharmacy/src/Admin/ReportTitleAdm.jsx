@@ -1,9 +1,8 @@
-import { FaFilter } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 import { useState } from "react";
 
-const ReportTitlePhar = ()=>{
-    const { setShowFilterModal, selectedMonth, setSelectedMonth } = useGlobalContext();
+const ReportTitleAdm = ()=>{
+    const { selectedMonth, setSelectedMonth } = useGlobalContext();
 
     // Array of months
     const months = [
@@ -39,11 +38,7 @@ const ReportTitlePhar = ()=>{
 
       {/* Display the selected month */}
     </div>
-        <FaFilter
-        style={{ color: "white", cursor: "pointer", "margin-top":"22px", "margin-left":"50px" }}
-        onClick={()=>setShowFilterModal(true)}
-      />
       </div>
     )
 }
-export default ReportTitlePhar
+export default ReportTitleAdm

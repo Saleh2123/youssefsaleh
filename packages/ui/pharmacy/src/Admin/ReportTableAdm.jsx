@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { BsFillCaretUpFill, BsFillCaretDownFill } from 'react-icons/bs';
 import { useGlobalContext } from '../context';
 
-const ReportTablePhar = () => {
+const ReportTableAdm = () => {
   const { medicines, medicineTable,selectedMonth } = useGlobalContext();
 
   const renderIcon = (change) => {
@@ -95,4 +95,4 @@ const ReportTablePhar = () => {
   ;
 };
 
-export default ReportTablePhar;
+export default ReportTableAdm;
