@@ -30,9 +30,6 @@ const Orders = () =>{
                         <h4>{`Order #${order.number}`}</h4>
                     </div>
                     <div>
-                        <p>{`Cart Items :`}</p>
-                    </div>
-                    <div>
                         {groupMedicines(order.cart).map((medicine) => (
                             <div className="cart-item">
                                 <span>{medicine.name}</span>
@@ -52,6 +49,7 @@ const Orders = () =>{
                            <span style={{"color":"white"}}>{calculateTotalInCart(order.cart)}{" EGP"}</span>
                         </div>
                     </div>
+                    <div style={{"color":"black"}}>
                     <div className="icon-container">
                         <FaHome className="address-icon" />
                         <p>{order.address.neighborhood}{", "}{order.address.street}{", "}{order.address.buildingNo}</p>
@@ -63,6 +61,7 @@ const Orders = () =>{
                     <div className="icon-container">
                         <FaPhone className="address-icon" />
                         <p>{order.address.telephoneNum}</p>
+                    </div>
                     </div>
                 </footer>
             </article>
