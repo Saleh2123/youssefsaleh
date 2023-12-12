@@ -15,7 +15,7 @@ const Orders = () =>{
             <article
                 key={order.number}
                 id={order.number}
-                className={order.number === 7?"singlemeal art":"singlemeal article"}
+                className="singlemeal article"
                 style={{ "background-color": "orangered" ,"cursor":"pointer"}}
                 >
                 <div className="image-section">

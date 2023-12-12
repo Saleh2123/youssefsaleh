@@ -6,7 +6,8 @@ import { useGlobalContext } from '../context';
 
 const PlaceOrderbox = () => {
     let {medicines,setMedicines,CountMedicineInCart,uniqueMedicines, selected
-    , setByCard, cardNumber,setByWallet,wallet,setWallet, total,setNoMethod} = useGlobalContext();
+    , setByCard, cardNumber,setByWallet,wallet,setWallet, total,setNoMethod, cart, chosenAddress,
+    nextOrderNumber,setNextOrderNumber, orders,setOrders} = useGlobalContext();
 
     const navigate = useNavigate()
 
@@ -44,6 +45,12 @@ const PlaceOrderbox = () => {
           console.log(wallet);
         }
         removeQuantityFromStore();
+        setOrders([...orders,{
+          number: nextOrderNumber,
+          cart: cart,
+          address: chosenAddress
+        }])
+        setNextOrderNumber(nextOrderNumber+1);
         changePage("/order");
       }
       else{

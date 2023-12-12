@@ -5,7 +5,7 @@ import { useGlobalContext } from '../context';
 
 const CancelBox = () => {
     let {uniqueMedicines,setCart,CountMedicineInCart,medicines,setMedicines,
-    selected,wallet,total,setWallet} = useGlobalContext();
+    selected,wallet,total,setWallet,setOrders,orders, nextOrderNumber,setNextOrderNumber} = useGlobalContext();
 
     const navigate = useNavigate()
 
@@ -35,6 +35,8 @@ const CancelBox = () => {
         console.log(wallet);
       }
       returnQuantityToStore();
+      setOrders(orders.filter((order)=>order.number !== nextOrderNumber-1));
+      setNextOrderNumber(nextOrderNumber-1);
       setCart([]);
       changePage("/patienthome");
     }
