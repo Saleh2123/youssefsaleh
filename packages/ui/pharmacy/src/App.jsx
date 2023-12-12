@@ -33,6 +33,7 @@ import PassPharmacist from './passpharmacist';
 import Notifications from './Pharmacist/Notifications';
 import SalesPhar from './Pharmacist/SalesPhar';
 import SalesAdm from './Admin/SalesAdm';
+import Orders from './Patient/Orders';
 
 function App() {
   return (
@@ -101,6 +102,8 @@ function App() {
         <Route path="/salesPhar" element={<SalesPhar />} />
 
         <Route path="/salesAdm" element={<SalesAdm />} />
+
+        <Route path="/orders" element={<Orders />} />
 
       </Routes>
     </BrowserRouter>

@@ -5,24 +5,24 @@ import { FaPlus } from 'react-icons/fa';
 import { FaMinus } from 'react-icons/fa';
 
 const Cart = () =>{
-     const { cart, CountMedicineInCart,addtocart ,removefromcart, removeAllfromcart } = useGlobalContext();
+     const { cart, CountMedicineInCart,addtocart ,removefromcart, removeAllfromcart, uniqueMedicines } = useGlobalContext();
 
-     const groupMedicines= ()=> {
-      const meds = [];
-      for(let i=0;i<cart.length;i++){
-        if(meds.indexOf(cart[i]) === -1){
-            meds.push(cart[i])
-        }
-      };
-      console.log(meds);
-      return meds;
-    }
+    //  const groupMedicines= ()=> {
+    //   const meds = [];
+    //   for(let i=0;i<cart.length;i++){
+    //     if(meds.indexOf(cart[i]) === -1){
+    //         meds.push(cart[i])
+    //     }
+    //   };
+    //   console.log(meds);
+    //   return meds;
+    // }
 
-    const [uniqueMedicines,setUniqueMedicines] = useState(groupMedicines());
+    // const [uniqueMedicines,setUniqueMedicines] = useState(groupMedicines());
 
-    useEffect(()=>{
-      setUniqueMedicines(groupMedicines());
-    },[cart])
+    // useEffect(()=>{
+    //   setUniqueMedicines(groupMedicines());
+    // },[cart])
 
     return (
       <div>

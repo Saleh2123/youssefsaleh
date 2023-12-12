@@ -19,6 +19,9 @@ const NavPatient = () =>{
                 </li>
             </ul>
             <ul className="navbar-nav ml-auto">
+            <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px"}} onClick={()=>changePage("/orders")}>
+                    View Orders
+                </li>
                 <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px"}} onClick={()=>changePage("/passPa")}>
                     Change Password?
                 </li>
