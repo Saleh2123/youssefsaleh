@@ -326,7 +326,7 @@ const AppProvider = ({ children }) => {
     const meds = [
       {
         name: "MedicineA",
-        ingredients: ["iron"],
+        ingredients: ["vitaminC"],
         description: "description",
         price: 10,
         quantity: 0,

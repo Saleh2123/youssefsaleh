@@ -5,15 +5,14 @@ import "../web.css";
 
 const Alternatives = () => {
   const { medicines, selectMedicine, addtocart, SelectedMainIngredient, SelectedMed} = useGlobalContext();
-  const getAlternatives = ()=>{
-    return medicines.filter((med)=>med.ingredients[0] === SelectedMainIngredient);
-  }
-  const [alternatives] = useState([...getAlternatives()]);
+  const [alternatives] = useState(medicines.filter((med)=>med.ingredients[0] === SelectedMainIngredient));
 
-  if (alternatives.length === 0) {
+  if (alternatives.length == 1) {
     return (
-      <section className="section">
-        <h4>No alternatives to {SelectedMed.name}</h4>
+      <section>
+        <h1 style={{"color":"wheat"}}>
+          No Alternatives to {SelectedMed.name}
+      </h1>
       </section>
     );
   }
