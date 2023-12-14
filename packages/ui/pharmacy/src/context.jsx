@@ -338,7 +338,7 @@ const AppProvider = ({ children }) => {
       },
       {
         name: "MedicineB",
-        ingredients: ["iron"],
+        ingredients: ["vitaminC"],
         description: "description",
         price: 50,
         quantity: 2,
@@ -350,7 +350,7 @@ const AppProvider = ({ children }) => {
       },
       {
         name: "MedicineC",
-        ingredients: ["iron"],
+        ingredients: ["vitaminC"],
         description: "description",
         price: 100,
         quantity: 3,
@@ -362,7 +362,7 @@ const AppProvider = ({ children }) => {
       },
       {
         name: "MedicineD",
-        ingredients: ["iron"],
+        ingredients: ["vitaminC"],
         description: "description",
         price: 130,
         quantity: 900,

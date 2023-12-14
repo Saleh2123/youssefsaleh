@@ -1,17 +1,22 @@
 import { useGlobalContext } from "../context";
+import {useEffect, useState } from "react";
 import { FaPlus } from 'react-icons/fa';
 import "../web.css";
 
 const Alternatives = () => {
   const { medicines, selectMedicine, addtocart, SelectedMainIngredient, SelectedMed} = useGlobalContext();
+  const getAlternatives = ()=>{
+    return medicines.filter((med)=>med.ingredients[0] === SelectedMainIngredient);
+  }
+  const [alternatives] = useState([...getAlternatives()]);
 
-//   if (medicines.length < 1) {
-//     return (
-//       <section className="section">
-//         <h4>No medicines matched your search term. Please try again.</h4>
-//       </section>
-//     );
-//   }
+  if (alternatives.length === 0) {
+    return (
+      <section className="section">
+        <h4>No alternatives to {SelectedMed.name}</h4>
+      </section>
+    );
+  }
 
   return (
     <div>
@@ -19,29 +24,29 @@ const Alternatives = () => {
         Alternatives to {SelectedMed.name}
       </h1>
     <section className="section-center">
-      {medicines.map((medicine) => {
-        if(medicine.archived === true || medicine.quantity == 0 || medicine.ingredients[0] !== SelectedMainIngredient){
+      {alternatives.map((alternative) => {
+        if(alternative.archived === true || alternative.quantity == 0){
           return;
         }
         return (
           <article
-            key={medicine.name}
-            id={medicine.name}
+            key={alternative.name}
+            id={alternative.name}
             className="single-meal"
             style={{ "background-color": "darkred" }}
           >
              <img
-              src={medicine.picture}
+              src={alternative.picture}
               alt={"No"}
               className="img"
               onClick={() => {
-                selectMedicine(medicine.name);
+                selectMedicine(alternative.name);
               }}
             />
             <footer>
-              <h5 style={{ color: "white" }}>{medicine.name}</h5>
+              <h5 style={{ color: "white" }}>{alternative.name}</h5>
               <div className="plus-square">
-                <FaPlus style={{ "margin-left": "10px", color: "black", cursor: "pointer" }} onClick={()=>{addtocart(medicine)}}/>
+                <FaPlus style={{ "margin-left": "10px", color: "black", cursor: "pointer" }} onClick={()=>{addtocart(alternative)}}/>
               </div>
             </footer>
           </article>
