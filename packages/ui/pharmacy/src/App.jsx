@@ -34,6 +34,7 @@ import Notifications from './Pharmacist/Notifications';
 import SalesPhar from './Pharmacist/SalesPhar';
 import SalesAdm from './Admin/SalesAdm';
 import Orders from './Patient/Orders';
+import Alternativeshome from './Patient/Alternativeshome';
 
 function App() {
   return (
@@ -104,6 +105,8 @@ function App() {
         <Route path="/salesAdm" element={<SalesAdm />} />
 
         <Route path="/orders" element={<Orders />} />
+
+        <Route path="/alternativeshome" element={<Alternativeshome />} />
 
       </Routes>
     </BrowserRouter>

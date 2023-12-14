@@ -21,9 +21,6 @@ const Medicines = () => {
   return (
     <section className="section-center">
       {medicines.map((medicine) => {
-        if(medicine.quantity === 0){
-          return;
-        }
         return (
           <article
             key={medicine.name}
@@ -31,7 +28,17 @@ const Medicines = () => {
             className="single-meal"
             style={{ "background-color": "darkred" }}
           >
+            {medicine.quantity == 0?
             <img
+            src={"https://assets-global.website-files.com/6226c4ffcb6d6446cdc96a84/62bc932b2a2231544be5a373_2fe3e76a66d4105790a62f68d8e5622a_M.jpeg"}
+            alt={"No"}
+            className="img"
+            onClick={() => {
+              selectMedicine(medicine.name);
+            }}
+          />
+             :
+             <img
               src={medicine.picture}
               alt={"No"}
               className="img"
@@ -39,6 +46,7 @@ const Medicines = () => {
                 selectMedicine(medicine.name);
               }}
             />
+              }
             <footer>
               <h5 style={{ color: "white" }}>{medicine.name}</h5>
             </footer>
