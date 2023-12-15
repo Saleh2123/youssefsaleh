@@ -260,7 +260,7 @@ ul {
   }
 }
 .single-meal{
-  background:var(--white);
+  background-color:black !important;
   color:var(--textColor);
   border-radius:var(--borderRadius);
   box-shadow:var(--shadow-2);
@@ -404,5 +404,5 @@ article:hover .delete-button{
 }
 
 .arch:hover {
-  color: black;
+  color: darkolivegreen;
 }
