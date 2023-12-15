@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./navigate.css"
 import { useGlobalContext } from "../context";
 import { useNavigate } from "react-router-dom";
+import ChatButton from "./chatbutton";
 
 const NavPatient = () =>{
     const { setShowlogoutModal, wallet } = useGlobalContext();
@@ -11,9 +12,11 @@ const NavPatient = () =>{
     }
 
     return (
+        <div>
+            <ChatButton />
         <nav className = "navbar navbar-expand-lg navbar-light bg-lights bcpa">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px","display":"flex"}}>
+                <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-left": "35px","display":"flex"}}>
                     <h6 style={{"color":"white","margin-right":"5px"}}>MY WALLET</h6>
                     <h6 style={{"background-color":"gray","color":"green"}}>{wallet}{" EGP"}</h6>
                 </li>
@@ -30,6 +33,7 @@ const NavPatient = () =>{
                 </li>
             </ul>
         </nav>
+        </div>
     )
 }
 export default NavPatient
