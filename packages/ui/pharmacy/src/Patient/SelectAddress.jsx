@@ -11,13 +11,7 @@ const SelectAddress = () => {
   const changePage = (exten) =>{
       navigate(exten)
   }
-  // if(loading){
-  //     return (
-  //         <section className="section">
-  //             <h4>Loading...</h4>
-  //         </section>
-  //     )
-  // }
+  
   if (addresses.length < 1) {
     return (
       <section className="section">

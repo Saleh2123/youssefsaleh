@@ -387,6 +387,24 @@ article:hover .delete-button{
   cursor: pointer;
 }
 
+.btn-addtocart {
+  background-color: orangered !important;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-closa {
+  background-color: darkred;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
 .plus-square {
   display: inline-block;
   width: 40px; /* Adjust the size as needed */
@@ -395,6 +413,18 @@ article:hover .delete-button{
   border: 2px solid black;
   border-radius: 5px; /* Adjust the border radius as needed */
   margin-left: 10px; /* Adjust the spacing as needed */
+  cursor: pointer;
+}
+
+.plus-rectangle {
+  display: inline-block;
+  width: 100px; /* Adjust the size as needed */
+  height: 30px; /* Adjust the size as needed */
+  background-color: whitesmoke; /* Adjust the color as needed */
+  color:red;
+  border: 2px solid black;
+  border-radius: 5px; /* Adjust the border radius as needed */
+  margin-left: 49px; /* Adjust the spacing as needed */
   cursor: pointer;
 }
 

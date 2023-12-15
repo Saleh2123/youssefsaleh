@@ -6,7 +6,7 @@ import "../web.css";
 import { useNavigate } from "react-router-dom";
 
 const MedicinesPa = () => {
-  const { medicines, selectMedicine, addtocart, setSelectedMainIngredient,setSelectedMed} = useGlobalContext();
+  const { medicines, selectMedicine, addtocart, setSelectedMainIngredient,setSelectedMed,setShowPrescriptionsModal, setChosenMedicine} = useGlobalContext();
   const navigate = useNavigate()
 
     const changePage = (exten) =>{
@@ -61,10 +61,15 @@ const MedicinesPa = () => {
               }
             <footer>
               <h5 style={{ color: "white" }}>{medicine.name}</h5>
+              {medicine.isOverTheCounter?<></>:<div className="plus-rectangle">Prescription*</div>}
               <div className="plus-square">
-                {medicine.quantity == 0?
-                <FontAwesomeIcon icon={faExchangeAlt} style={{ "margin-left": "10px", color: "darkblue", cursor: "pointer" }} onClick={()=>{showAlternatives(medicine)}}/>:
-                <FaPlus style={{ "margin-left": "10px", color: "black", cursor: "pointer" }} onClick={()=>{addtocart(medicine)}}/>}
+                {medicine.quantity == 0 ?
+                (<FontAwesomeIcon icon={faExchangeAlt} style={{ "margin-left": "10px", color: "darkblue", cursor: "pointer" }} onClick={()=>{showAlternatives(medicine)}}/>)
+                :
+                (medicine.isOverTheCounter ?
+                <FaPlus style={{ "margin-left": "10px", color: "black", cursor: "pointer" }} onClick={()=>{addtocart(medicine)}}/>
+                :
+                <div style={{"display":"flex","justify-content": "center" , "align-items":"center"}} onClick={()=>{setChosenMedicine(medicine);setShowPrescriptionsModal(true)}}>.....</div>)}
               </div>
             </footer>
           </article>
