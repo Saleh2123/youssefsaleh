@@ -7,9 +7,10 @@ import FilterModal from "../All/FilterModal"
 import NavPatient from "./NavPatient"
 import Logout from "../All/logoutModal"
 import Cartbox from "./cartbox"
+import PharmacistsListModal from "./pharmacistsListModal"
 
 const Patienthome = () => {
-    const {showModal,showFilterModal,showlogoutModal, cart} = useGlobalContext()
+    const {showModal,showFilterModal,showlogoutModal,showChatModal, cart} = useGlobalContext()
     return (
         <main style={{"margin-top": "170px"}}>
         <NavPatient/>
@@ -19,6 +20,7 @@ const Patienthome = () => {
         {showlogoutModal && <Logout />}
         {showModal && <Modal />}
         {showFilterModal && <FilterModal/>}
+        {showChatModal && <PharmacistsListModal/>}
         </main>
     )
 }

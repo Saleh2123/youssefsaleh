@@ -1,0 +1,38 @@
+/* Assuming you have a container with a class named "pharmacists-container" */
+.pharmacists-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #007BFF;
+    width: 100%;
+    padding: 15px; /* Adjust padding as needed */
+    margin-bottom: 10px; /* Add margin between sections if desired */
+  }
+
+  .curvedrec {
+    border-top-left-radius: 35px; /* Curved edge on the top left */
+    border-bottom-left-radius: 35px; /* Curved edge on the bottom left */
+    border-top-right-radius: 35px; /* Curved edge on the top right */
+    border-bottom-right-radius: 35px; /* Curved edge on the bottom right */
+  }
+
+  .curvedrec:hover{
+    background-color: darkgray;
+    color:  #007BFF;
+  }
+
+  /* Styles for the text content */
+  .pharmacists-container p {
+    margin: 0; /* Remove default margin to avoid extra spacing */
+  }
+
+  /* Styles for the heading and subheading */
+  .pharmaists-container h3 {
+    color: #FFF; /* Set text color to white or any contrasting color */
+    margin-bottom: 5px; /* Add spacing between heading and subheading */
+  }
+
+  .pharmacists-container h6 {
+    color: #FFF; /* Set text color to white or any contrasting color */
+    font-weight: normal; /* Adjust font weight as needed */
+    margin: 0; /* Remove margin to avoid extra spacing */
+  }

@@ -14,6 +14,8 @@ const AppProvider = ({ children }) => {
   const [showAddMediModal, setShowAddMediModal] = useState(false);
   const [showEddMediModal, setShowEddMediModal] = useState(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
+  const [showChatModal, setShowChatModal] = useState(false);
+
   const [selectedMedicine, setSelectedMedicine] = useState(null);
   const [editedMedicine, setEditedMedicine] = useState(null);
   const [medicineTable, setMedicineTable] = useState(null);
@@ -300,24 +302,28 @@ const AppProvider = ({ children }) => {
         id: 1,
         age: 20,
         education: "harvard",
+        chatID:'100004055503418'
       },
       {
         name: "Mohamed",
         id: 2,
         age: 20,
         education: "harvard",
+        chatID:'1410580089244711'
       },
       {
         name: "Ali",
         id: 3,
         age: 20,
         education: "harvard",
+        chatID:'100064015083080'
       },
       {
         name: "zeyad",
         id: 4,
         age: 20,
         education: "harvard",
+        chatID:'100009481298399'
       },
     ];
     return phars;
@@ -674,7 +680,9 @@ const AppProvider = ({ children }) => {
         SelectedMainIngredient,
         setSelectedMainIngredient,
         SelectedMed,
-        setSelectedMed
+        setSelectedMed,
+        showChatModal,
+        setShowChatModal
       }}
     >
       {children}
