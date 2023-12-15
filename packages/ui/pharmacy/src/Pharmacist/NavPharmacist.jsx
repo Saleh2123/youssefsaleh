@@ -3,6 +3,7 @@ import "./navi.css"
 import { useGlobalContext } from "../context";
 import { useNavigate } from "react-router-dom";
 import { FaBell } from 'react-icons/fa';
+import ChatButton from "../All/chatbutton";
 
 const NavPharmacist = () =>{
     const { setShowlogoutModal, wallet,notificationsCount } = useGlobalContext();
@@ -11,6 +12,8 @@ const NavPharmacist = () =>{
         navigate(exten)
   }
     return (
+        <div>
+            <ChatButton />
         <nav className = "navbar navbar-expand-lg navbar-light bg-lights bcph">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-right": "10px","display":"flex"}}>
@@ -54,6 +57,7 @@ const NavPharmacist = () =>{
                 </li>
             </ul>
         </nav>
+        </div>
     )
 }
 export default NavPharmacist

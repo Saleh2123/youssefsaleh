@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./navigate.css"
 import { useGlobalContext } from "../context";
 import { useNavigate } from "react-router-dom";
-import ChatButton from "./chatbutton";
+import ChatButton from "../All/chatbutton";
 
 const NavPatient = () =>{
     const { setShowlogoutModal, wallet } = useGlobalContext();

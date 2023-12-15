@@ -9,9 +9,11 @@ import NavPharmacist from "./NavPharmacist";
 import "../web.css";
 import Logout from "../All/logoutModal"
 import ArchivedMeds from "./ArchivedMeds";
+import PatientsListModal from "./patientsListModal";
 
 const Pharmacisthome = () => {
-  const { showModal, showAddMediModal, showEddMediModal, showFilterModal, showlogoutModal, archivedMeds } = useGlobalContext();
+  const { showModal, showAddMediModal, showEddMediModal, showFilterModal, showlogoutModal, archivedMeds,
+    showChatModal} = useGlobalContext();
 
   return (
     <main style={{ "margin-top": "500px" }}>
@@ -24,6 +26,7 @@ const Pharmacisthome = () => {
       {showAddMediModal && <AddMediModal />}
       {showEddMediModal && <EddMediModal />}
       {showFilterModal && <FilterModal />}
+      {showChatModal && <PatientsListModal/>}
     </main>
   );
 };
