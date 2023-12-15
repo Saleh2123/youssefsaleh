@@ -40,8 +40,7 @@ const PlaceOrderbox = () => {
       }
       else if(selected === "w" || selected === "cc" || selected === "cod"){
         if(selected === "w" && wallet >= total){
-          wallet-=total;
-          setWallet(wallet)
+          setWallet(wallet - total);
           console.log(wallet);
         }
         removeQuantityFromStore();

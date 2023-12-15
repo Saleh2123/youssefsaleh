@@ -30,8 +30,7 @@ const CancelBox = () => {
 
     const cancel = ()=>{
       if(selected === "w"){
-        wallet += total;
-        setWallet(wallet)
+        setWallet(wallet + total)
         console.log(wallet);
       }
       returnQuantityToStore();
