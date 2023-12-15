@@ -504,7 +504,7 @@ const AppProvider = ({ children }) => {
       }
       if(medicines[i].quantity !== 0){
         medicines[i].notified = false;
-      } //for cancelling order and being out of stock again
+      } //for cancelling order and being in stock again
     }
     //const organizedNotifications = organizeNotifications([...notifications,...nots]);
     setNotificationsCount(count)
