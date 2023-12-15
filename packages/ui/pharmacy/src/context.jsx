@@ -15,7 +15,8 @@ const AppProvider = ({ children }) => {
   const [showEddMediModal, setShowEddMediModal] = useState(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [showChatModal, setShowChatModal] = useState(false);
-
+  const [showChatModal1, setShowChatModal1] = useState(false);
+  const [showChatModal2, setShowChatModal2] = useState(false);
   const [selectedMedicine, setSelectedMedicine] = useState(null);
   const [editedMedicine, setEditedMedicine] = useState(null);
   const [medicineTable, setMedicineTable] = useState(null);
@@ -512,6 +513,38 @@ const AppProvider = ({ children }) => {
     ,[medicines])
 
   const [pharmacists, setPharmacists] = useState(getPharmacists());
+  const [doctors,setDoctors] = useState(
+    [
+      {
+        name: "Ahmed",
+        id: 1,
+        age: 20,
+        education: "harvard",
+        chatID:'100004055503418'
+      },
+      {
+        name: "Mohamed",
+        id: 2,
+        age: 20,
+        education: "harvard",
+        chatID:'1410580089244711'
+      },
+      {
+        name: "Ali",
+        id: 3,
+        age: 20,
+        education: "harvard",
+        chatID:'100064015083080'
+      },
+      {
+        name: "zeyad",
+        id: 4,
+        age: 20,
+        education: "harvard",
+        chatID:'100009481298399'
+      },
+    ]
+  )
   const [patients, setPatients] = useState(getPatients());
   const [requests] = useState(getRequests());
   // const [searchTerm,setSearchTerm] = useState("a")
@@ -686,7 +719,13 @@ const AppProvider = ({ children }) => {
         SelectedMed,
         setSelectedMed,
         showChatModal,
-        setShowChatModal
+        setShowChatModal,
+        doctors,
+        setDoctors,
+        showChatModal1,
+        setShowChatModal1,
+        showChatModal2,
+        setShowChatModal2
       }}
     >
       {children}

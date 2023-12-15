@@ -10,10 +10,12 @@ import "../web.css";
 import Logout from "../All/logoutModal"
 import ArchivedMeds from "./ArchivedMeds";
 import PatientsListModal from "./patientsListModal";
+import DoctorsListModal from "./doctorsListModal";
+import ChooseListModal from "./chooseListModal";
 
 const Pharmacisthome = () => {
   const { showModal, showAddMediModal, showEddMediModal, showFilterModal, showlogoutModal, archivedMeds,
-    showChatModal} = useGlobalContext();
+    showChatModal,showChatModal1,showChatModal2} = useGlobalContext();
 
   return (
     <main style={{ "margin-top": "500px" }}>
@@ -26,7 +28,9 @@ const Pharmacisthome = () => {
       {showAddMediModal && <AddMediModal />}
       {showEddMediModal && <EddMediModal />}
       {showFilterModal && <FilterModal />}
-      {showChatModal && <PatientsListModal/>}
+      {showChatModal && <ChooseListModal/>}
+      {showChatModal1 && <DoctorsListModal/>}
+      {showChatModal2 && <PatientsListModal/>}
     </main>
   );
 };

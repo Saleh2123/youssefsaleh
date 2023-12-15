@@ -2,9 +2,9 @@ import { useGlobalContext } from "../context"
 import "../web.css"
 import "../Patient/somecss.css"
 
-const PatientsListModal = () =>{
+const DoctorsListModal = () =>{
 
-    const {patients, setShowChatModal,setShowChatModal2} = useGlobalContext()
+    const {doctors, setShowChatModal,setShowChatModal1} = useGlobalContext()
 
     const handleMessengerClick = (ID) => {
         // Replace 'USER_ID_OR_USERNAME' with the actual user ID or username
@@ -17,19 +17,19 @@ const PatientsListModal = () =>{
 
       const BacktoPrevious = ()=>{
         setShowChatModal(true);
-        setShowChatModal2(false);
+        setShowChatModal1(false);
       }
 
     return (
     <aside className="modal-overlay">
         <div className="modal-container">
         <div className="modal-content">
-            {patients.map((patient)=>{
+            {doctors.map((doctor)=>{
                 return(
-                    <section className="pharmacists-container curvedrec" onClick={()=>handleMessengerClick(patient.chatID)}>
+                    <section className="pharmacists-container curvedrec" onClick={()=>handleMessengerClick(doctor.chatID)}>
                     <p>
-                        <h3>{`Patient ${patient.name}`}</h3>
-                        <h6>{`Struggling from ${patient.reason}`}</h6>
+                        <h3>{`Doctor ${doctor.name}`}</h3>
+                        <h6>{`Studied at ${doctor.education}`}</h6>
                     </p>
                     </section>
                 )
@@ -41,4 +41,4 @@ const PatientsListModal = () =>{
     )
 }
 
-export default PatientsListModal
+export default DoctorsListModal
