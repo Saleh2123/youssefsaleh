@@ -29,8 +29,8 @@ A Patient choosing a related prescription to be able to add medicineC to his Car
 ![Checkout order](screenshots/checkout.png)
 A Patient is at the checkout stage where he chooses the payment method, address...
 
-![Add new medicine option](screenshots/AddMedicine.png)
-A Pharmacist view of all medicines and has the option to add a new One.
+![Add new medicine option](screenshots/addMedicine.png)
+A Pharmacist's view of all medicines and has the option to add a new One.
 
 ![A Medicine out of stock notification](screenshots/Notification.png)
 A Pharmacist getting notified that medicineB is out of stock.
