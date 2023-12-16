@@ -170,11 +170,27 @@ Provide instructions on how to use your project.
 
 ## Contribute
 
-Explain how others can contribute to your project.
+Welcome to Topp-Pharmacy! We appreciate your interest in contributing to our project. Please follow the guidelines below to get started:
+
+1. Fork the repository
+2. Clone your forked repository to your local machine
+3. Install dependencies
+4. Create a new branch
+5. Make your changes
+6. Commit and push your changes
+7. Create a Pull request
+8. Wait for your Pull request to be reviewed and merged
+
+## Code of Conduct
+
+This project follows the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html). Please review it to understand the expectations for participating in this community.
 
 ## Credits
 
-Give credit to those who contributed to the project or inspired you.
+We would like to express our gratitude to the following YouTube videos and creators for their valuable insights and tutorials, which have contributed to the development of this project:
+
+1. [React Javascript Framework](https://youtu.be/u6gSSpfsoOQ?si=ATWOpjTZ8L2203LK) by [freeCodeCamp.org](https://www.youtube.com/@freecodecamp)
+2. [React.js Basics](https://youtu.be/fJSFus0pxZI?si=3EDi70zq7hPEKMYb) by [Yehia Tech](https://www.youtube.com/@yehiatech)
 
 ## License
 
