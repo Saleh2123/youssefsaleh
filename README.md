@@ -16,7 +16,7 @@ and fulfill each other's needs on stream. This includes patients buying medicine
 
 ## Code Style
 
-The code style is enforced using eslint and prettier. The code style is enforced using pre-commit hooks and pre-commit github action.
+The code style is enforced using **eslint** and **prettier**. The code style is enforced using **pre-commit** hooks and **pre-commit github action**.
 
 ## Screenshots
 
