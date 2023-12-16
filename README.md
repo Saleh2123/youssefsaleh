@@ -92,18 +92,14 @@ const addtocart = (medicine)=>{
       setCart([...cart, medicine]);
     }
   }
-#### -->
-Function is called with some medicine as a parameter, i want to add it to my cart, but i have to check
-that the amount is valid, so if the count of this medicine in my cart less than the quantity available in pharmacy i add it, otherwise, it can not be added.
+#### --> Function is called with some medicine as a parameter, i want to add it to my cart, but i have to check that the amount is valid, so if the count of this medicine in my cart less than the quantity available in pharmacy i add it, otherwise, it can not be added.
 
 #### Method #2
 const removeAllfromcart = (medicine)=>{
     const newcart = cart.filter((med)=> med.name !== medicine.name);
     setCart(newcart);
 }
-#### -->
-I want to remove some Medicine from my cart, remove all the Amount of it, so simply i filter my cart and
-only remain other medicines in the cart.
+#### --> I want to remove some Medicine from my cart, remove all the Amount of it, so simply i filter my cart and only remain other medicines in the cart.
 
 ### For Pharmacist
 
@@ -112,18 +108,14 @@ const addToArchivedMeds = (medicine) =>{ //viewing in patient remains
       medicine.archived = true;
       setArchivedMeds([...archivedMeds,medicine])
 }
-#### -->
-A Pharmacist wants to add some medicine to the archived medicines, so that medicine's archived attribute is set to true and the medicine is added to the list of archived medicines.
-(when the archived attribute is set to true, in the file where the medicines the patient can see is listed, i check if any medicine's archived attribute is true, then it is not shown to the patient)
+#### --> A Pharmacist wants to add some medicine to the archived medicines, so that medicine's archived attribute is set to true and the medicine is added to the list of archived medicines.(when the archived attribute is set to true, in the file where the medicines the patient can see is listed, i check if any medicine's archived attribute is true, then it is not shown to the patient)
 
 #### Method #2
 const removeFromArchivedMeds = (medicine) =>{
       medicine.archived = false;
       setArchivedMeds(archivedMeds.filter((med)=>med.name !== medicine.name))
 }
-#### -->
-A Pharmacist wants to remove some medicine from the archived medicines so the patient can see it again,
-that medicine's archived attribute is set to false and the archived medicines array is filtered such that only other archived medicines remain in the array.
+#### --> A Pharmacist wants to remove some medicine from the archived medicines so the patient can see it again, that medicine's archived attribute is set to false and the archived medicines array is filtered such that only other archived medicines remain in the array.
 
 ### For Admin
 
@@ -132,16 +124,14 @@ const removePharmacist = (id) => {
     let arr = pharmacists.filter((pharmacist) => pharmacist.id !== id);
     setPharmacists(arr);
 };
-#### -->
-An Admin wishes to remove some pharmacist from the system, so you pass that pharmacist id to the function and the pharmacists array is filtered, such that only other pharmacists remain in the system.
+#### --> An Admin wishes to remove some pharmacist from the system, so you pass that pharmacist id to the function and the pharmacists array is filtered, such that only other pharmacists remain in the system.
 
 #### Method #2
 const removePatient = (id) => {
     let arr = patients.filter((patient) => patient.id !== id);
     setPatients(arr);
 };
-#### -->
-An Admin wishes to remove some patient from the system, so you pass that patient id to the function and the patients array is filtered, such that only other patients remain in the system.
+#### --> An Admin wishes to remove some patient from the system, so you pass that patient id to the function and the patients array is filtered, such that only other patients remain in the system.
 
 ## Installation
 
