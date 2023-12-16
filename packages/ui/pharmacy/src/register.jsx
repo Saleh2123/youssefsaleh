@@ -53,12 +53,12 @@ const Register = () => {
 
   return (
     <div className="registration-form-container">
-      <h2>Register as a Patient</h2>
+      <h2 style={{"color":"darkgray","display": "flex", "justify-content": "center", "align-items": "center"}}>Registration Form</h2>
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-md-4">
             <div className="form-group">
-              <label>Username:</label>
+              <label style={{"color":"wheat"}}>Username:</label>
               <input
                 type="text"
                 name="username"
@@ -70,7 +70,7 @@ const Register = () => {
           </div>
           <div className="col-md-4">
             <div className="form-group">
-              <label>Name:</label>
+              <label style={{"color":"wheat"}}>Name:</label>
               <input
                 type="text"
                 name="name"
@@ -82,7 +82,7 @@ const Register = () => {
           </div>
           <div className="col-md-4">
             <div className="form-group">
-              <label>Email:</label>
+              <label style={{"color":"wheat"}}>Email:</label>
               <input
                 type="email"
                 name="email"
@@ -97,7 +97,7 @@ const Register = () => {
         <div className="row">
           <div className="col-md-4">
             <div className="form-group">
-              <label>Password:</label>
+              <label style={{"color":"wheat"}}>Password:</label>
               <input
                 type="password"
                 name="password"
@@ -109,7 +109,7 @@ const Register = () => {
           </div>
           <div className="col-md-4">
             <div className="form-group">
-              <label>Date of Birth:</label>
+              <label style={{"color":"wheat"}}>Date of Birth:</label>
               <div className="dob-fields">
                 <select
                   name="birthDay"
@@ -171,7 +171,7 @@ const Register = () => {
           </div>
           <div className="col-md-4">
             <div className="form-group">
-              <label>Gender:</label>
+              <label style={{"color":"wheat"}}>Gender:</label>
               <select name="gender" value={formData.gender} onChange={handleInputChange} required>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -183,7 +183,7 @@ const Register = () => {
         <div className="row">
           <div className="col-md-4">
             <div className="form-group">
-              <label>Mobile Number:</label>
+              <label style={{"color":"wheat"}}>Mobile Number:</label>
               <input
                 type="text"
                 name="mobileNumber"
@@ -195,7 +195,7 @@ const Register = () => {
           </div>
           <div className="col-md-4">
             <div className="form-group">
-              <label>Emergency Name:</label>
+              <label style={{"color":"wheat"}}>Emergency Name:</label>
               <input
                 type="text"
                 name="fullName"
@@ -207,7 +207,7 @@ const Register = () => {
           </div>
           <div className="col-md-4">
             <div className="form-group">
-              <label>Relation to Patient:</label>
+              <label style={{"color":"wheat"}}>Relation to Patient:</label>
               <input
                 type="text"
                 name="relation"
@@ -222,7 +222,7 @@ const Register = () => {
         <div className="row">
           <div className="col-md-4">
             <div className="form-group">
-              <label>Emergency Mobile Number:</label>
+              <label style={{"color":"wheat"}}>Emergency Mobile Number:</label>
               <input
                 type="text"
                 name="emergencyMobile"

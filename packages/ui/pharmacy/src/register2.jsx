@@ -51,10 +51,10 @@ const Registerr = () => {
 
   return (
     <div className="registration-form-container">
-      <h2>Register as a Pharmacist</h2>
+      <h2 style={{"color":"darkgray","display": "flex", "justify-content": "center", "align-items": "center"}}>Registration Form</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Username:</label>
+          <label style={{"color":"wheat"}}>Username:</label>
           <input
             type="text"
             name="username"
@@ -64,7 +64,7 @@ const Registerr = () => {
           />
         </div>
         <div className="form-group">
-          <label>Name:</label>
+          <label style={{"color":"wheat"}}>Name:</label>
           <input
             type="text"
             name="name"
@@ -74,7 +74,7 @@ const Registerr = () => {
           />
         </div>
         <div className="form-group">
-          <label>Email:</label>
+          <label style={{"color":"wheat"}}>Email:</label>
           <input
             type="email"
             name="email"
@@ -84,7 +84,7 @@ const Registerr = () => {
           />
         </div>
         <div className="form-group">
-          <label>Password:</label>
+          <label style={{"color":"wheat"}}>Password:</label>
           <input
             type="password"
             name="password"
@@ -94,7 +94,7 @@ const Registerr = () => {
           />
         </div>
         <div className="form-group">
-          <label>Date of Birth:</label>
+          <label style={{"color":"wheat"}}>Date of Birth:</label>
           <div className="dob-fields">
             <select name="birthDay" value={formData.birthDay} onChange={handleInputChange} required>
               <option value="">Day</option>
@@ -146,7 +146,7 @@ const Registerr = () => {
           </div>
         </div>
         <div className="form-group">
-          <label>Hourly Rate:</label>
+          <label style={{"color":"wheat"}}>Hourly Rate:</label>
           <input
             type="text"
             name="hourlyRate"
@@ -156,7 +156,7 @@ const Registerr = () => {
           />
         </div>
         <div className="form-group">
-          <label>Affiliation (Hospital):</label>
+          <label style={{"color":"wheat"}}>Affiliation (Hospital):</label>
           <input
             type="text"
             name="affiliation"
@@ -166,7 +166,7 @@ const Registerr = () => {
           />
         </div>
         <div className="form-group">
-          <label>Educational Background:</label>
+          <label style={{"color":"wheat"}}>Educational Background:</label>
           <input
             type="text"
             name="educationalBackground"
@@ -177,15 +177,15 @@ const Registerr = () => {
         </div>
         {/* Three file input buttons for uploading documents */}
         <div className="form-group">
-           <label>Upload ID:</label>
+           <label style={{"color":"wheat"}}>Upload ID:</label>
            <input type="file" accept=".pdf" name="idDocument" onChange={handlePDFChange} />
         </div>
         <div className="form-group">
-          <label>Upload Pharmacy Degree:</label>
+          <label style={{"color":"wheat"}}>Upload Pharmacy Degree:</label>
           <input type="file" accept=".pdf" name="degreeDocument" onChange={handlePDFChange} />
         </div>
         <div className="form-group">
-         <label>Upload Working Licenses:</label>
+         <label style={{"color":"wheat"}}>Upload Working Licenses:</label>
          <input type="file" accept=".pdf" name="licenseDocument" onChange={handlePDFChange} />
         </div>
         {/* Register button */}

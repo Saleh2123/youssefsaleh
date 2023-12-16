@@ -29,11 +29,11 @@ const LoginPatient = () => {
 
   return (
     <div>
-      <h1 style={{ color: "white" }}>Log into your account</h1>
+      <h1 style={{ color: "darkgray" }}>Log into your account</h1>
       <form
         style={{
-          border: "2px dotted black",
-          padding: "20px",
+          border: "3px solid darkgray",
+          padding: "50px",
           width: "300px",
           margin: "20px auto",
         }}

@@ -2,6 +2,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Welcome from './Welcome';
 import Openpage from './openpage';
 import Openpage2 from './openpage2';
 import Register from './register';
@@ -41,8 +42,9 @@ function App() {
     <main className='container'>
     <BrowserRouter>
       <Routes>
+      <Route path="/" element={<Welcome />} />
 
-        <Route path="/" element={<Openpage />} />
+        <Route path="/one" element={<Openpage />} />
 
         <Route path="/two" element={<Openpage2 />} />
 

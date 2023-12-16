@@ -43,18 +43,18 @@ const PassPatient = () => {
 
   return (
     <div>
-      <h1 style={{ color: "white" }}>Change Password</h1>
+      <h1 style={{ color: "darkgray" }}>Change Password</h1>
       <form
         style={{
-          border: "2px dotted black",
-          padding: "20px",
+          border: "3px solid darkgray",
+          padding: "50px",
           width: "300px",
           margin: "20px auto",
         }}
         onSubmit={handleSubmit}
       >
         <div>
-          <label htmlFor="password" style={{ color: "white" }}>
+          <label htmlFor="password" style={{ color: "wheat" }}>
             New password:
           </label>
           <input
@@ -75,7 +75,7 @@ const PassPatient = () => {
           )}
         </div>
         <div>
-          <label htmlFor="password" style={{ color: "white" }}>
+          <label htmlFor="password" style={{ color: "wheat" }}>
             Confirm new password:
           </label>
           <input
