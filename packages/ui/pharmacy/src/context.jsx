@@ -215,7 +215,7 @@ const AppProvider = ({ children }) => {
         }
         ]);
 
-    const addToArchivedMeds = (medicine) =>{ //viewing in patient remains
+    const addToArchivedMeds = (medicine) =>{
       medicine.archived = true;
       setArchivedMeds([...archivedMeds,medicine])
     }
