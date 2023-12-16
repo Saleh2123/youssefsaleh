@@ -20,11 +20,32 @@ Describe the coding style you're following (e.g., linting rules).
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-*Caption for screenshot 1.*
+![Cart](screenshots/cart.png)
+A Patient adding medicines to his Cart.
 
-![Screenshot 2](screenshots/screenshot2.png)
-*Caption for screenshot 2.*
+![Choosing Prescription](screenshots/prescriptions.png)
+A Patient choosing a related prescription to be able to add medicineC to his Cart.
+
+![Checkout order](screenshots/checkout.png)
+A Patient is at the checkout stage where he chooses the payment method, address...
+
+![Add new medicine option](screenshots/AddMedicine.png)
+A Pharmacist view of all medicines and has the option to add a new One.
+
+![A Medicine out of stock notification](screenshots/Notification.png)
+A Pharmacist getting notified that medicineB is out of stock.
+
+![Two Medicines Archived](screenshots/Archive.png)
+A Pharmacist decides to archive MedicineB & MedicineD.
+
+![Adding new admin](screenshots/addAdmin.png)
+An Admin adding a new Admin to the system.
+
+![Requests of Pharmacists](screenshots/Requests.png)
+An Admin seeing the requests of the guests applying as Pharmacists.
+
+![Accept or reject the request](screenshots/AcceptReject.png)
+An Admin choosing whether to accept or reject the request.
 
 ## Tech/Framework used
 
@@ -54,7 +75,7 @@ now that guest is considered a patient on the system.
 
 ## Code Examples
 
-Provide some code examples to showcase key functionalities.
+
 
 ## Installation
 
