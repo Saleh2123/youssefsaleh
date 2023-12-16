@@ -3,6 +3,7 @@ import Search from "../All/Search"
 import MedicinesPa from "./MedicinesPa"
 import Modal from "../All/Modal"
 import "../web.css"
+import "./viewcart.css"
 import FilterModal from "../All/FilterModal"
 import NavPatient from "./NavPatient"
 import Logout from "../All/logoutModal"
@@ -13,8 +14,10 @@ import PrescriptionsModal from "./prescriptionsModal"
 const Patienthome = () => {
     const {showModal,showFilterModal,showlogoutModal,showChatModal, cart, showPrescriptionsModal} = useGlobalContext()
     return (
-        <main style={{"margin-top": "170px"}}>
+        <div className="page-container">
+        <header>
         <NavPatient/>
+        </header>
         <Search/>
         <MedicinesPa />
         {cart.length > 0 && < Cartbox/>}
@@ -23,7 +26,7 @@ const Patienthome = () => {
         {showFilterModal && <FilterModal/>}
         {showChatModal && <PharmacistsListModal/>}
         {showPrescriptionsModal && <PrescriptionsModal/>}
-        </main>
+        </div>
     )
 }
 export default Patienthome

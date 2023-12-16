@@ -5,9 +5,12 @@
     box-shadow: none !important;
 }
 
+.bc{
+    background-color:brown !important;
+}
+
 .messenger{
-    background-color : darkred !important;
-    margin-Left : 1150px;
+    background-color : brown !important;
     border: 0px;
-    padding: 10px;
+    margin-Left : 10px;
 }

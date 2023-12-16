@@ -7,6 +7,7 @@ import { useGlobalContext } from "../context";
 import EddMediModal from "./eddMediModal";
 import NavPharmacist from "./NavPharmacist";
 import "../web.css";
+import "../Patient/viewcart.css"
 import Logout from "../All/logoutModal"
 import ArchivedMeds from "./ArchivedMeds";
 import PatientsListModal from "./patientsListModal";
@@ -18,8 +19,10 @@ const Pharmacisthome = () => {
     showChatModal,showChatModal1,showChatModal2} = useGlobalContext();
 
   return (
-    <main style={{ "margin-top": "500px" }}>
+    <div className="page-container">
+      <header>
       <NavPharmacist />
+      </header>
       <Search />
       {archivedMeds.length > 0 && <ArchivedMeds />}
       <MedicinesP />
@@ -31,7 +34,7 @@ const Pharmacisthome = () => {
       {showChatModal && <ChooseListModal/>}
       {showChatModal1 && <DoctorsListModal/>}
       {showChatModal2 && <PatientsListModal/>}
-    </main>
+    </div>
   );
 };
 export default Pharmacisthome;

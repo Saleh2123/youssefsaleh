@@ -12,11 +12,12 @@ const NavPatient = () =>{
     }
 
     return (
-        <div>
-            <ChatButton />
-        <nav className = "navbar navbar-expand-lg navbar-light bg-lights bcpa">
+        <nav className = "navbar navbar-expand-lg navbar-light bg-lights bc">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-left": "35px","display":"flex"}}>
+                <li className="nav-item">
+                    <ChatButton/>
+                </li>
+                <li className="nav-item" style={{"color":"white", "cursor":"pointer","margin-left": "30px","display":"flex"}}>
                     <h6 style={{"color":"white","margin-right":"5px"}}>MY WALLET</h6>
                     <h6 style={{"background-color":"gray","color":"green"}}>{wallet}{" EGP"}</h6>
                 </li>
@@ -33,7 +34,6 @@ const NavPatient = () =>{
                 </li>
             </ul>
         </nav>
-        </div>
     )
 }
 export default NavPatient
