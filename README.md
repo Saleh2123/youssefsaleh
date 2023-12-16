@@ -69,15 +69,15 @@ A **Pharmacist** has the right to view all the medicines on the system with some
 A **Patient** is able to view the medicines available in the pharmacy (unarchived by the pharmacist) and add these medicines to the cart, choose the amount needed per medicine (as long as the quantity is valid), and add prescription medicines to his cart as well, but a related medicine prescription has to be attached to complete the process and the medicine gets added to the cart, and at the end the patient is able to place the order, and if he changes his mind due to any reason, he has the opportunity to cancel the order. In addition, a patient can choose to pay via credit card, cod or his account wallet, and also able to edit or add a new delivery address on the platform.
 
 ### For a Guest
-A **guest** can request to join the platform as a pharmacist through registration and uploading the required doucuments. In case he got accepted (by the administrator), now he is officially a pharmacist on the system.
+A **Guest** can request to join the platform as a pharmacist through registration and uploading the required doucuments. In case he got accepted (by the administrator), now he is officially a pharmacist on the system.
 Moreover, a guest can join the platform as a patient through registration only, no documents to upload, just filling the registration form (name, enmaol, date of birth,...etc) and in case an admin accepts,
 now that guest is considered a patient on the system.
 
 ## Code Examples
 
-For Patient :-
+### For Patient
 
-- Method #1
+#### Method #1
 const addtocart = (medicine)=>{
     const found = cart.find((med)=>med.name === medicine.name)
     if(found){
@@ -95,7 +95,7 @@ const addtocart = (medicine)=>{
 -- Function is called with some medicine as a parameter, i want to add it to my cart, but i have to check
 that the amount is valid, so if the count of this medicine in my cart less than the quantity available in pharmacy i add it, otherwise, it can not be added.
 
-- Method #2
+#### Method #2
 const removeAllfromcart = (medicine)=>{
     const newcart = cart.filter((med)=> med.name !== medicine.name);
     setCart(newcart);
