@@ -46,8 +46,8 @@ const CancelModal = () =>{
         <div className="modalcontent">
             <h4>Cancelling your order?</h4>
             <div className="button-container">
-            <button className="closebtn" onClick={cancel}>Yes</button>
-            <button className="closebtn2" onClick={()=>setShowCancelModal(false)}>No</button>
+            <button className="closebtn2" onClick={cancel}>Yes</button>
+            <button className="closebtn" onClick={()=>setShowCancelModal(false)}>No</button>
             </div>
         </div>
         </div>
