@@ -9,6 +9,7 @@
   }
 
   .curvedrec {
+    cursor: pointer;
     border-top-left-radius: 35px; /* Curved edge on the top left */
     border-bottom-left-radius: 35px; /* Curved edge on the bottom left */
     border-top-right-radius: 35px; /* Curved edge on the top right */

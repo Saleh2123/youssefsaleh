@@ -1,6 +1,7 @@
 import { useGlobalContext } from "../context"
 import "../web.css"
 import "../Patient/somecss.css"
+import "./choosechat.css"
 
 const ChooseListModal = () =>{
 
@@ -17,9 +18,9 @@ const ChooseListModal = () =>{
     }
 
     return (
-    <aside className="modal-overlay">
-        <div className="modal-container">
-        <div className="modal-content">
+    <aside className="modalloverlay">
+        <div className="modallcontainer">
+        <div className="modallcontent">
         <section className="pharmacists-container curvedrec" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={showChat1}>
             <p style={{"color":"white"}}>
                 Chat With Doctors

@@ -73,8 +73,8 @@ const MedicinesP = () => {
           className="img"
           onClick={() => setShowAddMediModal(true)}
         />
-        <footer>
-          <h5 style={{ color: "white" }}>Add medicine</h5>
+        <footer style={{"display": "flex", "justify-content": "center", "align-items": "center"}}>
+          <h5 style={{"color":"white"}}>Add medicine</h5>
         </footer>
       </article>
     </section>
