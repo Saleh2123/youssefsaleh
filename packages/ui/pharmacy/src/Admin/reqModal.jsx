@@ -1,6 +1,12 @@
 import "../web.css";
 
-const ReqModal = ({ selectedRequest, close }) => {
+const ReqModal = ({ requests,setRequests,selectedRequest, close }) => {
+
+  const removeRequest = (request)=>{
+    setRequests(requests.filter((req)=>req.username !== selectedRequest.username));
+    close();
+  }
+
   return (
     <aside className="modal-overlay">
       <div className="modal-container">
@@ -13,8 +19,8 @@ const ReqModal = ({ selectedRequest, close }) => {
           <p>Affiliation: {selectedRequest.affiliation}</p>
           <p>Educational Background: {selectedRequest.education}</p>
           <div className="button-container">
-            <button className="btn-accept" onClick={close}>Accept</button>
-            <button className="btn-reject" onClick={close}>Reject</button>
+            <button className="btn-accept" onClick={()=>removeRequest(selectedRequest)}>Accept</button>
+            <button className="btn-reject" onClick={()=>removeRequest(selectedRequest)}>Reject</button>
           </div>
           <button className="btn btn-hipster close-btn" onClick={close}>
             Close

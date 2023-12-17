@@ -41,7 +41,7 @@ const Requestshome = () => {
     <main style={{ "margin-top": "150px" }}>
       <Requests requests={requests} select={select} />
       {showModal && (
-        <ReqModal selectedRequest={selectedRequest} close={setShowModal.bind(null, false)} />
+        <ReqModal requests={requests} setRequests={setRequests} selectedRequest={selectedRequest} close={setShowModal.bind(null, false)} />
       )}
     </main>
   );
