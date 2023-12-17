@@ -56,8 +56,6 @@ const ReportTableAdm = () => {
             <thead>
               <tr>
                 <th scope="col">Medicine Name</th>
-                {/* <th scope="col">Type</th>
-                <th scope="col">Description</th> */}
                 <th scope="col">Price</th>
                 <th scope="col">Remaining Quantity</th>
                 <th scope="col">{selectedMonth? `${selectedMonth} Sales` : "Last Month Sales"}</th>
@@ -71,8 +69,6 @@ const ReportTableAdm = () => {
                 return (
                   <tr key={medicine.name} style={{ cursor: 'pointer' }} className="table-row">
                     <th scope="row">{medicine.name}</th>
-                    {/* <td>{medicine.use}</td>
-                    <td style={{ textAlign: 'center' }}>{medicine.description}</td> */}
                     <td style={{ textAlign: 'center' }}>{medicine.price}</td>
                     <td style={{ textAlign: 'center' }}>{medicine.quantity}</td>
                     <td style={{ textAlign: 'center' }}>{ selectedMonth ? ((selectedMonth === "November")? medicine.sales: 512): medicine.sales}</td>
