@@ -11,7 +11,7 @@ const Requests = ({ requests, select }) => {
   if (requests.length < 1) {
     return (
       <section className="section">
-        <h4>No requests.</h4>
+        <h4 style={{"color":"wheat"}}>No requests.</h4>
       </section>
     );
   }

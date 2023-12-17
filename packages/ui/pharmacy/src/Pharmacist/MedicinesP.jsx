@@ -13,13 +13,13 @@ const MedicinesP = () => {
   //     )
   // }
 
-  // if(medicines.length < 1){
-  //     return (
-  //         <section className="section">
-  //             <h4>No medicines matched your search term. Please try again.</h4>
-  //         </section>
-  //     )
-  // }
+  if(medicines.length < 1){
+      return (
+          <section className="section">
+              <h4 style={{"color":"wheat"}}>No medicines Available In Pharmacy yet.</h4>
+          </section>
+      )
+  }
   return (
     <section className="section-center">
       {medicines.map((medicine) => {

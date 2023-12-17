@@ -14,7 +14,7 @@ const Medicines = () => {
   if (medicines.length < 1) {
     return (
       <section className="section">
-        <h4>No medicines matched your search term. Please try again.</h4>
+        <h4 style={{"color":"wheat"}}>No medicines Available In Pharmacy yet.</h4>
       </section>
     );
   }

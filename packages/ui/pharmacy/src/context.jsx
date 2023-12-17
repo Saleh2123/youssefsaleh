@@ -12,6 +12,7 @@ const AppProvider = ({ children }) => {
   const [showPrescriptionsModal, setShowPrescriptionsModal] = useState(false);
   const [chosenMedicine, setChosenMedicine] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [showCancelModal, setShowCancelModal] = useState(false);
   const [showlogoutModal, setShowlogoutModal] = useState(false);
   const [showAddMediModal, setShowAddMediModal] = useState(false);
   const [showEddMediModal, setShowEddMediModal] = useState(false);
@@ -765,7 +766,9 @@ const AppProvider = ({ children }) => {
         setShowPrescriptionsModal,
         prescriptions,
         chosenMedicine,
-        setChosenMedicine
+        setChosenMedicine,
+        showCancelModal,
+        setShowCancelModal
       }}
     >
       {children}

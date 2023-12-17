@@ -3,6 +3,7 @@ import { _TARGET } from "../_target";
 import { useGlobalContext } from "../context";
 import React, { useRef } from 'react';
 import "../web.css";
+import "./modals.css";
 
 const EddMediModal = () => {
   const fileInputRef = useRef(null);
@@ -62,9 +63,9 @@ const EddMediModal = () => {
     });
   };
   return (
-    <aside className="modal-overlay">
-      <div className="modal-container">
-        <div className="modal-content">
+    <aside className="modoverlay">
+      <div className="modcontainer">
+        <div className="modcontent">
           <form onSubmit={handleSubmit}>
             <div>
               <label>Name:</label>
@@ -114,8 +115,8 @@ const EddMediModal = () => {
             {isSubmitted && editedMedicine.description === "" && (
               <p className="text-danger">Please fill out this field</p>
             )}
-            <div>
-               <label>Upload Photo:</label>
+            <div style={{"margin-top":"120px","display":"flex","justify-content": "center" , "align-items":"center"}}>
+               <label>Upload Photo</label>
                   <input
                   type="file"
                   accept="image/*"
@@ -125,9 +126,11 @@ const EddMediModal = () => {
                 />
               <button className="btn-hipster close-btn btn-accept" type="button" onClick={() => fileInputRef.current.click()}>Choose Image</button>
             </div>
+            <div style={{"margin-top":"10px","display":"flex","justify-content": "center" , "align-items":"center"}}>
             <button type="submit" className="btn btn-hipster close-btn">
             Edit Medicine
             </button>
+            </div>
           </form>
         </div>
       </div>

@@ -41,11 +41,11 @@ const AddAddress = () => {
 
   return (
     <main>
-        <h2 style={{"color":"white"}}>Add A new Address</h2>
+        <h2 style={{"color":"darkgray", "display":"flex","justify-content": "center" , "align-items":"center"}} >Add A new Address</h2>
     <form className="registration-form-container" onSubmit={handleSubmit}>
 
       <div className="form-group">
-        <label htmlFor="street">Street:</label>
+        <label htmlFor="street" style={{"color":"wheat"}}>Street:</label>
         <input type="text" id="street" name="street" value={address.street} onChange={handleChange} />
         {isSubmitted && address.street==='' &&
         (
@@ -54,16 +54,16 @@ const AddAddress = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="city">City:</label>
+        <label htmlFor="city" style={{"color":"wheat"}}>City:</label>
         <select id="city" name="city" value={address.city} onChange={handleChange}>
-          <option value="Cairo">Cairo</option>
+          <option value="Cairo" >Cairo</option>
           {/* Add other city options as needed */}
         </select>
         {}
       </div>
 
       <div className="form-group">
-        <label htmlFor="district">District:</label>
+        <label htmlFor="district" style={{"color":"wheat"}}>District:</label>
         <input type="text" id="district" name="district" value={address.district} onChange={handleChange} />
         {isSubmitted && address.district==='' &&
         (
@@ -72,7 +72,7 @@ const AddAddress = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="neighborhood">Neighborhood:</label>
+        <label htmlFor="neighborhood" style={{"color":"wheat"}}>Neighborhood:</label>
         <input type="text" id="neighborhood" name="neighborhood" value={address.neighborhood} onChange={handleChange} />
         {isSubmitted && address.neighborhood==='' &&
         (
@@ -81,7 +81,7 @@ const AddAddress = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="postalCode">Postal Code:</label>
+        <label htmlFor="postalCode" style={{"color":"wheat"}}>Postal Code:</label>
         <input type="text" id="postalCode" name="postalCode" value={address.postalCode} onChange={handleChange} />
         {isSubmitted && address.postalCode==='' &&
         (
@@ -90,7 +90,7 @@ const AddAddress = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="country">Country:</label>
+        <label htmlFor="country" style={{"color":"wheat"}}>Country:</label>
         <select id="country" name="country" value={address.country} onChange={handleChange}>
           <option value="Egypt">Egypt</option>
           {/* Add other country options as needed */}
@@ -99,7 +99,7 @@ const AddAddress = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="telephoneNum">Telephone Number:</label>
+        <label htmlFor="telephoneNum" style={{"color":"wheat"}}>Telephone Number:</label>
         <input type="tel" id="telephoneNum" name="telephoneNum" value={address.telephoneNum} onChange={handleChange} />
         {isSubmitted && address.telephoneNum==='' &&
         (
@@ -108,7 +108,7 @@ const AddAddress = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="buildingNo">Building Number:</label>
+        <label htmlFor="buildingNo" style={{"color":"wheat"}}>Building Number:</label>
         <input type="text" id="buildingNo" name="buildingNo" value={address.buildingNo} onChange={handleChange} />
         {isSubmitted && address.buildingNo==='' &&
         (

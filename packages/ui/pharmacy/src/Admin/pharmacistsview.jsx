@@ -37,7 +37,7 @@ const Pharmacistsview = () => {
   if (pharmacists.length < 1) {
     return (
       <section className="section">
-        <h4>No pharmacists.</h4>
+        <h4 style={{"color":"wheat"}}>No pharmacists.</h4>
       </section>
     );
   }

@@ -37,7 +37,7 @@ const Patientsview = () => {
   if (patients.length < 1) {
     return (
       <section className="section">
-        <h4>No patients.</h4>
+        <h4 style={{"color":"wheat"}}>No patients.</h4>
       </section>
     );
   }

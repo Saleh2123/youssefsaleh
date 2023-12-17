@@ -2,6 +2,7 @@ import { useState } from "react";
 import { _TARGET } from "../_target";
 import { useGlobalContext } from "../context";
 import "../web.css";
+import "./modals.css";
 
 const AddMediModal = () => {
   const { closeAddMediModal, medicines, setMedicines} = useGlobalContext();
@@ -83,9 +84,10 @@ const AddMediModal = () => {
     });
   };
   return (
-    <aside className="modal-overlay">
-      <div className="modal-container">
-        <div className="modal-content">
+    <aside className="modoverlay">
+      <div className="modcontainer">
+        <h5 style={{"display":"flex","justify-content": "center" , "align-items":"center"}}>Medicine Details</h5>
+        <div className="modcontent">
           <form onSubmit={handleSubmit}>
             <div>
               <label>Name:</label>
