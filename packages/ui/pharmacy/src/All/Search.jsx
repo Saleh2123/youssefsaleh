@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaFilter } from "react-icons/fa";
 import { _TARGET } from "../_target";
 import { useGlobalContext } from "../context";
+import * as _trpc from "../_util/trpc";
 import "../web.css";
 
 const Search = () => {
@@ -22,11 +23,7 @@ const Search = () => {
       return;
     }
 
-    const res = await fetch(`${_TARGET}/api/medicine/find?name=${text}`, {
-      headers: { "content-type": "application/json" },
-    });
-    const results = await res.json();
-    console.log(results);
+    const results = await _trpc.vanilla.medicine.find.query(text);
     setResults(results);
   };
 

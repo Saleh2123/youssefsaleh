@@ -1,0 +1,11 @@
+{
+  "result": {
+    "data": {
+      "id": "6582aea79542c3d7cb5f6d34",
+      "username": "_profile",
+      "email": "_profile@example.com",
+      "mode": 0,
+      "password": "$argon2id$v=19$m=19456,t=2,p=1$akayZ7WX/Ev9EJF3W3pE9A$17C1dInuZ+bOjaCdRhewKQF0ObWZ+D3oPCp+z69i2po"
+    }
+  }
+}

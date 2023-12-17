@@ -3,11 +3,14 @@ import './cart.css';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from '../context';
+import * as _trpc from "../_util/trpc";
 
 const PlaceOrderbox = () => {
+  const _mutation = _trpc.client.patient.setWallet.useMutation();
+
     let {medicines,setMedicines,CountMedicineInCart,uniqueMedicines, selected
     , setByCard, cardNumber,setByWallet,wallet,setWallet, total,setNoMethod, cart, chosenAddress,
-    nextOrderNumber,setNextOrderNumber, orders,setOrders} = useGlobalContext();
+    nextOrderNumber,setNextOrderNumber, orders,setOrders, _user} = useGlobalContext();
 
     const navigate = useNavigate()
 
@@ -40,8 +43,9 @@ const PlaceOrderbox = () => {
       }
       else if(selected === "w" || selected === "cc" || selected === "cod"){
         if(selected === "w" && wallet >= total){
-          setWallet(wallet - total);
-          console.log(wallet);
+          const _wallet = wallet - total;
+          _mutation.mutate({ username: _user.username, wallet: _wallet });
+          setWallet(_wallet);
         }
         removeQuantityFromStore();
         setOrders([...orders,{

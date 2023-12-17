@@ -1,0 +1,19 @@
+{
+  "result": {
+    "data": {
+      "id": "6582ad6f9542c3d7cb5f6d33",
+      "username": "_pharmacist",
+      "email": "_pharmacist@example.com",
+      "name": "_name",
+      "password": "$argon2id$v=19$m=19456,t=2,p=1$hgoFEZzWfad2jhysPCJFcw$SGieY5mySklc+yMc+CWX5l+W5cvMcTUPHgmEP+A0xa4",
+      "dateofbirth": "1 1 1970",
+      "hourlyRate": 100,
+      "affiliation": "_affiliation",
+      "educationalBackground": "_educationalBackground",
+      "mode": 4,
+      "idDocument": null,
+      "degreeDocument": null,
+      "licenseDocument": null
+    }
+  }
+}

@@ -1,11 +1,14 @@
 import { useGlobalContext } from "../context"
 import "../All/logout.css"
 import { useNavigate } from "react-router-dom";
+import * as _trpc from "../_util/trpc";
 
 const CancelModal = () =>{
+  const _mutation = _trpc.client.patient.setWallet.useMutation();
+
     const navigate = useNavigate();
     let {setShowCancelModal,uniqueMedicines,setCart,CountMedicineInCart,medicines,setMedicines,
-        selected,wallet,total,setWallet,setOrders,orders, nextOrderNumber,setNextOrderNumber} = useGlobalContext();
+        selected,wallet,total,setWallet,setOrders,orders, nextOrderNumber,setNextOrderNumber, _user} = useGlobalContext();
 
         const changePage = (exten) =>{
           navigate(exten)
@@ -27,9 +30,10 @@ const CancelModal = () =>{
           }
 
         const cancel = ()=>{
-          if(selected === "w"){
-            setWallet(wallet + total)
-            console.log(wallet);
+          if(selected !== "cod"){
+            const _wallet = wallet + total;
+            _mutation.mutate({ username: _user.username, wallet: _wallet });
+            setWallet(_wallet)
           }
           returnQuantityToStore();
           setOrders(orders.filter((order)=>order.number !== nextOrderNumber-1));

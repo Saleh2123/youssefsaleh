@@ -1,0 +1,11 @@
+{
+  "result": {
+    "data": {
+      "id": "6582aac02aba946ffbbdf024",
+      "username": "evalpatient",
+      "email": "evalpatient@example.com",
+      "mode": 2,
+      "password": "$argon2id$v=19$m=19456,t=2,p=1$i5p6cfYdSDHlfXkZGGRh2g$CEmC67oRPHQd5N/wGG2/+xN36d8i3UHxeW9h594wcRk"
+    }
+  }
+}

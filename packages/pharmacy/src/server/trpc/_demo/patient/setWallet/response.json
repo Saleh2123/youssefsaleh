@@ -1,0 +1,28 @@
+{
+  "result": {
+    "data": {
+      "id": "6582aa669542c3d7cb5f6d2e",
+      "username": "_username",
+      "email": "_email@example.com",
+      "mode": 2,
+      "password": "$argon2id$v=19$m=19456,t=2,p=1$xkj9E2ULCp6ql7MRXN0Mow$wrF3sJSEHsyGmyoFV40KyJjKc1aokslsXTpjlPHCr6E",
+      "patient": {
+        "id": "6582aa669542c3d7cb5f6d2f",
+        "profileId": "6582aa669542c3d7cb5f6d2e",
+        "name": "_name",
+        "birthYear": "1970",
+        "birthMonth": "1",
+        "birthDay": "1",
+        "gender": "_gender",
+        "mobileNumber": "0000",
+        "contactFullName": "_emergencyContact.fullName",
+        "contactRelation": "_emergencyContact.relation",
+        "contactMobile": "1111",
+        "age": null,
+        "reason": null,
+        "chatID": null,
+        "wallet": 42
+      }
+    }
+  }
+}

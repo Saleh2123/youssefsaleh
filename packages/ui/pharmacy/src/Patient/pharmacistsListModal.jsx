@@ -24,7 +24,7 @@ const PharmacistsListModal = () =>{
                     <section className="pharmacists-container curvedrec" onClick={()=>handleMessengerClick(pharmacist.chatID)}>
                     <p>
                         <h3>{`DR. Pharmacist ${pharmacist.name}`}</h3>
-                        <h6>{`studied at ${pharmacist.education}`}</h6>
+                        <h6>{`studied at ${pharmacist.educationalBackground}`}</h6>
                     </p>
                     </section>
                 )

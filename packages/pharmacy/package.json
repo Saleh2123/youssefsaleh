@@ -1,27 +1,59 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
+
   "name": "@topp/pharmacy",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "exports": null,
-  "scripts": {
-    "build::prisma": "prisma generate",
-    "build": "next build",
-    "check::eslint": "TIMING=1 eslint .",
-    "check::prettier": "prettier --ignore-path=../../.gitignore --check .",
-    "dev": "next dev",
-    "test": "vitest run"
+
+  "exports": {
+    ".": {
+      "types": "./src/lib.ts",
+      "default": "./target/tsc/src/lib.js"
+    }
   },
+
+  "scripts": {
+    "build": "tsc",
+    "check.eslint": "TIMING=1 eslint .",
+    "prisma.generate": "prisma generate",
+    "prisma.push": "prisma db push",
+    "prisma.studio": "prisma studio --browser=none",
+    "run.development": "NODE_ENV=development bun --hot ./src/main.ts",
+    "run.production": "NODE_ENV=production bun ./src/main.ts"
+  },
+
+  "prisma": { "schema": "./src/server/prisma/schema.prisma" },
+
   "dependencies": {
-    "@prisma/client": ">=5 <6",
-    "@topp/_config.next": "*",
-    "@topp/_core": "*",
-    "compression": ">=1 <2",
-    "express": ">=4 <5",
-    "helmet": ">=7 <8",
-    "next": ">=13 <14",
-    "react": ">=18 <19",
-    "react-dom": ">=18 <19"
+    "@node-rs/argon2": "^1",
+    "@prisma/client": "^5",
+    "@trpc/server": "^10",
+    "compression": "^1",
+    "cors": "^2",
+    "effect": "^2.0.0-next",
+    "express": "^4",
+    "helmet": "^7",
+    "iron-session": "^8",
+    "nodemailer": "^6",
+    "zod": "^3"
+  },
+
+  "devDependencies": {
+    "@types/compression": "^1",
+    "@types/cors": "^2",
+    "@types/express": "^4",
+    "@types/express-serve-static-core": "^4",
+    "@types/node": "^20",
+    "@types/nodemailer": "^6",
+    "@types/qs": "^6",
+    "prisma": "^5",
+
+    "@topp/_config": "workspace:*",
+    "@eslint/js": "^8",
+    "@typescript-eslint/eslint-plugin": "^6",
+    "@typescript-eslint/parser": "^6",
+    "eslint": "^8",
+    "typescript": "^5"
   }
 }

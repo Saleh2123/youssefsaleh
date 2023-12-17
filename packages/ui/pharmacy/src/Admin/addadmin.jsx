@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { _TARGET } from "../_target";
 import { useNavigate } from "react-router-dom";
+import * as _pharmacy from "@topp/pharmacy";
+import * as _trpc from "../_util/trpc";
 
 const Addadmin = () => {
+  const _mutation = _trpc.client.profile.create.useMutation();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -33,12 +37,8 @@ const Addadmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-    await fetch(`${_TARGET}/api/auth/register/admin`, {
-      headers: { "content-type": "application/json" },
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-    });
     if(password !== "" && checkPassword() === true){
+      _mutation.mutate({ username, password, mode: _pharmacy.mode.ADMIN });
       changePage("/adminhome");
     }
   };

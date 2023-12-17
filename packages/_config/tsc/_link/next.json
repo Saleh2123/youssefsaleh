@@ -1,23 +1,30 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig.json",
-  "extends": "@topp/_config.tsc/base.json",
+  "extends": "@topp/_config/tsc/base.json",
 
   "include": [
-    "./*.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./target/next/development/types/**/*.ts",
-    "./target/next/production/types/**/*.ts",
-    "./target/next/test/types/**/*.ts",
-    "./tests/**/*.ts"
+    "./*.*ts",
+    "./src/**/*.*ts",
+    "./src/**/*.*tsx",
+
+    "target/next/development/types/**/*.ts",
+    "target/next/production/types/**/*.ts",
+    "target/next/test/types/**/*.ts"
   ],
 
   "exclude": [],
 
   "compilerOptions": {
-    "baseUrl": ".",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "plugins": [{ "name": "next" }],
-    "rootDir": "."
+
+    "baseUrl": "./.",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "outDir": "./target/tsc",
+    "rootDir": "./.",
+
+    "paths": { "~/*": ["./src/*"] },
+
+    "plugins": [{ "name": "next" }]
   }
 }

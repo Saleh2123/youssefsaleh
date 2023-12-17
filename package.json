@@ -1,67 +1,29 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
+  "packageManager": "pnpm@8.12.1+sha256.28ca61ece5a496148b73fabc9afb820f9c3fec4f55f04ce45a2cea0a5219f2e1",
+
   "name": "@topp/mono",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "packages/_config/*",
-    "packages/ui/*"
-  ],
+
   "scripts": {
-    "check::prettier": "prettier --check '*.json' '*.md' '*.yaml'",
-    "check::syncpack": "syncpack",
-    "b": "turbo build",
-    "c": "turbo check",
-    "d": "turbo dev",
-    "t": "turbo test"
+    ",": "turbo",
+    "check.biome": "biome check .",
+    "clean": "git clean -dx --exclude='.env' --exclude='.env*.local'"
   },
+
   "devDependencies": {
-    "@eslint/eslintrc": ">=2 <3",
-    "@prisma/language-server": ">=5 <6",
-    "@topp/_config.eslint": "*",
-    "@topp/_config.tsc": "*",
-    "@topp/_config.vitest": "*",
-    "@types/compression": ">=1 <2",
-    "@types/eslint": ">=8 <9",
-    "@types/eslint__js": ">=8 <9",
-    "@types/express": ">=4 <5",
-    "@types/node": ">=20 <21",
-    "@types/react": ">=18 <19",
-    "@types/react-dom": ">=18 <19",
-    "compression": ">=1 <2",
-    "eslint": ">=8 <9",
-    "eslint-config-next": ">=13 <14",
-    "express": ">=4 <5",
-    "helmet": ">=7 <8",
-    "next": ">=13 <14",
-    "npm-check-updates": ">=16 <17",
-    "prettier": ">=3 <4",
-    "prettier-plugin-organize-imports": ">=3 <4",
-    "prisma": ">=5 <6",
-    "syncpack": ">=11 <12",
-    "turbo": ">=1 <2",
-    "typescript": ">=5 <6",
-    "vitest": ">=0 <1"
+    "prettier": "^3",
+    "turbo": "^1",
+    "typescript": "^5"
   },
-  "config": {
-    "syncpack": {
-      "dependencyTypes": [
-        "!local"
-      ]
+
+  "prettier": { "printWidth": 100 },
+
+  "pnpm": {
+    "packageExtensions": {
+      "eslint-config-next@^14": {
+        "peerDependencies": { "next": "^14" }
+      }
     }
-  },
-  "prettier": {
-    "endOfLine": "lf",
-    "printWidth": 100,
-    "plugins": [
-      "prettier-plugin-organize-imports"
-    ],
-    "organizeImportsSkipDestructiveCodeActions": true
-  },
-  "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "chart.js": "^4.4.1",
-    "react-chartjs-2": "^5.2.0"
   }
 }

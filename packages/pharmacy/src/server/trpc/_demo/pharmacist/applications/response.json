@@ -1,0 +1,81 @@
+{
+  "result": {
+    "data": [
+      {
+        "id": "6582aac02aba946ffbbdf041",
+        "username": "khelo",
+        "email": "khaled@gmail.com",
+        "name": "khaled",
+        "password": "$argon2id$v=19$m=19456,t=2,p=1$Mw63oeHWjukQj2Ba8uIr2A$U7o9Dd/O5hwkm52UsMHWI/Q9KW4HWh7xZaGqftOoAPA",
+        "dateofbirth": "5 jan 2002",
+        "hourlyRate": 4,
+        "affiliation": "Magdy hospital",
+        "educationalBackground": "abc",
+        "mode": 4,
+        "idDocument": null,
+        "degreeDocument": null,
+        "licenseDocument": null
+      },
+      {
+        "id": "6582aac02aba946ffbbdf042",
+        "username": "zozz",
+        "email": "ziad@gmail.com",
+        "name": "zozz",
+        "password": "$argon2id$v=19$m=19456,t=2,p=1$Mw63oeHWjukQj2Ba8uIr2A$U7o9Dd/O5hwkm52UsMHWI/Q9KW4HWh7xZaGqftOoAPA",
+        "dateofbirth": "5 jan 2002",
+        "hourlyRate": 4,
+        "affiliation": "Magdy hospital",
+        "educationalBackground": "abc",
+        "mode": 4,
+        "idDocument": null,
+        "degreeDocument": null,
+        "licenseDocument": null
+      },
+      {
+        "id": "6582aac02aba946ffbbdf043",
+        "username": "mo",
+        "email": "omar@gmail.com",
+        "name": "mo",
+        "password": "$argon2id$v=19$m=19456,t=2,p=1$Mw63oeHWjukQj2Ba8uIr2A$U7o9Dd/O5hwkm52UsMHWI/Q9KW4HWh7xZaGqftOoAPA",
+        "dateofbirth": "5 jan 2002",
+        "hourlyRate": 4,
+        "affiliation": "Magdy hospital",
+        "educationalBackground": "abc",
+        "mode": 4,
+        "idDocument": null,
+        "degreeDocument": null,
+        "licenseDocument": null
+      },
+      {
+        "id": "6582aac02aba946ffbbdf044",
+        "username": "zozo",
+        "email": "zeyad@gmail.com",
+        "name": "zozo",
+        "password": "$argon2id$v=19$m=19456,t=2,p=1$Mw63oeHWjukQj2Ba8uIr2A$U7o9Dd/O5hwkm52UsMHWI/Q9KW4HWh7xZaGqftOoAPA",
+        "dateofbirth": "5 jan 2002",
+        "hourlyRate": 4,
+        "affiliation": "Magdy hospital",
+        "educationalBackground": "abc",
+        "mode": 4,
+        "idDocument": null,
+        "degreeDocument": null,
+        "licenseDocument": null
+      },
+      {
+        "id": "6582acc09542c3d7cb5f6d30",
+        "username": "_pharmacist",
+        "email": "_pharmacist@example.com",
+        "name": "_name",
+        "password": "$argon2id$v=19$m=19456,t=2,p=1$UcqcZ35BDDyNiMs9udh49g$FH69vPp7Np00TVEKC/OXwIo2Kf0fg3tjZVWSoJ2/aH4",
+        "dateofbirth": "1 1 1970",
+        "hourlyRate": 100,
+        "affiliation": "_affiliation",
+        "educationalBackground": "_educationalBackground",
+        "mode": 4,
+        "idDocument": null,
+        "degreeDocument": null,
+        "licenseDocument": null
+      }
+    ]
+  }
+}

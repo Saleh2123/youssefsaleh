@@ -2,7 +2,16 @@
   "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
   "pipeline": {
-    "build::prisma": {},
-    "build": { "dependsOn": ["^build", "build::prisma"] }
+    "build": { "dependsOn": ["^build", "prisma.generate"] },
+
+    "check.eslint": { "dependsOn": ["^build", "prisma.generate"] },
+    "check": { "dependsOn": ["build", "check.eslint"] },
+
+    "prisma.generate": { "inputs": ["./src/server/prisma/schema.prisma"] },
+    "prisma.push": { "cache": false },
+    "prisma.studio": { "cache": false, "persistent": true, "dependsOn": ["prisma.push"] },
+
+    "run.development": { "dependsOn": ["^build", "prisma.push"] },
+    "run.production": { "dependsOn": ["^build", "prisma.push"] }
   }
 }

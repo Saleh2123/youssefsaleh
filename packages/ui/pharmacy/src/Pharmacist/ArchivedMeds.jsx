@@ -1,7 +1,10 @@
 import { useGlobalContext } from "../context"
 import { FaArchive } from 'react-icons/fa';
+import * as _trpc from "../_util/trpc";
 
 const ArchivedMeds = () => {
+  const _mutation = _trpc.client.medicine.archive.useMutation();
+
     const{archivedMeds , removeFromArchivedMeds, selectMedicine} = useGlobalContext()
     return (
     <section className="favorites">
@@ -14,7 +17,10 @@ const ArchivedMeds = () => {
                     <div key={archivedMed.name} className="favorite-item">
                         <h6>{archivedMed.name}</h6>
                         <img src={archivedMed.picture} alt="no image" className="favorites-img img" onClick={()=> selectMedicine(archivedMed.name,true)}/>
-                        <button className="remove-btn" onClick={()=> removeFromArchivedMeds(archivedMed)}> Unarchive </button>
+                        <button className="remove-btn" onClick={()=> {
+                          _mutation.mutate({ id: archivedMed.id, archived: false });
+                          removeFromArchivedMeds(archivedMed);
+                        }}> Unarchive </button>
                     </div>
                     )
                 }

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.4.0/schema.json",
+
+  "files": { "ignore": ["./packages/ui/", "target/"] },
+
+  "organizeImports": { "enabled": true },
+
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 100
+  },
+
+  "json": {
+    "parser": { "allowComments": true }
+  },
+
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "all": true,
+      "nursery": { "noDefaultExport": "off" },
+      "style": { "noNonNullAssertion": "off" }
+    }
+  }
+}

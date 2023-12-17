@@ -2,34 +2,22 @@ import { useEffect, useState } from "react";
 import { _TARGET } from "../_target";
 import ReqModal from "./reqModal";
 import Requests from "./requests";
+import { useGlobalContext } from "../context"
+import * as _trpc from "../_util/trpc";
 import "../web.css";
 
 const Requestshome = () => {
-  const [requests, setRequests] = useState([
-    {
-      username: "khelo",
-      name: "khaled",
-      email: "khaled@gmail.com",
-      password: "abc",
-      dob: "5 jan 2002",
-      hourlyRate: 4,
-      affiliation: "Magdy hospital",
-      education: "abc",
-    }]);
+  const { requests, _setRequests } = useGlobalContext();
   const [showModal, setShowModal] = useState(false);
   const [selectedRequest, setSelectedRequest] = useState(null);
 
   useEffect(() => {
     const get = async () => {
-      const res = await fetch(`${_TARGET}/api/pharmacist/pending/find`, {
-        headers: { "content-type": "application/json" },
-      });
-      const results = await res.json();
-      console.log(results);
-      setRequests(results);
+      const results = await _trpc.vanilla.pharmacist.applications.query();
+      _setRequests(results);
     };
     get();
-  }, []);
+  }, [_setRequests]);
 
   const select = (email) => {
     const request = requests.find((request) => request.email === email);
@@ -41,7 +29,7 @@ const Requestshome = () => {
     <main style={{ "margin-top": "150px" }}>
       <Requests requests={requests} select={select} />
       {showModal && (
-        <ReqModal requests={requests} setRequests={setRequests} selectedRequest={selectedRequest} close={setShowModal.bind(null, false)} />
+        <ReqModal requests={requests} setRequests={_setRequests} selectedRequest={selectedRequest} close={setShowModal.bind(null, false)} />
       )}
     </main>
   );

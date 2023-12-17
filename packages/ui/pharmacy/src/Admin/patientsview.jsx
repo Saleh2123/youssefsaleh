@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import { _TARGET } from "../_target";
+import * as _trpc from "../_util/trpc";
 import "../web.css";
 
 const Patientsview = () => {
+  const _mutation = _trpc.client.profile.delete.useMutation();
   const [patients, setPatients] = useState([]);
 
   useEffect(() => {
     const get = async () => {
-      const res = await fetch(`${_TARGET}/api/patient/find`, {
-        headers: { "content-type": "application/json" },
-      });
-      const results = await res.json();
-      console.log(results);
+      const results = await _trpc.vanilla.patient.find.query();
       setPatients(results);
     };
     get();
@@ -20,11 +18,7 @@ const Patientsview = () => {
   const removePatient = async (id, profileId) => {
     let arr = patients.filter((patient) => patient.id !== id);
     setPatients(arr);
-    await fetch(`${_TARGET}/api/profile/delete`, {
-      headers: { "content-type": "application/json" },
-      method: "POST",
-      body: JSON.stringify({ id: profileId }),
-    });
+    _mutation.mutate({ id: profileId });
   };
 
   // if(loading){
@@ -54,9 +48,9 @@ const Patientsview = () => {
           >
             <h2 style={{ color: "white" }}>Patient Name: {patient.name}</h2>
             <footer>
-              <p style={{ color: "black" }}>ID:{patient.id}</p>
+              <p style={{ color: "white" }}>ID:{patient.id}</p>
               {/* <p style={{ color: "black" }}>Age:{patient.age}</p> */}
-              <p style={{ color: "black" }}>reason:{patient.reason}</p>
+              {patient.reason && <p style={{ color: "white" }}>reason:{patient.reason}</p>}
             </footer>
             <button
               className="btn btn-sm ml-3 d-inline-block delete-button"

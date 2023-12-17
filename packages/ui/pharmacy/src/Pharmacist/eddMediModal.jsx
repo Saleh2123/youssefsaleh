@@ -2,10 +2,14 @@ import { useState } from "react";
 import { _TARGET } from "../_target";
 import { useGlobalContext } from "../context";
 import React, { useRef } from 'react';
+import * as _misc from "../_util/misc";
+import * as _trpc from "../_util/trpc";
 import "../web.css";
 import "./modals.css";
 
 const EddMediModal = () => {
+  const _mutation = _trpc.client.medicine.update.useMutation();
+
   const fileInputRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const {
@@ -30,7 +34,6 @@ const EddMediModal = () => {
     setSelectedImage(file);
   };
 
-
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,23 +46,25 @@ const EddMediModal = () => {
     ) {
       return;
     }
+
+    let picture = undefined;
     if (selectedImage) {
       editedMedicine.picture = URL.createObjectURL(selectedImage);
+      picture = await _misc.fs.encode(selectedImage);
     }
+
     let arr = medicines;
     arr[editedindex] = editedMedicine;
     setMedicines(arr);
     closeEddMediModal();
 
-    await fetch(`${_TARGET}/api/medicine/update`, {
-      headers: { "content-type": "application/json" },
-      method: "POST",
-      body: JSON.stringify({
-        name: editedMedicine.name,
-        description: editedMedicine.description,
-        quantity: +editedMedicine.quantity,
-        price: +editedMedicine.price,
-      }),
+    _mutation.mutate({
+      id: editedMedicine.id,
+      name: editedMedicine.name,
+      description: editedMedicine.description,
+      quantity: +editedMedicine.quantity,
+      price: +editedMedicine.price,
+      picture,
     });
   };
   return (

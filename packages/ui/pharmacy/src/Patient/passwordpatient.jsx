@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //import { useLocation } from "react-router-dom";
+import * as _trpc from "../_util/trpc";
+import { useGlobalContext } from "../context"
 
 const PasswordPatient = () => {
+  const _mutation = _trpc.client.profile.updatePassword.useMutation();
+  const { _user } = useGlobalContext();
+
   const [Currentpassword, setCurrentpassword] = useState("");
   const [Newpassword, setNewpassword] = useState("");
   const [Cpassword, setCpassword] = useState("");
@@ -42,6 +47,7 @@ const PasswordPatient = () => {
     e.preventDefault();
     setIsSubmitted(true);
     if(Cpassword !== "" && Newpassword !== "" && Currentpassword !=="" && Cpassword === Newpassword && checkPassword() === true){
+      _mutation.mutate({ username: _user.username, old: Currentpassword, new: Newpassword });
       changePage("/patienthome");
     }
   };

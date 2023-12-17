@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { _TARGET } from "../_target";
 import { useGlobalContext } from "../context";
+import * as _trpc from "../_util/trpc";
 import "../web.css";
 import "./modals.css";
 
 const AddMediModal = () => {
+  const _mutation = _trpc.client.medicine.create.useMutation();
+
   const { closeAddMediModal, medicines, setMedicines} = useGlobalContext();
   const [medicineData, setMedicineData] = useState({
     name: "",
@@ -69,18 +72,14 @@ const AddMediModal = () => {
     ]);
     closeAddMediModal();
 
-    await fetch(`${_TARGET}/api/medicine/add`, {
-      headers: { "content-type": "application/json" },
-      method: "POST",
-      body: JSON.stringify({
-        name: medicineData.name,
-        use: medicineData.use,
-        description: medicineData.description,
-        ingredients: ing,
-        quantity: +medicineData.quantity,
-        picture: "https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
-        price: +medicineData.price,
-      }),
+    _mutation.mutate({
+      name: medicineData.name,
+      use: medicineData.use,
+      description: medicineData.description,
+      ingredients: ing,
+      quantity: +medicineData.quantity,
+      picture: "https://rhc.nhsggc.org.uk/media/1331/medicines.png?width=262&height=187&mode=max",
+      price: +medicineData.price,
     });
   };
   return (

@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 const Logout = () =>{
 
-    const {closelogoutModal} = useGlobalContext()
+    const {_setUser, closelogoutModal} = useGlobalContext()
     const navigate = useNavigate()
 
     const exit = () =>{
+        _setUser(null);
         closelogoutModal()
         navigate("/two")
     }

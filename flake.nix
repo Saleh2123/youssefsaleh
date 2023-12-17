@@ -6,28 +6,47 @@
 
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
   };
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-    systems = import inputs.systems;
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.systems;
 
-    perSystem = { pkgs, system, ... }: {
-      _module.args.pkgs = import "${inputs.nixpkgs}/pkgs/top-level" {
-        localSystem = system;
-      };
-      devShells.default = pkgs.mkShell.override { stdenv = pkgs.stdenvNoCC; } {
-        packages = [
-          pkgs.bun
-          pkgs.nodejs_latest
-          pkgs.openssl
-          pkgs.prettierd
-          pkgs.shellcheck
-          pkgs.shfmt
-        ];
-        shellHook = ''
-          export PRISMA_QUERY_ENGINE_BINARY="${pkgs.prisma-engines}/bin/query-engine"
-          export PRISMA_QUERY_ENGINE_LIBRARY="${pkgs.prisma-engines}/lib/libquery_engine.node"
-          export PRISMA_SCHEMA_ENGINE_BINARY="${pkgs.prisma-engines}/bin/schema-engine"
-        '';
+      perSystem = { self', pkgs, system, ... }: {
+        _module.args.pkgs =
+          import "${inputs.nixpkgs}/pkgs/top-level" { localSystem = system; };
+
+        formatter = pkgs.nixfmt;
+
+        devShells.default =
+          pkgs.mkShell.override { stdenv = pkgs.stdenvNoCC; } {
+            name = "@topp/mono";
+
+            packages = [
+              pkgs.biome
+              pkgs.bun
+              pkgs.corepack_latest
+              pkgs.hurl
+              pkgs.nil
+              pkgs.nodejs_latest
+              pkgs.nodejs_latest.pkgs."@prisma/language-server"
+              pkgs.nodejs_latest.pkgs."@tailwindcss/language-server"
+              pkgs.openssl
+              pkgs.prisma-engines
+              pkgs.shellcheck
+              pkgs.shfmt
+              pkgs.vscode-langservers-extracted
+              self'.formatter
+            ];
+
+            shellHook = ''
+              set -o allexport
+
+              PRISMA_QUERY_ENGINE_BINARY="${pkgs.prisma-engines}/bin/query-engine"
+              PRISMA_QUERY_ENGINE_LIBRARY="${pkgs.prisma-engines}/lib/libquery_engine.node"
+              PRISMA_SCHEMA_ENGINE_BINARY="${pkgs.prisma-engines}/bin/schema-engine"
+
+              set +o allexport
+            '';
+          };
       };
     };
-  };
 }

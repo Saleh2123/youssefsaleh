@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AppProvider } from './context';
+import * as _util from "./_util/provider";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <_util.Provider>
     <AppProvider>
     <App />
     </AppProvider>
+    </_util.Provider>
   </React.StrictMode>
 );
 

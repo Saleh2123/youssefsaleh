@@ -1,14 +1,35 @@
 name: topp
+
+x-base: &base
+  init: true
+  restart: on-failure
+  tty: true
+  build:
+    args: &base_build_args
+      topp_user: topp
+
 services:
-  db:
-    build: packages/_config/docker
-    entrypoint: _topp_db.sh
-    init: true
-    restart: on-failure
-    tty: true
+  mongo:
+    <<: *base
+    build:
+      context: ./packages/_config/docker/mongo
+      args:
+        <<: *base_build_args
+        topp_image_mongo: mongo:7
+    entrypoint: _mongod.sh
     environment:
-      _TOPP_DB_PORT: ${_TOPP_DB_PORT}
+      _TOPP_MONGO_PORT: ${_TOPP_MONGO_PORT}
     ports:
-      - ${_TOPP_DB_PORT}:${_TOPP_DB_PORT}
+      - ${_TOPP_MONGO_PORT}:${_TOPP_MONGO_PORT}
     volumes:
-      - ./packages/_config/docker/bin:/usr/local/bin
+      - ./packages/_config/docker/mongo/bin:/usr/local/bin
+
+  mailcrab:
+    <<: *base
+    image: marlonb/mailcrab:v0.23.0
+    environment:
+      HTTP_PORT: ${_TOPP_MAIL_HTTP_PORT}
+      SMTP_PORT: ${_TOPP_MAIL_SMTP_PORT}
+    ports:
+      - ${_TOPP_MAIL_HTTP_PORT}:${_TOPP_MAIL_HTTP_PORT}
+      - ${_TOPP_MAIL_SMTP_PORT}:${_TOPP_MAIL_SMTP_PORT}

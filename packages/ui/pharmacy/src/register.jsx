@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { _TARGET } from "./_target";
 import "./register.css"; // Import your custom CSS for the form styles
+import * as _trpc from "./_util/trpc";
 
 const Register = () => {
+  const _mutation = _trpc.client.patient.register.useMutation();
+
   const [formData, setFormData] = useState({
     username: "",
     name: "",
@@ -43,12 +45,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    await fetch(`${_TARGET}/api/auth/register/patient`, {
-      headers: { "content-type": "application/json" },
-      method: "POST",
-      body: JSON.stringify(formData),
-    });
+    _mutation.mutate(formData);
   };
 
   return (

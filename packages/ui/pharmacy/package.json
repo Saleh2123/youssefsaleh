@@ -1,45 +1,42 @@
 {
-  "name": "pharmacy",
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@topp/ui.pharmacy",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.3.2",
-    "chart.js": "^4.4.1",
-    "jquery": "^3.7.1",
-    "react": "^18.2.0",
-    "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0",
-    "react-router-dom": "^6.16.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
+  "exports": null,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "dev": "PORT=8000 react-scripts start",
     "eject": "react-scripts eject",
-    "dev": "PORT=8000 react-scripts start"
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "run.development": "BROWSER=none PORT=8000 react-scripts start",
+    "run.production": "BROWSER=none PORT=8000 react-scripts start"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6",
+    "@fortawesome/react-fontawesome": "^0.2",
+    "@tanstack/react-query": "^4",
+    "@topp/pharmacy": "workspace:*",
+    "@trpc/client": "^10",
+    "@trpc/react-query": "^10",
+    "bootstrap": "^5",
+    "chart.js": "^4",
+    "jquery": "^3",
+    "react": "^18",
+    "react-chartjs-2": "^5",
+    "react-dom": "^18",
+    "react-icons": "^4",
+    "react-router-dom": "^6",
+    "web-vitals": "^3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^14",
+    "@testing-library/user-event": "^14",
+    "react-scripts": "^5"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }

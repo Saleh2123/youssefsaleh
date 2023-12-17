@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { _TARGET } from "./_target";
 import "./register2.css";
+import * as _misc from "./_util/misc";
+import * as _trpc from "./_util/trpc";
 
 const Registerr = () => {
+  const _mutation = _trpc.client.pharmacist.apply.useMutation();
+
   const [idDocument, setIdDocument] = useState(null);
   const [degreeDocument, setDegreeDocument] = useState(null);
   const [licenseDocument, setLicenseDocument] = useState(null);
@@ -41,12 +44,18 @@ const Registerr = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    await fetch(`${_TARGET}/api/auth/register/pharmacist`, {
-      headers: { "content-type": "application/json" },
-      method: "POST",
-      body: JSON.stringify(formData),
-    });
+
+    const documents = await Promise.all([
+      _misc.fs.encode(idDocument),
+      _misc.fs.encode(degreeDocument),
+      _misc.fs.encode(licenseDocument),
+    ])
+
+    _mutation.mutate(Object.assign(formData, {
+      idDocument: documents[0],
+      degreeDocument: documents[1],
+      licenseDocument: documents[2],
+    }));
   };
 
   return (

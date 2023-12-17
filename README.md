@@ -150,20 +150,28 @@ const removePatient = (id) => {
 3. **Install dependencies:**
 
     ```bash
-    npm install
+    pnpm install
     ```
 
 ## API References
 
-If applicable, provide references to your API documentation.
+[DEMO](./packages/pharmacy/src/server/trpc/_demo)
 
 ## Tests
 
-Explain how to run tests and provide any relevant information about testing.
+[DEMO](./packages/pharmacy/src/server/trpc/_demo)
 
 ## How to Use
 
-Provide instructions on how to use your project.
+1. Start-up the required back-end containers.
+```
+docker compose up --detach
+```
+
+2. Run the applications (in development mode).
+```
+pnpm , run.development
+```
 
 ## Contribute
 
@@ -191,4 +199,4 @@ We would like to express our gratitude to the following YouTube videos and creat
 
 ## License
 
-Specify the license under which your project is distributed.
+Dual licensed under [Apache-2.0](./LICENSES/APACHE.txt) and [MIT](./LICENSES/MIT.txt).

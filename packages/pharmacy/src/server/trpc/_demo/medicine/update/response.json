@@ -1,0 +1,20 @@
+{
+  "result": {
+    "data": [
+      {
+        "id": "6582a7a19542c3d7cb5f6d2a",
+        "name": "_name__updated",
+        "description": "_description__updated",
+        "price": 13,
+        "use": "_use",
+        "archived": false,
+        "ingredients": ["_ingredient"],
+        "isOverTheCounter": true,
+        "notified": false,
+        "picture": "_picture",
+        "quantity": 7,
+        "sales": 0
+      }
+    ]
+  }
+}

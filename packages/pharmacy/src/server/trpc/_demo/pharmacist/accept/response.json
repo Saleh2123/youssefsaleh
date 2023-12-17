@@ -1,0 +1,19 @@
+{
+  "result": {
+    "data": {
+      "id": "6582ad599542c3d7cb5f6d32",
+      "profileId": "6582ad599542c3d7cb5f6d31",
+      "name": "_name",
+      "dateofbirth": "1 1 1970",
+      "hourlyRate": 100,
+      "affiliation": "_affiliation",
+      "educationalBackground": "_educationalBackground",
+      "age": null,
+      "chatID": null,
+      "idDocument": null,
+      "degreeDocument": null,
+      "licenseDocument": null,
+      "wallet": 0
+    }
+  }
+}

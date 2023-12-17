@@ -1,8 +1,11 @@
 import { FaEdit } from "react-icons/fa";
 import { useGlobalContext } from "../context";
+import * as _trpc from "../_util/trpc";
 import "../web.css";
 
 const MedicinesP = () => {
+  const _mutation = _trpc.client.medicine.archive.useMutation();
+
   const { medicines, selectMedicine, setShowAddMediModal, editMedicine, addToArchivedMeds} = useGlobalContext();
 
   // if(loading){
@@ -53,7 +56,10 @@ const MedicinesP = () => {
             />
               }
             <footer>
-              <h5 className="arch" onClick={()=>{addToArchivedMeds(medicine)}}>{medicine.name}</h5>
+              <h5 className="arch" onClick={()=>{
+                _mutation.mutate({ id: medicine.id, archived: true });
+                addToArchivedMeds(medicine);
+              }}>{medicine.name}</h5>
               <FaEdit
                 style={{ "margin-left": "10px", color: "white", cursor: "pointer" }}
                 onClick={() => {

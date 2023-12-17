@@ -1,0 +1,105 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("_TOPP_MONGO_URL")
+}
+
+//------------------------------------------------------------------------------
+model Profile {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    username String @unique
+    email    String @unique
+
+    mode     Int
+    password String
+
+    patient    Patient?
+    pharmacist Pharmacist?
+}
+
+//------------------------------------------------------------------------------
+model Patient {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    profileId String  @unique @db.ObjectId
+    profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+    name            String
+    birthYear       String
+    birthMonth      String
+    birthDay        String
+    gender          String
+    mobileNumber    String
+    contactFullName String
+    contactRelation String
+    contactMobile   String
+
+    age    Int?
+    reason String?
+    chatID String?
+
+    wallet Int @default(0)
+}
+
+model Pharmacist {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    profileId String  @unique @db.ObjectId
+    profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+    name                  String
+    dateofbirth           String
+    hourlyRate            Int
+    affiliation           String
+    educationalBackground String
+
+    age             Int?
+    chatID          String?
+    idDocument      String?
+    degreeDocument  String?
+    licenseDocument String?
+
+    wallet Int @default(0)
+}
+
+//------------------------------------------------------------------------------
+model PendingPharmacist {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    username String @unique
+    email    String @unique
+
+    name                  String
+    password              String
+    dateofbirth           String
+    hourlyRate            Int
+    affiliation           String
+    educationalBackground String
+
+    mode            Int     @default(4)
+    idDocument      String?
+    degreeDocument  String?
+    licenseDocument String?
+}
+
+//------------------------------------------------------------------------------
+model Medicine {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+
+    name        String
+    description String
+    price       Float
+    use         String
+
+    archived         Boolean  @default(false)
+    ingredients      String[]
+    isOverTheCounter Boolean  @default(true)
+    notified         Boolean  @default(false)
+    picture          String?
+    quantity         Int      @default(0)
+    sales            Int      @default(0)
+}

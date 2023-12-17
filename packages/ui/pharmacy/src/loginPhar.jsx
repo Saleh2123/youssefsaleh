@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import * as _trpc from "./_util/trpc";
+import * as _pharmacy from "@topp/pharmacy";
+import { useGlobalContext } from "./context"
 
 const LoginPhar = () => {
+  const _mutation = _trpc.client.profile.logIn.useMutation();
+  const { _setUser } = useGlobalContext();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -23,7 +29,13 @@ const LoginPhar = () => {
     e.preventDefault();
     setIsSubmitted(true);
     if(password !== "" && username !== ""){
-      changePage("/pharhome");
+      try {
+        const mode = _pharmacy.mode.PHARMACIST;
+        await _mutation.mutateAsync({ username, password, mode });
+        _setUser({ username, mode })
+        changePage("/pharhome");
+      } catch (_) {
+      }
     }
   };
 
